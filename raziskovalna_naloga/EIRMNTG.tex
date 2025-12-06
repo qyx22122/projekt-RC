@@ -1,5 +1,7 @@
-\documentclass[titlepage]{article}
+\documentclass[titlepage, a4paper, twoside, draft]{article}
 
+%\setcounter{secnumdepth}{2} %Globina uštevilčnja naslovov
+%\setcounter{tocdepth}{2} %Do katere globine bodo naslovi v kazalu
 
 \begin{document}
 
@@ -10,17 +12,23 @@
 
 \renewcommand{\abstractname}{Povzetek}
 \begin{abstract}
-Sem gre povzetek
+Tle gre povzetek
 \end{abstract}
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
 The abstract goes here
 \end{abstract}
 
-
-\renewcommand{\tableofcontents}{Vsebina}
+\renewcommand{\contentsname}{Vsebina}
 \tableofcontents
+\clearpage
 
+\section{Uvod}
 
+Bla bla bla
+
+\subsection{Pod uvod}
+
+bla 2.0
 
 \end{document}
