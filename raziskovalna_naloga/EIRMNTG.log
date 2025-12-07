@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  7 DEC 2025 19:23
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.1)  7 DEC 2025 19:57
+>>>>>>> main
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **EIRMNTG
 (./EIRMNTG.tex
+<<<<<<< HEAD
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 
@@ -14,19 +19,28 @@ Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
 (/nix/store/jnzbk1g55r9hbjhr7cllb02si7vikqw9-texlive-2024-env-texmfdist/tex/lat
 ex/base/size10.clo
 File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+=======
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-11-14>
+(c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(c:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+>>>>>>> main
 )
-\c@part=\count196
-\c@section=\count197
-\c@subsection=\count198
-\c@subsubsection=\count199
-\c@paragraph=\count266
-\c@subparagraph=\count267
-\c@figure=\count268
-\c@table=\count269
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen141
+\bibindent=\dimen148
 )
+<<<<<<< HEAD
 (/nix/store/jnzbk1g55r9hbjhr7cllb02si7vikqw9-texlive-2024-env-texmfdist/tex/lat
 ex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
@@ -458,17 +472,51 @@ onts/map/pdftex/updmap/pdftex.map}]
 [1] (./EIRMNTG.toc)
 \tf@toc=\write4
 \openout4 = `EIRMNTG.toc'.
+=======
+(c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count283
+)
+(./EIRMNTG.aux)
+\openout1 = `EIRMNTG.aux'.
 
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 11.
+ [1
 
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [1] (./EIRM
+NTG.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `EIRMNTG.toc'.
+>>>>>>> main
 
-[2]
-
-[3
-
-] (./EIRMNTG.aux)
+ [2] [3] (./EIRMNTG.aux)
  ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-01-18>
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-11-14>
  ***********
 
 
@@ -484,6 +532,7 @@ Package logreq Info: Writing requests to 'EIRMNTG.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  9463 strings out of 473203
  183945 string characters out of 5692202
  1001821 words of memory out of 5000000
@@ -510,6 +559,21 @@ live-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmti10.pfb></nix/store/j
 nzbk1g55r9hbjhr7cllb02si7vikqw9-texlive-2024-env-texmfdist/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb>
 Output written on EIRMNTG.pdf (5 pages, 142160 bytes).
+=======
+ 469 strings out of 467537
+ 8537 string characters out of 5423704
+ 435733 words of memory out of 5000000
+ 29442 multiletter control sequences out of 15000+600000
+ 631976 words of font info for 54 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 35i,7n,38p,654b,198s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb>
+Output written on EIRMNTG.pdf (5 pages, 66433 bytes).
+>>>>>>> main
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
