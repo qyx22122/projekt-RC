@@ -1,2 +1,9 @@
 \contentsline {section}{\numberline {1}Uvod}{3}{}%
 \contentsline {subsection}{\numberline {1.1}Pod uvod}{3}{}%
+\contentsline {section}{\numberline {2}Teoretičen del}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Specifičen impulz}{3}{}%
+\contentsline {section}{\numberline {3}Empirični del}{3}{}%
+\contentsline {section}{\numberline {4}Rezultati}{3}{}%
+\contentsline {section}{\numberline {5}Razprava}{3}{}%
+\contentsline {section}{\numberline {6}Zaključek}{3}{}%
+\contentsline {section}{Literatura}{3}{}%

@@ -1,7 +1,11 @@
 \documentclass[titlepage, a4paper, twoside, draft]{article}
 
-%\setcounter{secnumdepth}{2} %Globina uštevilčnja naslovov
-%\setcounter{tocdepth}{2} %Do katere globine bodo naslovi v kazalu
+\setcounter{secnumdepth}{2} %Globina uštevilčnja naslovov
+\setcounter{tocdepth}{2} %Do katere globine bodo naslovi v kazalu
+
+\usepackage{amsmath}
+\usepackage{biblatex}
+\addbibresource{./literatura.bib}
 
 \begin{document}
 
@@ -28,10 +32,40 @@ The abstract goes here
 \section{Uvod}
 
 Bla bla bla
+\cite{wiki:SPR2025}
 
 \subsection{Pod uvod}
 
 bla 2.0
 
+\section{Teoretičen del}
+Raketni motorji delujejo, zaradi zakona o ohranitvi gibalne količine; motor pospeši vroče pline v nasprotno smer gibanja in s tem poveča hitrost rakete.
+Pri raketnih motorjih na trdno grivo pride ta plin iz reakcije med gorivom in oksidatorjem, ki sta oba v trdnem agregatnem stanju. V zgorevalni komori se zaradi tega ustvari tlak.
+Vroči plini uhajajo skozi šobo, ki jih zaradi zožanja v vratu, pospeši do zvočne hitrosti in potem ko se začne tlak manjšati do normalnega zračnega tlaka pospešijo tudi preko zvočne hitrosti. 
+Funkcija šobe je izkoristiti plinov tlak in temperaturo, da ga pospeši do visokih hitrosti in mu s tem poveča gibalno količino.
+\subsection{Specifičen impulz}
+Impuloz ali sunek sile je fizikalna količina, ki spremeni gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine.
+\begin{equation}
+	I = G_1 - G_0
+\end{equation}
+Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in maso goriva. 
+\begin{equation}
+	I_{SP} = \frac{I}{m \cdot g_0}
+\end{equation}
+
+
+\section{Empirični del}
+
+\section{Rezultati}
+
+\section{Razprava}
+
+\section{Zaključek}
+
+
+\printbibliography[
+heading=bibintoc,
+title={Literatura}
+]
 
 \end{document}
