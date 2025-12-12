@@ -4,9 +4,14 @@
 \setcounter{tocdepth}{2} %Do katere globine bodo naslovi v kazalu
 
 \usepackage{amsmath}
-\usepackage{biblatex}
+\usepackage{mhchem}
+\usepackage[backend=biber, date=iso]{biblatex}
 \usepackage{graphicx}
 \usepackage{geometry}
+
+%Formatiranje datuma
+\DeclareFieldFormat{urldate}{ dostopano \DTMdisplaydate{\thefield{urlyear}}{\thefield{urlmonth}}{\thefield{urlday}}{}}
+
 
 \graphicspath{{./slike/}}
 
@@ -78,7 +83,8 @@
 	\section{Teoretičen del}
 	Raketni motorji delujejo, zaradi zakona o ohranitvi gibalne količine; motor pospeši vroče pline v nasprotno smer gibanja in s tem poveča hitrost rakete.
 	Pri raketnih motorjih na trdno grivo pride ta plin iz reakcije med gorivom in oksidatorjem, ki sta oba v trdnem agregatnem stanju. V zgorevalni komori se zaradi tega ustvari tlak.
-	Vroči plini uhajajo skozi šobo, ki jih zaradi zožanja v vratu, pospeši do zvočne hitrosti in potem ko se začne tlak manjšati do normalnega zračnega tlaka pospešijo tudi preko zvočne 				hitrosti. 
+	Vroči plini uhajajo skozi šobo, ki jih zaradi zožanja v vratu, pospeši do zvočne hitrosti in potem ko se začne tlak manjšati do normalnega zračnega tlaka pospešijo tudi preko zvočne
+	hitrosti.
 	Funkcija šobe je izkoristiti plinov tlak in temperaturo, da ga pospeši do visokih hitrosti in mu s tem poveča gibalno količino.
 	\subsection{Specifičen impulz}
 	Impuloz ali sunek sile je fizikalna količina, ki spremeni gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine.
@@ -89,6 +95,13 @@
 \begin{equation}
 	I_{SP} = \frac{I}{m \cdot g_0}
 \end{equation}
+	To količino sva se odločila meriti v tej raziskovalni nalogi.
+
+	\subsection{Gorivo}
+	Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo. Vsa so sestavljena iz goriva in oksidatorja. V večini primerov so dodani še
+	katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocke candy". Ta je sestavljen iz saharoze in kalijevega nitrata ter občasno
+	tudi nekaterih primesi (npr. \ce{Fe2O3}). Izbrala sva razmerje saharoze in \ce{KNO3} 35/65 \cite{nakkaKNSU2025}.
+
 
 
 	\section{Empirični del}
