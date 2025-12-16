@@ -8,6 +8,8 @@
 \usepackage[backend=biber, date=iso]{biblatex}
 \usepackage{graphicx}
 \usepackage{geometry}
+\usepackage{stackengine}
+
 
 %Formatiranje datuma
 \DeclareFieldFormat{urldate}{ dostopano \DTMdisplaydate{\thefield{urlyear}}{\thefield{urlmonth}}{\thefield{urlday}}{}}
@@ -91,11 +93,19 @@
 \begin{equation}
 	I = G_1 - G_0
 \end{equation}
-	Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in maso goriva. \cite{wiki:Specific_impulse2025}
+	Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva. \cite{wiki:Specific_impulse2025}
 \begin{equation}
 	I_{SP} = \frac{I}{m \cdot g_0}
 \end{equation}
+	Specifični impulz je tudi razmerje med potiskom motorja in tokom teže.
+\begin{equation}
+	I_{SP} = \frac{F}{\stackon[1px]{m}{.}\cdot g_0}
+\end{equation}
+
 	Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
+
+	\subsubsection{Zakaj prav specifičen impulz?}
+		
 
 	\subsection{Gorivo}
 	Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo - mešanico goriva in oksidatorja. V večini primerov so dodani še
