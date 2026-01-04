@@ -12,7 +12,6 @@
 
 
 %Formatiranje datuma
-%\DeclareFieldFormat{urldate}{ dostopano \DTMdisplaydate{\thefield{urlyear}}{\thefield{urlmonth}}{\thefield{urlday}}{}}
 
 
 \graphicspath{{./slike/}}
@@ -28,7 +27,7 @@
 		\vspace*{1cm}
 		\huge
 		\textbf{Energijski izkoristek raketnega motorja na trdo gorivo}
-            
+			
 		\vspace{1.5cm}
 
 		\normalsize
@@ -49,34 +48,37 @@
 		%\includegraphics{kul slika}
 		\normalsize
 		Raziskovalna naloga s področja ???
-		\vspace{1.5cm}    
+		\vspace{1.5cm}	
 
 		\includegraphics{gimvic-logo}
 		\vspace{0cm}
 
 		Gimnazija Vič
 		2025/2026
-            
+
 	\end{center}
 \end{titlepage}
 
-	\renewcommand{\abstractname}{Povzetek}
+\renewcommand{\abstractname}{Povzetek}
 \begin{abstract}
 	Sem gre povzetek
 \end{abstract}
-	\renewcommand{\abstractname}{Abstract}
+\renewcommand{\abstractname}{Abstract}
 \begin{abstract}
 	The abstract goes here
 \end{abstract}
 
-	\renewcommand{\contentsname}{Vsebina}
-	\tableofcontents
+\renewcommand{\contentsname}{Vsebina}
+\tableofcontents
 
-	\newpage
+\newpage
 
 
 	\section{Uvod}
-	Z razvojem raketne znanosti se je razširilo tudi amatersko raketarstvo, in z njim tudi različni tipi goriva. --neki gre se sm? yap-- Da bi prihranila na opremi, času in denarju nasploh sva si 	izbrala najenostavnejše in najcenejše gorivo. --neki gre tut sm-- Kaj kmalu pa se nama je porodilo vprašanje učinkovitosti in tako so nastali temelji za raziskovalno nalogo. Ker pa mnogi, 	vključno z nama, nimajo oziroma ne želijo porabiti velikih vsot za "igranje" z oksidativnimi snovmi sva se omejila in poizkusila narediti motor iz prostodostopnih in nizkocenovnih 					materialov, kar nama je tudi uspelo.%(foreshadowing)
+	Z razvojem raketne znanosti se je razširilo tudi amatersko raketarstvo, in z njim tudi različni tipi goriva. --neki gre se sm? yap-- Da bi prihranila na opremi, času in denarju
+	nasploh sva si izbrala najenostavnejše in najcenejše gorivo. --neki gre tut sm-- Kaj kmalu pa se nama je porodilo vprašanje učinkovitosti in tako so nastali temelji za raziskovalno
+	nalogo. Ker pa mnogi, vključno z nama, nimajo oziroma ne želijo porabiti velikih vsot za "igranje" z oksidativnimi snovmi sva se omejila in poizkusila narediti motor iz
+	prostodostopnih in nizkocenovnih materialov, kar nama je tudi uspelo.%(foreshadowing)
 
 	\subsection{Pod uvod}
 
@@ -88,33 +90,44 @@
 	Vroči plini uhajajo skozi šobo, ki jih zaradi zožanja v grlu pospeši do zvočne hitrosti. Ko se tlak manjša do normalnega zračnega tlaka plini pospešujejo tudi preko zvočne
 	hitrosti.
 	Funkcija šobe je izkoriščanje tlaka in temperature plinov za pospeševanje do visokih hitrosti in s tem povečevanje gibalne količine.
-	\subsection{Specifičen impulz}
-	Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine.
-\begin{equation}
-	I = G_1 - G_0 = \frac{dF}{dt}
-\end{equation}
-	Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva. \cite{wiki:Specific_impulse2025}
-\begin{equation}
-	I_{SP} = \frac{I}{m \cdot g_0}
-\end{equation}
-	Specifični impulz je tudi razmerje med potiskom motorja in tokom teže.
-\begin{equation}
-	I_{SP} = \frac{F}{\stackon[1px]{m}{.}\cdot g_0}
-\end{equation}
-
-	Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
-
-	\subsubsection{Zakaj prav specifičen impulz?}
-		
-
-	\subsection{Gorivo}
-	Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo - mešanico goriva in oksidatorja. V večini primerov so dodani še
-	katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocket candy". Sestavljen je iz saharoze in kalijevega nitrata ter občasno
-	tudi nekaterih primesi (npr. \ce{Fe2O3}). Izbrala sva razmerje saharoze in \ce{KNO3} 35/65 \cite{nakkaKNSU2025}.
+		\subsection{Specifičen impulz}
+		Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine.
+		\begin{equation}
+			I = G_1 - G_0 = \frac{dF}{dt}
+		\end{equation}
+			Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
+			\cite{wiki:Specific_impulse2025}
+		\begin{equation}
+			I_{SP} = \frac{I}{m \cdot g_0}
+		\end{equation}
+			Specifični impulz je tudi razmerje med potiskom motorja in tokom teže.
+		\begin{equation}
+			I_{SP} = \frac{F}{\stackon[1px]{m}{.}\cdot g_0}
+		\end{equation}
+	
+		Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
+	
+		\subsubsection{Zakaj prav specifičen impulz?}
+			
+	
+		\subsection{Gorivo}
+		Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo - mešanico goriva in oksidatorja. V večini primerov so dodani še
+		katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocket candy". Sestavljen je iz saharoze in kalijevega nitrata ter občasno
+		tudi nekaterih primesi (npr. \ce{Fe2O3}). Izbrala sva razmerje saharoze in \ce{KNO3} 35/65 \cite{nakkaKNSU2025}.
 
 
 
 	\section{Empirični del}
+		\subsection{Izolator}
+			\subsubsection{Prvi test}
+			karton, silver tape, cement, kontrol (4cm x 4, 9. 11. 2025, 11. 11. 2025)
+			\subsubsection{Drugi test}
+			različne debeline odpadnega kartona (4cm x 3, 11.11. 2025, 12. 11. 2025)
+			\subsubsection{Tretji test}
+			različne debeline risalnega papirja + epoksi (4cm x 6, 22. 11. 2025, 25. 11. 2025)
+			\subsubsection{Četrti test}
+			različne debeline risalnega papirje 2.0 (6cm x 4+1, 5. 12. 2025, 8. 12. 2025)
+
 
 	\section{Rezultati}
 
