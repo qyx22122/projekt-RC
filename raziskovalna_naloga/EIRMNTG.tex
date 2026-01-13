@@ -3,12 +3,14 @@
 \setcounter{secnumdepth}{2} %Globina uštevilčnja naslovov
 \setcounter{tocdepth}{2} %Do katere globine bodo naslovi v kazalu
 
+\usepackage[slovenian]{babel}
 \usepackage{amsmath}
 \usepackage{mhchem}
 \usepackage[backend=biber, date=iso]{biblatex}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{stackengine}
+\usepackage{physics}
 
 
 %Formatiranje datuma
@@ -93,16 +95,16 @@
 		\subsection{Specifičen impulz}
 		Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine.
 		\begin{equation}
-			I = G_1 - G_0 = \frac{dF}{dt}
+			I = G_1 - G_0 = \dot{F}
 		\end{equation}
 			Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
 			\cite{wiki:Specific_impulse2025}
 		\begin{equation}
-			I_{SP} = \frac{I}{m \cdot g_0}
+			I_{SP} = \frac{I}{m \vdot g_0}
 		\end{equation}
 			Specifični impulz je tudi razmerje med potiskom motorja in tokom teže.
 		\begin{equation}
-			I_{SP} = \frac{F}{\stackon[1px]{m}{.}\cdot g_0}
+			I_{SP} = \frac{F}{\dot{m}\vdot g_0}
 		\end{equation}
 	
 		Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
