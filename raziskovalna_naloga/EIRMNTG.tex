@@ -81,20 +81,44 @@
 	nalogo. Ker pa mnogi, vključno z nama, nimajo oziroma ne želijo porabiti velikih vsot za "igranje" z oksidativnimi snovmi sva se omejila in poizkusila narediti motor iz
 	prostodostopnih in nizkocenovnih materialov, kar nama je tudi uspelo.%(foreshadowing)
 
-		\subsection{Pod uvod}
-
-	bla 2.0
-
 	\section{Teoretičen del}
 	Raketni motorji delujejo zaradi zakona o ohranitvi gibalne količine; motor pospeši vroče pline v nasprotno smer gibanja in s tem poveča hitrost rakete.
 	Pri raketnih motorjih na trdno grivo ta plin pride iz reakcije goriva in oksidatorja, obeh v trdnem agregatnem stanju. V zgorevalni komori je zaradi tega ustvarjen tlak.
-	Vroči plini uhajajo skozi šobo, ki jih zaradi zožanja v grlu pospeši do zvočne hitrosti. Ko se tlak manjša do normalnega zračnega tlaka plini pospešujejo tudi preko zvočne
-	hitrosti.
-	Funkcija šobe je izkoriščanje tlaka in temperature plinov za pospeševanje do visokih hitrosti in s tem povečevanje gibalne količine.
+	Vroči plini uhajajo skozi šobo, katere funkcija je izkoriščanje tlaka in temperature teh plinov, da jih pospeši do visokih hitrosti in jim s tem poveča gibalno količino.
+		\subsection{Gorivo}
+		Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo - mešanico goriva in oksidatorja. V večini primerov so dodani še
+		katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocket candy". Sestavljen je iz saharoze (\ce{C12H22O11}) in kalijevega nitrata (\ce{KNO3}) ter občasno
+		tudi nekaterih primesi (npr. \ce{Fe2O3}). Po literaturi, ki sva jo našla, je optimalno razmerje saharoze in \ce{KNO3} 35/65 \cite{nakkaKNSU2025}.
+
+		\subsection{Šoba}
+		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje motorja, saj pretvori vroče produkte reakcije v potisk, ki pospeši raketo.
+		Od šobe je tudi odvisen največji deseženi tlak, katerega morajo zdržati tudi vsi ostali deli motorja. Šoba na notranji strani konvergira proti premeru grla in nato divergira do izhodnega premera - 
+		od tod tudi pride ime kovergentno-divergentna šoba (KD šoba) ali z drugim imenov de Laval šoba. Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba \cite{nasa:nozzle_design}.
+		\begin{equation} \label{šoba-vA}
+			(1 - M^2) \frac{\dd v}{v} = - \frac{\dd A}{A}
+		\end{equation}
+		Enačba \ref{šoba-vA} povezuje spremembo hitrosti tekočine ($\dd v$) z spremembo v preseku šobe ($\dd A$). V enačbi \ref{šoba-vA} nastopa tudi M,
+		ki je Machovo število in je po definicije razmerje med hitrostjo tekočine in zvočno hitrostjo v tej tekočini.
+		Machovo število lahko izračunamo z enačbo \ref{Mach}, kjer je $v$ hitrost tekočine in $c$ zvočne hitrost v tej tekočini.
+		\begin{equation} \label{Mach}
+			M = \frac{v}{c}
+		\end{equation}
+
+		Ko je $M < 1$, je hitrost tekočine manjša od zvočne hitrosti in je prvi del enačbe \ref{šoba-vA} pozitiven in nam ta pove,
+		da v primeru, ko se površine preseka pomanjša, se bo hitrost tekočine povečala.
+
+		Če pa je $M > 1$, potem tekočina teče z nad zvočno hitrostjo in je prvi del enačbe \ref{šoba-vA} negativen. To nam pove, da se bo z povečanje površine preseka,
+		povečala tudi hitrost tekočine.
+
+		V našem primeru želimo, da tekočina doseže zvočno hitrost ($v = c$) ravno v grlu šobe, kjer je premer najmanjši. Tako bodo vroči plini, ki nastanejo pri reakciji,
+		pospeševali do zvočne hitrosti v zožanju šobe in nato pospešili tudi preko zvočne hitrosti, ko se v končnem delu šobe presek spet povečuje.
+
+
+
 		\subsection{Specifičen impulz}
 		Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine.
 		\begin{equation}
-			I = G_1 - G_0 = \dot{F}
+			I = G_1 - G_0 = F \Delta t
 		\end{equation}
 			Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
 			\cite{wiki:Specific_impulse2025}
@@ -112,12 +136,12 @@
 			
 	
 
+	\section{Empirični del}
 	
-	\section{Izdelava in sestava motorja}
 		\subsection{Zunanja cev}
 		Za ohišje motorja sva uporabljala odtočne cevi iz plastike PPH (polipropilen homopolimer), ki sva jih kupila v trgovini Bauhaus, in jih razžagala na primerno dolžino.
 		Cev je certificirana s standardom EN 1451 in bi tako morala pri temperaturi 353K zdržati, četudi za kratek čas, pritiske do 6,0 MPa .\cite{EN1451}
-		Po tem sva se tudi ravnala. Ko sva odžagala primerno dolžino cevi sva plastiko, ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom V. S tem sva 
+		Po tem sva se tudi ravnala. Ko sva odžagala primerno dolžino cevi sva plastiko, ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. S tem sva 
 		cev polepšala, predvsem pa olajšala vstavljanje izolatorja.
 		Za pravilno delovanje raketnega motorja je potreben visok pritisk, ki pa ni dosežen, če sta konca cevi odprta. Ker želimo tudi, da rezultanta sil na telo v fazi pospeševanja
 		oziroma izgorevanja ni enaka nič, ni dovolj da konce cevi zožamo, eno od strani je potrebno neprodušno zapreti na način, ki tudi premore visoke pritiske, po možnosti brez
@@ -197,9 +221,6 @@
 			%različne debeline risalnega papirje 2.0 (6cm x 4+1, 5. 12. 2025, 8. 12. 2025)
 
 		\subsection{Gorivo}
-		Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo - mešanico goriva in oksidatorja. V večini primerov so dodani še
-		katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocket candy". Sestavljen je iz saharoze in kalijevega nitrata ter občasno
-		tudi nekaterih primesi (npr. \ce{Fe2O3}). Izbrala sva razmerje saharoze in \ce{KNO3} 35/65 \cite{nakkaKNSU2025}. REAKCIJA NI ČISTA!, midva zažgeva cukr
 
 			\subsubsection{Ulivanje goriva}
 			Ulivanje goriva je zelo zapleten proces. Potrebna je predpriprava in potrpežljivost, in nikoli ne smemo pozabiti na prepotrebno varnost.
@@ -213,10 +234,10 @@
 		Še posebej je na udaru grlo, ki, ko je razširjeno, ne opravlja več svoje funkcije. Nameravala sva tudi zalepiti šobo na zunanjo cev. Tako sva že od samega začetka 
 		vedela da bodo šobe za enkratno uporabo. Tako dražji materiali nikoli niso prišli v poštev. 
 
-		Vendar pa imajo tudi dražje alternative svoje slabosti. Čeprav grafit dobro prenaša temperaturo in je lahek je struženje grafita izjemno umazan proces.
+		Vendar pa imajo tudi dražje alternative svoje slabosti. Čeprav grafit dobro prenaša temperaturo in je lahek je struženje grafita izjemno umazan proces, saj je nastali grafitni prah abraziven za vsa vodila stružnice.
 		Zaradi krhkosti je vsakršna obdelava zahtevna, tudi hitro erodira. 
 		Kovine so pretežke, in imajo prenizka tališča. Njih struženje prav tako vzame veliko časa. Želela sva se držati tudi cilja prostodostopnosti.
-		Na idejo nama je prišel cement, ki ga, kot material za šobe v amaterskem raketarstvu še nisva zasledila. 
+		Na idejo nama je prišel cement, ki ga, kot material za šobe v amaterskem raketarstvu še nisva zasledila.%TEGA JE NA NETU ZELO VELIKO (npr. https://www.youtube.com/watch?v=7ydLaY3Zn_Y)
 		Ker pa ima cement daljše čase strjevanja in večja zrna sva se odločila za električarski mavec. Da bi mavec zavzel želeno obliko pa sva ga ulivala v kalupe,
 		ki sva jih sama zmodelirala in jih je naredil 3D tiskalnik (IME TISKALNIKA) uporabljala 
 		sva plastiko (????). Model je sestavljrn iz štirih delov, zato da je šobo kasneje sploh možno dobiti iz modela.
@@ -228,7 +249,6 @@
 
 
 		
-	\section{Empirični del}
 		\subsection{Merjenje potiska}
 		Za merjenje potiska sva uporabila Vernierjev Force Plate, katerega natančnost je 0,3 N na intervalu -85 N do 850 N ali 1 N na intervalu -350 N do 3500 N.
 		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo 0,3 N. Za držanje motorja sva izdelala stojalo iz aluminija. Stojalo je narejeno
