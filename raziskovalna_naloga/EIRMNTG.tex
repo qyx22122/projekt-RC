@@ -21,6 +21,7 @@
 
 \geometry{centering}
 
+
 \begin{document}
 
 \begin{titlepage}
@@ -60,12 +61,18 @@
 	\end{center}
 \end{titlepage}
 
+
+\pagenumbering{Roman}
 \renewcommand{\abstractname}{Povzetek}
 \begin{abstract}
+	\thispagestyle{plain}
+	\setcounter{page}{2}
 	Sem gre povzetek
 \end{abstract}
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
+	\thispagestyle{plain}
+	\setcounter{page}{3}
 	The abstract goes here
 \end{abstract}
 
@@ -74,6 +81,8 @@
 
 \newpage
 
+\pagenumbering{arabic}
+\setcounter{page}{5}
 
 	\section{Uvod}
 	Z razvojem raketne znanosti se je razširilo tudi amatersko raketarstvo, in z njim tudi različni tipi goriva. --neki gre se sm? yap-- Da bi prihranila na opremi, času in denarju
