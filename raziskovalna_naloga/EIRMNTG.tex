@@ -4,15 +4,19 @@
 \setcounter{tocdepth}{2} %Do katere globine bodo naslovi v kazalu
 
 \usepackage[slovenian]{babel}
-\usepackage{mhchem}
-\usepackage[backend=biber, date=iso]{biblatex}
+\usepackage{csquotes}
+\usepackage[version=4]{mhchem}
+\usepackage[backend=biber, date=iso, seconds=true]{biblatex}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{stackengine}
 \usepackage{physics}
 
-
-%Formatiranje datuma
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=false,
+	linktoc=all,
+}
 
 
 \graphicspath{{./slike/}}
