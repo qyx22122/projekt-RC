@@ -98,6 +98,7 @@
 	Raketni motorji delujejo zaradi zakona o ohranitvi gibalne količine; motor pospeši vroče pline v nasprotno smer gibanja in s tem poveča hitrost rakete.
 	Pri raketnih motorjih na trdno grivo ta plin pride iz reakcije goriva in oksidatorja, obeh v trdnem agregatnem stanju. V zgorevalni komori je zaradi tega ustvarjen tlak.
 	Vroči plini uhajajo skozi šobo, katere funkcija je izkoriščanje tlaka in temperature teh plinov, da jih pospeši do visokih hitrosti in jim s tem poveča gibalno količino.
+
 		\subsection{Gorivo}
 		Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo - mešanico goriva in oksidatorja. V večini primerov so dodani še
 		katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocket candy". Sestavljen je iz saharoze (\ce{C12H22O11}) in kalijevega nitrata (\ce{KNO3}) ter občasno
@@ -125,13 +126,28 @@
 
 		V našem primeru želimo, da tekočina doseže zvočno hitrost ($v = c$) ravno v grlu šobe, kjer je premer najmanjši. Tako bodo vroči plini, ki nastanejo pri reakciji,
 		pospeševali do zvočne hitrosti v zožanju šobe in nato pospešili tudi preko zvočne hitrosti, ko se v končnem delu šobe presek spet povečuje.
-
-
+			\subsubsection{Potisk}
+			
+		\subsection{Simulacija v openMotor}
+		Motor sva se odločila tudi simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
+		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza).
+		Potem openMotor simulira gorenje motorja po majhnih časovnih inkrementih. V vsaki iteraciji izračuna sledeče : \cite{openMotor}
+		\begin{enumerate}
+			\item Regresijo goriva
+			\item Vrednost Kn (razmerje med površino goriva, ki gori in površino grla)
+			\item Tlak v zgorevalni komori
+			\item Potisk motorja
+		\end{enumerate}
+		Nato preveri, če reakcija še poteka in se glede na to odloči ali naj simulacijo nadaljuje ali konča.
+		Ob koncu simulacije openMotor preveru, ali so bile prekoračene v naprej določene omejitve (npr. največji dovoljeni tlak).
+		Če je vse vredu izpiše podatke in izriše grafe, drugače pa javi napako.
+		OpenMotor je izjemno orodje za amatersko raketarstvo, saj omogoča lažje in bolj varno načrtovanje raketnih motorjev.
 
 		\subsection{Specifičen impulz}
-		Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine.
+		Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine ali kot produkt sile in spremembe časa. To lahko zapišemo tudi v diferencialni obliki
+		kot integral sile po času.
 		\begin{equation}
-			I = G_1 - G_0 = F \Delta t
+			I = G_1 - G_0 = F \Delta t = \int F dt
 		\end{equation}
 			Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
 			\cite{wiki:Specific_impulse2025}
@@ -149,6 +165,7 @@
 		Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
 	
 			\subsubsection{Zakaj prav specifičen impulz?}
+			Specifičen impulz nam omogoča lažjo primerjavo med različnimi raketnimi motorji. %TODO: tabela primerov motorjev in njihovih specifičnih impulzov
 			
 	
 
