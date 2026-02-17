@@ -84,6 +84,9 @@
 \renewcommand{\contentsname}{Vsebina}
 \tableofcontents
 
+\renewcommand{\contentsname}{Tabela}
+\listoftables
+
 \newpage
 
 \pagenumbering{arabic}
@@ -140,7 +143,8 @@
 			\begin{equation}
 				F = \dot{m} v_e + (P_e - P_a)A_e
 			\end{equation}
-			kjer je $v_e$ hitrost izpuhov relativno na raketo, $P_e$ tlak izpušnih plinov, $P_a$ tlak zunaj motorja (v najinem primeru je to kar atmosferski tlak) in $A_e$ površina izhodnega dela šobe.
+			kjer je $v_e$ hitrost izpuhov relativno na raketo, $P_e$ tlak izpušnih plinov, $P_a$ tlak zunaj motorja (v najinem primeru je to kar atmosferski tlak)
+			in $A_e$ površina izhodnega dela šobe.
 			Če predpostavimo, da šoba izpušne pline spravi do atmosferskega tlaka, potem je člen $(P_e - P_a)A_e = 0$ in dobimo poenostavljeno obliko enačbe.
 			\begin{equation} \label{eq:potisk}
 				F = \dot{m} v_e
@@ -190,8 +194,38 @@
 		Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
 	
 			\subsubsection{Zakaj prav specifičen impulz?}
-		 	Specifičen impulz nam omogoča lažjo primerjavo med različnimi raketnimi motorji. %TODO: tabela primerov motorjev in njihovih specifičnih impulzov
-			
+		 	Specifičen impulz nam pove učinkovitost raketnega motorja in sicer koliko sekund bo ta motor proizvajal 1N potiska z gorivom, ki tehta 1N.
+			Če imata dva motorja različna specifična impulza, bo motor z večjim specifičnim impulzom proizvedel večji sunek sile. \cite{nasa:specific_impulse}
+			Specifičen impulz je tudi priročen, ker je merjen v sekundah, ki se uporabljajo tako v metričnem kot tudi v imperialnem sistemu. Z njim se da
+			tudi oceniti količino goriva potrebnega za določeno spremembo hitrosti rakete ($\Delta v$) in s tem za določen manever.
+			To naredimo z enačbo Ciolkovskega. \cite{nasa:ideal_rocket_equation}
+			\begin{equation}
+				\Delta v = v_e \ln{\frac{m_0}{m_1}} = I_{SP} g_0 \ln{\frac{m_0}{m_1}}
+			\end{equation}
+			kjer je $v_e$ hitrost izpuhov, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
+			\begin{table}
+				\centering
+				\begin{tabular}{||c c c||} 
+					\hline
+					Raketni motor & Vrsta & $I_{SP}$ [s] \\ [0.5ex] 
+					\hline\hline
+					NERVA NRX A6 & Nuklearni & 869  \\ 
+					\hline
+					RS-25 & Tekoče gorivo & 453  \\ 
+					\hline
+					RD-843 & Tekoče gorivo & 315,5 \\
+					\hline
+					Merlin 1D & Tekoče gorivo & 310  \\
+					\hline
+					Avio Zefiro 9A & Trdno gorivo & 295,2\\
+					\hline
+					Avio Zefiro 23 & Trdno gorivo & 287,5 \\
+					\hline
+					Space Shuttle SRB & Trdno gorivo & 250 \\ [1ex] 
+					\hline
+				\end{tabular}
+				\caption{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
+			\end{table}
 	
 
 	\section{Empirični del}
@@ -225,7 +259,7 @@
 		Ker sprva nisva vedela kateri izolatorji delujejo oziroma katerega bi lahko uporabila sva testirala različne. Karton se je pokazal kot zelo obetaven,
 		a ker je bilo iskanje lahko dostopnega, ugodnega in
 		nespremenljivega vira neuspešno in ker z debelejšimi plastmi nastajajo problemi kot so gubanje zvitih plasti zaradi prevelike razlike
-		v radijih zunanje in notranje ploskve ter problem navoja???  
+		v radijih zunanje in notranje ploskve ter problem navoja???
 		sva se odločila za relativno ugodno, predvsem pa lahko dostopno alternativo risalnih listov. Ker so večji in debelejši od pisarniškega papirja se nama
 		je zmanjšal tudi čas sestavljanja posameznih šob.
 		Zadnji test izolatorja sva spremljala tudi s toplotno kamero in tako merila temperaturo zunanje cevi. Končna debelina izolatorja je bila tista,
@@ -289,7 +323,7 @@
 			pripravljene posebej za ta namen. V njih je vstavljen izolator, in 
 		
 		\subsection{Šoba}
-		BLALAALA.  Uhajanje plinov in drugih produktov reakcije, ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodiraostopek  površino šobe. 
+		BLALAALA. Uhajanje plinov in drugih produktov reakcije, ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodiraostopek površino šobe. 
 		Še posebej je na udaru grlo, ki, ko je razširjeno, ne opravlja več svoje funkcije. Nameravala sva tudi zalepiti šobo na zunanjo cev. Tako sva že od samega začetka 
 		vedela da bodo šobe za enkratno uporabo. Tako dražji materiali nikoli niso prišli v poštev. 
 
