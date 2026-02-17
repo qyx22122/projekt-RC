@@ -11,6 +11,7 @@
 \usepackage{geometry}
 \usepackage{stackengine}
 \usepackage{physics}
+\usepackage{amsmath}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -116,25 +117,36 @@
 		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj pretvarja nekatere vroče produkte reakcije v potisk, ki pospeši raketo.
 		Od šobe je odvisen tudi največji deseženi tlak, katerega morajo zdržati tudi vsi ostali deli motorja. Šoba na notranji strani konvergira proti premeru grla in nato divergira do izhodnega premera - 
 		od tod tudi prideta imeni kovergentno-divergentna ali kar KD šoba, z drugim imenom De Laval šoba. Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba \cite{nasa:nozzle_design}.
-		\begin{equation} \label{šoba-vA}
+		\begin{equation} \label{eq:šoba-vA}
 			(1 - M^2) \frac{\dd v}{v} = - \frac{\dd A}{A}
 		\end{equation}
-		Enačba \ref{šoba-vA} povezuje spremembo hitrosti tekočine ($\dd v$) z spremembo v preseku šobe ($\dd A$). V enačbi \ref{šoba-vA} nastopa tudi M,
+		Enačba \ref{eq:šoba-vA} povezuje spremembo hitrosti tekočine ($\dd v$) z spremembo v preseku šobe ($\dd A$). V enačbi \ref{eq:šoba-vA} nastopa tudi M,
 		ki je Machovo število in je po definicije razmerje med hitrostjo tekočine in zvočno hitrostjo v tej tekočini.
-		Machovo število lahko izračunamo z enačbo \ref{Mach}, kjer je $v$ hitrost tekočine in $c$ zvočna hitrost v tej tekočini.
-		\begin{equation} \label{Mach}
+		Machovo število lahko izračunamo z enačbo \ref{eq:Mach}, kjer je $v$ hitrost tekočine in $c$ zvočna hitrost v tej tekočini.
+		\begin{equation} \label{eq:Mach}
 			M = \frac{v}{c}
 		\end{equation}
 
-		Ko je $M < 1$, je hitrost tekočine manjša od zvočne hitrosti in je prvi del enačbe \ref{šoba-vA} pozitiven in nam ta pove,
+		Ko je $M < 1$, je hitrost tekočine manjša od zvočne hitrosti in je prvi del enačbe \ref{eq:šoba-vA} pozitiven in nam ta pove,
 		da v primeru, ko se površine preseka pomanjša, se bo hitrost tekočine povečala.
 
-		Če pa je $M > 1$, potem tekočina teče z nad zvočno hitrostjo in je prvi del enačbe \ref{šoba-vA} negativen. To nam pove, da se bo z povečanje površine preseka,
+		Če pa je $M > 1$, potem tekočina teče z nad zvočno hitrostjo in je prvi del enačbe \ref{eq:šoba-vA} negativen. To nam pove, da se bo z povečanje površine preseka,
 		povečala tudi hitrost tekočine.
 
 		V našem primeru želimo, da tekočina doseže zvočno hitrost ($v = c$) ravno v grlu šobe, kjer je premer najmanjši. Tako bodo vroči plini, ki nastanejo pri reakciji,
 		pospeševali do zvočne hitrosti v zožanju šobe in nato pospešili tudi preko zvočne hitrosti, ko se v končnem delu šobe presek spet povečuje.
 			\subsubsection{Potisk}
+			Potisk motorja ja ena najbolj pomembnih lasnosti raketnega motorja. Izračunamo ga s sledečo enačbo:
+			\begin{equation}
+				F = \dot{m} v_e + (P_e - P_a)A_e
+			\end{equation}
+			kjer je $v_e$ hitrost izpuhov relativno na raketo, $P_e$ tlak izpušnih plinov, $P_a$ tlak zunaj motorja (v najinem primeru je to kar atmosferski tlak) in $A_e$ površina izhodnega dela šobe.
+			Če predpostavimo, da šoba izpušne pline spravi do atmosferskega tlaka, potem je člen $(P_e - P_a)A_e = 0$ in dobimo poenostavljeno obliko enačbe.
+			\begin{equation} \label{eq:potisk}
+				F = \dot{m} v_e
+			\end{equation}
+
+			
 			
 		\subsection{Simulacija v openMotor}
 		Motor sva se odločila tudi simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
@@ -167,8 +179,13 @@
 			I_{SP} &= \frac{F \Delta t}{m\vdot g_0} \nonumber \\[1em]
 			I_{SP} &= \frac{F}{\frac{m}{\Delta t}\vdot g_0} \nonumber \\[1em]
 			I_{SP} &= \frac{F}{\dv{m}{t}\vdot g_0} \nonumber \\[1em]
-			I_{SP} &= \frac{F}{\dot{m}\vdot g_0}
+			I_{SP} &= \frac{F}{\dot{m}\vdot g_0} \label{eq:ISP}
 		\end{align}
+		
+		Če v enačbo \ref{eq:ISP} vstavimo enačbo \ref{eq:potisk} dobimo:
+		\begin{equation}
+			I_{SP} = \frac{v_e}{g_0}
+		\end{equation}
 	
 		Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
 	
