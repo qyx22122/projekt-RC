@@ -425,17 +425,43 @@
 		
 		\subsection{Merjenje potiska}
 		Za merjenje potiska sva uporabila Vernierjev Force Plate, katerega natančnost je 0,3 N na intervalu -85 N do 850 N ali 1 N na intervalu -350 N do 3500 N.
-		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo 0,3 N. Za držanje motorja sva izdelala stojalo iz aluminija. Stojalo je narejeno
-		iz dveh L-profilov iz in štirih kotnikov, kot je videno na shemi. %TODO
+		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo 0,3 N. Za držanje motorja sta nama hišnika Gimnazije Vič izdelala stojalo iz aluminija.
+		Stojalo je narejeno iz dveh L-profilov iz in štirih kotnikov, kot je videno na sliki. %TODO
 		V aluminijasto ploščo in L-profila so bile zvrtane luknje in narejeni navoji. Z vijaki so bili kotniki pritrjeni na ploščo in L-profili na kotnike.
+		Za tako držalo sva se odločila, saj varno drži motor med testiranjem in a vidno ne pomaga k zadrževanju pritiska. Držalo je tudi narejeno tako,
+		da ima dve reži, skozi kateri lahko termalna kamera meri temperaturo cevi motorja.
+		Stojalo sva postavila na Force Plate in se zaščitila z pleksi steklom. Force Plate sva preko Vernirjevega umesnika povezala na računalnik,
+		ki bere in shranjuje podatke o potisku motorja, sproti pa tudi izrisuje graf.
 
+		\subsection{Vžig motorja}
+		Ker bi bil vžig z vžigalico prenevaren, zaradi potencialne eksplozije, sva se odločila za elektronski vžig.
+		Za to sva pripravila elektronsko vžigalico. Izdelala sva jo iz dvo žilnega mehkožilnega kabla, tako da sva vzela po eno nit iz vsake žile in ju zvezala skupaj.
+		Ker je se presek žice močno zmanjša se njen upor poveča. To name pove sledeča enačba :
+		\begin{equation}
+			R = \frac{\zeta l}{S}
+		\end{equation}
+		kjer je $R$ upornost, $\zeta$ specifična upornost, $l$ dolžina vodnika in $S$ presek vodnika.
+		Iz upornosti lahko izračunamo električno moč :
+		\begin{equation}
+			P = I^2 R
+		\end{equation}
+		kjer je P moč in I električni tok. Moč je v tem primeru enaka toploti, ki jo prejme tanka žica vžigalice ($P = Q$).
+		Zaradi nje se vžigalica segreje kot nam pravi ta enačba
+		\begin{equation}
+			Q = m c \Delta T
+		\end{equation}
+		kjer je $Q$ toplota, $m$ masa, $c$ specifična toplota in $\Delta T$ sprememba temperature.
+		Žica nato segreje gorivo s katerim je v kontaktu in ga segreva do temprature vžiga, ki je nad 300°C. \cite{nakkaKNSUchem2025}
+		Žico priklopiva na električni potencial, ki ga proizvaja vir DC napetosti in ta proizvede električni tok, ki segreje žico
+		in vžge gorivo. %TODO dodaj specifikacije vira napetosti
+		
 	\section{Rezultati}
 
 	\section{Razprava}
 
 	\section{Zaključek}
 
-
+	\newpage
 	\printbibliography
 	[
 	heading=bibintoc,
