@@ -108,7 +108,7 @@
 	Za raketne pogone so značilne eksotermne kemijske reakcije in gorivo ki ga uporabljava ni nič drugačno. Pri pravih pogojih je zelo lahko vnetljivo, gori z vročim plamenom in
 	skoraj nemogoče ga je pogasiti, saj gori neodvisno od kisika v ozračju. Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline.
 	Kot produkt reakcije se sproščajo plini, ki dražijo oči in dihala. Testiranje v zaprtih prostorih je tako odsvetovano, tudi zaradi tveganja materialne škode.
-	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja pritiska reakcija poteka še hitreje in s tem narašča .
+	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja pritiska reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
 	To vodi v pozitivno povratno zanko, ki se ponavadi konča z eksplozijo, pri kateri je nevarnost šrapnelov in poškodbe sluha, zaradi udarnega vala.
 	
 
@@ -119,13 +119,15 @@
 
 		\subsection{Gorivo}
 		Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo - mešanico goriva in oksidatorja. V večini primerov so dodani še
-		katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocket candy". Sestavljen je iz saharoze (\ce{C12H22O11}) in kalijevega nitrata (\ce{KNO3}) ter občasno
-		tudi nekaterih primesi (npr. \ce{Fe2O3}). Po literaturi, ki sva jo našla, je optimalno razmerje saharoze in \ce{KNO3} 35/65 \cite{nakkaKNSU2025}.
+		katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocket candy".
+		Sestavljen je iz saharoze (\ce{C12H22O11}) in kalijevega nitrata (\ce{KNO3}) ter občasno
+		tudi nekaterih primesi (npr. \ce{Fe2O3}). Po literaturi, ki sva jo našla, je optimalno razmerje saharoze in \ce{KNO3} 35/65. \cite{nakkaKNSU2025}
 
 		\subsection{Šoba}
 		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj pretvarja nekatere vroče produkte reakcije v potisk, ki pospeši raketo.
-		Od šobe je odvisen tudi največji deseženi tlak, katerega morajo zdržati tudi vsi ostali deli motorja. Šoba na notranji strani konvergira proti premeru grla in nato divergira do izhodnega premera - 
-		od tod tudi prideta imeni kovergentno-divergentna ali kar KD šoba, z drugim imenom De Laval šoba. Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba \cite{nasa:nozzle_design}.
+		Od šobe je odvisen tudi največji deseženi tlak, katerega morajo zdržati tudi vsi ostali deli motorja. Šoba na notranji strani konvergira proti premeru grla
+		in nato divergira do izhodnega premera - od tod tudi prideta imeni kovergentno-divergentna ali kar KD šoba, z drugim imenom De Laval šoba.
+		Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba. \cite{nasa:nozzle_design}
 		\begin{equation} \label{eq:šoba-vA}
 			(1 - M^2) \frac{\dd v}{v} = - \frac{\dd A}{A}
 		\end{equation}
@@ -160,16 +162,28 @@
 			
 			
 		\subsection{Simulacija v openMotor}
-		Motor sva se odločila tudi simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
+		Simulacije so v raketni znanosti zelo pomembno orodje, saj v naprej povejo lasnosti motorja, ki so ključnega pomena za njegovo izdelavo.
+		So tudi veliko bolj varne in bolj ekonomične od statičnega testiranja motorjev, kjer lahko motor nevarno in nepopravljivo spodleti.
+		Ponavadi vzamejo tudi manj časa. Na žalost pa so v veliko primerih simulacije nepopolne, saj ne upoštevajo vseh pojavov, ki jih opazimo pri pravih raketnih motorjih,
+		zato so statični in tudi dinamični testi motorjev nenadomstljiv del v procesu njihovega razvoja.
+		Motor sva se odločila simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
+		Program sva naložila iz svetovnega spleta (https://github.com/reilleya/openMotor).
 		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza).
-		Potem openMotor simulira gorenje motorja po majhnih časovnih inkrementih. V vsaki iteraciji izračuna sledeče : \cite{openMotor}
+		Potem openMotor simulira gorenje motorja po majhnih časovnih inkrementih. Najprej openMotor izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice :
+		\cite{openMotor}
 		\begin{enumerate}
-			\item Regresijo goriva
-			\item Vrednost Kn (razmerje med površino goriva, ki gori in površino grla)
-			\item Tlak v zgorevalni komori
-			\item Potisk motorja
+			\item Regresijo goriva; to  izračuna tako, da pomnoži majhen korak v času z hitrostjo gorenja, ki je funkcija pritiska.
+				Za pritisk uporabi vrednost iz prejšnjega koraka simulacije.
+			\item Masni pretok, ki ga izračuna iz masnih pretokov gorivnih celic nad zdajšnjo.
+			\item Maso gorivne celice; to izračuna iz gostote goriva in regresije, ki je bila izračunana v tem koraku
+			\item Kot zadnji korak doda masni pretok skozi to celico v skupen masni pretok in izračuna novo geometrijo gorivne celice.
 		\end{enumerate}
-		Nato preveri, če reakcija še poteka in se glede na to odloči ali naj simulacijo nadaljuje ali konča.
+
+		Nato izračuna vrednost KN, ki je razmerje med površino grla in vso gorenju izpostavljeno površino goriva. Ta vrednost je pomembna,
+		saj je funkcija pritiska odvisna zgolj od nje in lasnosti goriva. Potem izračuna tlak v motorju in izhodni tlak.
+		Iz teh dveh tlakov izračuna potisk motorja. Na koncu izračuna še nanos žlindre na šobo in se premakne za en časovni korak naprej.
+
+		Na koncu vsake iteracije preveri, če reakcija še poteka in se glede na to odloči ali naj simulacijo nadaljuje ali konča.
 		Ob koncu simulacije openMotor preveru, ali so bile prekoračene v naprej določene omejitve (npr. največji dovoljeni tlak).
 		Če je vse vredu izpiše podatke in izriše grafe, drugače pa javi napako.
 		OpenMotor je izjemno orodje za amatersko raketarstvo, saj omogoča lažje in bolj varno načrtovanje raketnih motorjev.
@@ -217,6 +231,7 @@
 			kjer je $v_e$ hitrost izpuhov, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
 			\begin{table}
 				\centering
+				\caption{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
 				\begin{tabular}{||c c c||} 
 					\hline
 					Raketni motor & Vrsta & $I_{SP}$ [s] \\ [0.5ex] 
@@ -236,7 +251,6 @@
 					Space Shuttle SRB & Trdno gorivo & 250 \\ [1ex] 
 					\hline
 				\end{tabular}
-				\caption{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
 			\end{table}
 	
 
