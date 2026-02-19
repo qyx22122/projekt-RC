@@ -72,30 +72,33 @@
 \end{titlepage}
 
 
-\pagenumbering{Roman}
+\renewcommand{\thepage}{\Roman{page}}
 \renewcommand{\abstractname}{Povzetek}
 \begin{abstract}
-	\thispagestyle{plain}
+    \thispagestyle{plain}
 	\setcounter{page}{2}
-	Sem gre povzetek
+    Sem gre povzetek
 \end{abstract}
+
+\renewcommand{\thepage}{\Roman{page}}
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
-	\thispagestyle{plain}
+    \thispagestyle{plain}
 	\setcounter{page}{3}
-	The abstract goes here
+    The abstract goes here
 \end{abstract}
 
-\renewcommand{\contentsname}{Vsebina}
 \tableofcontents
-
-\renewcommand{\contentsname}{Tabela}
-\listoftables
 
 \newpage
 
-\pagenumbering{arabic}
-\setcounter{page}{5}
+\listoftables
+
+\listoffigures
+
+\newpage
+
+\renewcommand{\thepage}{\arabic{page}}
 
 	\section{Uvod}
 	Z razvojem raketne znanosti se je razširilo tudi amatersko raketarstvo, in z njim različne velikosti raket, različni materiali in tipi goriva. Skozi čas so 
@@ -235,9 +238,8 @@
 				\Delta v = v_e \ln{\frac{m_0}{m_1}} = I_{SP} g_0 \ln{\frac{m_0}{m_1}}
 			\end{equation}
 			kjer je $v_e$ hitrost izpuhov, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
-			\begin{table}
+			\begin{table}[H]
 				\centering
-				\caption{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
 				\begin{tabular}{||c c c||} 
 					\hline
 					Raketni motor & Vrsta & $I_{SP}$ [s] \\ [0.5ex] 
@@ -257,6 +259,7 @@
 					Space Shuttle SRB & Trdno gorivo & 250 \\ [1ex] 
 					\hline
 				\end{tabular}
+				\caption[Primeri specifičnih impulzov]{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
 			\end{table}
 	
 
