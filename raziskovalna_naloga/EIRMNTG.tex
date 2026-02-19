@@ -72,30 +72,33 @@
 \end{titlepage}
 
 
-\pagenumbering{Roman}
+\renewcommand{\thepage}{\Roman{page}}
 \renewcommand{\abstractname}{Povzetek}
 \begin{abstract}
-	\thispagestyle{plain}
+    \thispagestyle{plain}
 	\setcounter{page}{2}
-	Sem gre povzetek
+    Sem gre povzetek
 \end{abstract}
+
+\renewcommand{\thepage}{\Roman{page}}
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
-	\thispagestyle{plain}
+    \thispagestyle{plain}
 	\setcounter{page}{3}
-	The abstract goes here
+    The abstract goes here
 \end{abstract}
 
-\renewcommand{\contentsname}{Vsebina}
 \tableofcontents
-
-\renewcommand{\contentsname}{Tabela}
-\listoftables
 
 \newpage
 
-\pagenumbering{arabic}
-\setcounter{page}{5}
+\listoftables
+
+\listoffigures
+
+\newpage
+
+\renewcommand{\thepage}{\arabic{page}}
 
 	\section{Uvod}
 	Z razvojem raketne znanosti se je razširilo tudi amatersko raketarstvo, in z njim različne velikosti raket, različni materiali in tipi goriva. Skozi čas so 
@@ -231,7 +234,7 @@
 			kjer je $v_e$ hitrost izpuhov, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
 			\begin{table}
 				\centering
-				\caption{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
+				\caption[Primeri specifičnih impulzov]{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
 				\begin{tabular}{||c c c||} 
 					\hline
 					Raketni motor & Vrsta & $I_{SP}$ [s] \\ [0.5ex] 
