@@ -3,11 +3,6 @@
 \setcounter{secnumdepth}{2} %Globina uštevilčnja naslovov
 \setcounter{tocdepth}{2} %Do katere globine bodo naslovi v kazalu
 
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks=false,
-	linktoc=all,
-}
 \usepackage[slovenian]{babel}
 \usepackage{csquotes}
 \usepackage[version=4]{mhchem}
@@ -18,12 +13,17 @@
 \usepackage{physics}
 \usepackage{amsmath}
 
-\usepackage{float} %za hard override placementa slik \begin{figure}[H]
-\usepackage{placeins} % za barierje placementa slik \FloatBarier
+\usepackage{float} %za hard override placementa slik /begin{figure}[H]
+\usepackage{placeins} % za barierje placementa slik /FloatBarrier
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=false,
+	linktoc=all,
+}
 
 
-
-\usepackage[nameinlink]{cleveref} % za lepse, auto reference. sintaksa: v sliki \label{label}  in potem \cref{label} za lepo naslavljanje slik in tabel
+\usepackage[nameinlink]{cleveref} % za lepse, auto reference. sintaksa: v sliki /label{label}  in potem /cref{label} za lepo naslavljanje slik in tabel
 
 \graphicspath{{./slike/}}
 
@@ -279,7 +279,7 @@
 		pri kateri se zunanja cev ni segrela nad 303 K, kar je krepko pod mejo 
 		kritičnega padca zmožnosti prenašanja visokih pritiskov.
 
-			\FloatBarier
+			\FloatBarrier
 			\subsubsection{Prvi test}
 			S tem testom sva testirala različne vrste izolatorjev. Preizkusila sva karton, debel nanos srebrnega lepilnega traku in
 			relativno tanek nanos električaskega mavca (isti mavec sva uporabljala za šobe). Imela sva tudi kontrolo.
@@ -334,7 +334,7 @@
 			\caption{Četrti test: primerjava takoj po izgorevanju in 80 sekund kasneje}
 			\end{figure}
 
-			\FloatBarier
+			\FloatBarrier
 		\subsection{Gorivo}
 		Raketna goriva so mešanice goriva in oksidatorja, zato da oksidacija ni odvisna od  kisika v ozračju. Posledično lahko reakcija poteka tudi v zaprtih posodah. Skupina goriv, v kateri je tudi KNSU(--)
 		je sestavljena iz karbohidrata oziroma sladkorja in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35, v prid \ce{KNO3}.
