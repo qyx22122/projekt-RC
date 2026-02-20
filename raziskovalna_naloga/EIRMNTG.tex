@@ -1,7 +1,7 @@
-\documentclass[titlepage, a4paper, twoside, final]{article}
+	\documentclass[titlepage, a4paper, twoside, final]{article}
 
 \setcounter{secnumdepth}{2} %Globina uštevilčnja naslovov
-\setcounter{tocdepth}{2} %Do katere globine bodo naslovi v kazalu
+\setcounter{tocdepth}{3} %Do katere globine bodo naslovi v kazalu
 
 \usepackage[slovenian]{babel}
 \usepackage{csquotes}
@@ -108,15 +108,17 @@
 	prostodostopnih materialov mogoče narediti učinkovito in zmogljivo raketo.%(foreshadowing)
 
 	\section{Varnost}
-	Za raketne pogone so značilne eksotermne kemijske reakcije in gorivo ki ga uporabljava ni nič drugačno. Pri pravih pogojih je zelo lahko vnetljivo, gori z vročim plamenom in
-	skoraj nemogoče ga je pogasiti, saj gori neodvisno od kisika v ozračju. Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline.
+	Za raketne pogone so značilne eksotermne kemijske reakcije in gorivo ki ga uporabljava ni nič drugačno. Ob vžigu gori z vročim plamenom in
+	ga je skoraj nemogoče pogasiti, saj gori neodvisno od kisika v ozračju, ker vsebuje oksidator; v najinem primeru \ce{KNO3}.
+	To vidimo tudi v spodnji enačbi \ref{eq:gorjenje-goriva}, kjer med reaktanti ni elementarnega kisika (\ce{O2}).
+	Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline.
 	Kot produkt reakcije se sproščajo plini, ki dražijo oči in dihala. Testiranje v zaprtih prostorih je tako odsvetovano, tudi zaradi tveganja materialne škode.
-	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja pritiska reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
+	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja tlaka reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
 	To vodi v pozitivno povratno zanko, ki se ponavadi konča z eksplozijo, pri kateri je nevarnost šrapnelov in poškodbe sluha, zaradi udarnega vala.
 	
 
 	\section{Teoretičen del}
-	Raketni motorji delujejo zaradi zakona o ohranitvi gibalne količine; motor pospeši vroče pline v nasprotno smer gibanja in s tem poveča hitrost rakete.
+	Raketni motorji delujejo zaradi zakona o ohranitvi gibalne količine; motor pospeši vroče pline v nasprotno smer gibanja rakete in s tem poveča hitrost rakete.
 	Pri raketnih motorjih na trdno grivo ta plin pride iz reakcije goriva in oksidatorja, obeh v trdnem agregatnem stanju. V zgorevalni komori je zaradi tega ustvarjen tlak.
 	Vroči plini uhajajo skozi šobo, katere funkcija je izkoriščanje tlaka in temperature teh plinov, da jih pospeši do visokih hitrosti in jim s tem poveča gibalno količino.
 
@@ -124,16 +126,17 @@
 		Vrst trdnih goriv za raketne motorje je zelo veliko, ampak imajo vsa v osnovi podobno sestavo - mešanico goriva in oksidatorja. V večini primerov so dodani še
 		katalizatorji in sredstva za strjevanje. Midva sva se odločila za gorivo, ki ga pogosto poimenujejo "rocket candy".
 		Sestavljen je iz saharoze (\ce{C12H22O11}) in kalijevega nitrata (\ce{KNO3}) ter občasno
-		tudi nekaterih primesi (npr. \ce{Fe2O3}). Po literaturi, ki sva jo našla, je optimalno razmerje saharoze in \ce{KNO3} 35/65. \cite{nakkaKNSU2025}
+		tudi nekaterih primesi (npr. \ce{Fe2O3}, ki je katalizator in pospešuje reakcijo).
+		Po literaturi, ki sva jo našla, je optimalno razmerje saharoze in \ce{KNO3} 35/65. \cite{nakkaKNSU2025}
 		Kemijska enačba za gorenje je sledeča \cite{nakkaKNSUchem2025}
 		\begin{equation} \label{eq:gorjenje-goriva}
 		\begin{split} 
-		\ce{C12H22O11 + 6.288 KNO3 -> 3.796 CO2 + \\ 5.205 CO + 7.794 H2O + 3.065 H2 + 3.143 N2 + 2.998 K2CO3 + 0.274 KOH}
+			\ce{C12H22O11(s) + 6.288 KNO3(s) -> 3.796 CO2(g) + \\ 5.205 CO(g) + 7.794 H2O(g) + 3.065 H2(g) + 3.143 N2(g) + 2.998 K2CO3(l) + 0.274 KOH(g)}
 		\end{split}
 		\end{equation}
 
 		\subsection{Šoba}
-		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj pretvarja nekatere vroče produkte reakcije v potisk, ki pospeši raketo.
+		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj izkoristi vroče produkte reakcije za potisk, ki pospeši raketo.
 		Od šobe je odvisen tudi največji deseženi tlak, katerega morajo zdržati tudi vsi ostali deli motorja. Šoba na notranji strani konvergira proti premeru grla
 		in nato divergira do izhodnega premera - od tod tudi prideta imeni kovergentno-divergentna ali kar KD šoba, z drugim imenom De Laval šoba.
 		Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba. \cite{nasa:nozzle_design}
@@ -157,18 +160,23 @@
 		pospeševali do zvočne hitrosti v zožanju šobe in nato pospešili tudi preko zvočne hitrosti, ko se v končnem delu šobe presek spet povečuje.
 
 			\subsubsection{Potisk}
-			Potisk motorja ja ena najbolj pomembnih lasnosti raketnega motorja. Izračunamo ga s sledečo enačbo:
+			Potisk motorja ja ena najpomembnejših lasnosti raketnega motorja. Izračunamo ga s sledečo enačbo : \cite{nasa:rocket_thrust}
 			\begin{equation}
 				F = \dot{m} v_e + (P_e - P_a)A_e
 			\end{equation}
-			kjer je $v_e$ hitrost izpuhov relativno na raketo, $P_e$ tlak izpušnih plinov, $P_a$ tlak zunaj motorja (v najinem primeru je to kar atmosferski tlak)
+			kjer je $v_e$ hitrost izpuhov relativno na raketo, $P_e$ tlak plinov, ki zapustijo motor, $P_a$ tlak zunaj motorja (v najinem primeru je to kar atmosferski tlak)
 			in $A_e$ površina izhodnega dela šobe.
 			Če predpostavimo, da šoba izpušne pline spravi do atmosferskega tlaka, potem je člen $(P_e - P_a)A_e = 0$ in dobimo poenostavljeno obliko enačbe.
 			\begin{equation} \label{eq:potisk}
 				F = \dot{m} v_e
 			\end{equation}
 
-			
+		\subsection{Statično testiranje raketnih motorjev}
+		Statično testiranje raketnih motorjev je izrednega pomena v razvoju novih raketnih motorjev. Pri statičnem testiranju je
+		motorju omejeno gibanje tako, da se lahko premika samo po osi vzporedni z silo potiska, ki jo proizvaja. Motor potiska
+		proti silomeru, ki ponavadi digitalne podatke pošilja do računalnika, ki jih shranjuje. Iz teh podatkov dobimo graf potiska
+		v odvisnosti od časa. Pri dinamičnih testih je raketni motor nameščen na primerno raketo. Podatke tako dobimo iz merilcev lokacije in pospoešla na raketi.
+		Statično testiranje je bolj varno, saj lažje nadziramo in zavarujemo okolje. \cite{static_firing}
 			
 		\subsection{Simulacija v openMotor}
 		Simulacije so v raketni znanosti zelo pomembno orodje, saj v naprej povejo lasnosti motorja, ki so ključnega pomena za njegovo izdelavo.
@@ -188,7 +196,7 @@
 			\item Kot zadnji korak doda masni pretok skozi to celico v skupen masni pretok in izračuna novo geometrijo gorivne celice.
 		\end{enumerate}
 
-		Nato izračuna vrednost KN, ki je razmerje med površino grla in vso gorenju izpostavljeno površino goriva. Ta vrednost je pomembna,
+		Nato izračuna vrednost $K_n$, ki je razmerje med površino grla in vso gorenju izpostavljeno površino goriva. Ta vrednost je pomembna,
 		saj je funkcija pritiska odvisna zgolj od nje in lasnosti goriva. Potem izračuna tlak v motorju in izhodni tlak.
 		Iz teh dveh tlakov izračuna potisk motorja. Na koncu izračuna še nanos žlindre na šobo in se premakne za en časovni korak naprej.
 
