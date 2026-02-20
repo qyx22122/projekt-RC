@@ -182,13 +182,13 @@
 
 			\subsubsection{Potisk}
 			Potisk motorja ja ena najpomembnejših lasnosti raketnega motorja. Izračunamo ga s sledečo enačbo : \cite{nasa:rocket_thrust}
-			\begin{equation}
+			\begin{equation} \label{eq:potisk_1}
 				F = \dot{m} v_e + (P_e - P_a)A_e
 			\end{equation}
 			kjer je $v_e$ hitrost izpuhov relativno na raketo, $P_e$ tlak plinov, ki zapustijo motor, $P_a$ tlak zunaj motorja (v najinem primeru je to kar atmosferski tlak)
 			in $A_e$ površina izhodnega dela šobe.
 			Če predpostavimo, da šoba izpušne pline spravi do atmosferskega tlaka, potem je člen $(P_e - P_a)A_e = 0$ in dobimo poenostavljeno obliko enačbe.
-			\begin{equation} \label{eq:potisk}
+			\begin{equation} \label{eq:potisk_2}
 				F = \dot{m} v_e
 			\end{equation}
 
@@ -207,7 +207,7 @@
 		Motor sva se odločila simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
 		Program sva naložila iz svetovnega spleta (https://github.com/reilleya/openMotor).
 		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza).
-		Potem openMotor simulira gorenje motorja po majhnih časovnih inkrementih. Najprej openMotor izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice :
+		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej openMotor izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice :
 		\cite{openMotor}
 		\begin{enumerate}
 			\item Regresijo goriva; to  izračuna tako, da pomnoži majhen korak v času z hitrostjo gorenja, ki je funkcija pritiska.
@@ -219,7 +219,8 @@
 
 		Nato izračuna vrednost $K_n$, ki je razmerje med površino grla in vso gorenju izpostavljeno površino goriva. Ta vrednost je pomembna,
 		saj je funkcija pritiska odvisna zgolj od nje in lasnosti goriva. Potem izračuna tlak v motorju in izhodni tlak.
-		Iz teh dveh tlakov izračuna potisk motorja. Na koncu izračuna še nanos žlindre na šobo in se premakne za en časovni korak naprej.
+		Iz teh dveh tlakov izračuna potisk motorja kot nam to opisuje enačba \ref{eq:potisk_1}.
+		Na koncu izračuna še nanos \ce{K2CO3} in \ce{KOH} na šobo in se premakne za en časovni korak naprej.
 
 		Na koncu vsake iteracije preveri, če reakcija še poteka in se glede na to odloči ali naj simulacijo nadaljuje ali konča.
 		Ob koncu simulacije openMotor preveru, ali so bile prekoračene v naprej določene omejitve (npr. največji dovoljeni tlak).
@@ -232,12 +233,13 @@
 		sva merila predvsem temperaturo zunanje cevi in tako preverila, da se ne pregreva. 
 
 		\subsection{Specifičen impulz}
-		Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa, ki se giba. Izračunamo ga kot spremembo gibalne količine ali kot produkt sile in spremembe časa. To lahko zapišemo tudi v diferencialni obliki
+		Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa. Izračunamo ga kot spremembo gibalne količine ali kot produkt sile in spremembe časa.
+		To lahko zapišemo tudi v diferencialni obliki
 		kot integral sile po času.
 		\begin{equation}
-			I = G_1 - G_0 = F \Delta t = \int F dt
+			I = F \Delta t = G_1 - G_0 = \int F dt
 		\end{equation}
-			Iz impulza izpeljemo količino za učinkovitost raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
+			Iz impulza izpeljemo količino raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
 			\cite{wiki:Specific_impulse2025}
 		\begin{equation}
 			I_{SP} = \frac{I}{m \vdot g_0}
@@ -250,7 +252,7 @@
 			I_{SP} &= \frac{F}{\dot{m}\vdot g_0} \label{eq:ISP_F}
 		\end{align}
 		
-		Če v enačbo \ref{eq:ISP_F} vstavimo enačbo \ref{eq:potisk} dobimo:
+		Če v enačbo \ref{eq:ISP_F} vstavimo enačbo \ref{eq:potisk_2} dobimo:
 		\begin{equation} \label{eq:ISP_v}
 			I_{SP} = \frac{v_e}{g_0}
 		\end{equation}
@@ -282,27 +284,29 @@
 					Space Shuttle SRB & Trdno gorivo & 250 \\  
 					\hline
 				\end{tabular}
-				\caption[Primeri specifičnih impulzov]{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
+				\caption[Primeri specifičnih impulzov]{Primeri že testiranih raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
 			\end{table}
 	
 
 	\section{Empirični del}
 	
 		\subsection{Zunanja cev}
-		Za ohišje motorja sva uporabljala odtočne cevi iz plastike PP-H (polipropilen homopolimer) ki jih izdeluje podjetje Peštan. Kupila sva jih v trgovini Bauhaus in jih razžagala na primerno dolžino.
-		Cev je certificirana s standardom EN 1451. \cite{Katalog_HTPP}Tako bi morala pri temperaturi 353 K zdržati, četudi za kratek čas, pritiske do 6,0 MPa .\cite{EN1451}
-		Cevi sva izmerila notrananji premer 36mm in debelino stene 1.90mm. Ko sva odžagala primerno dolžino cevi sva plastiko, ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. 
+		Za ohišje motorja sva uporabljala odtočne cevi iz plastike PP-H (polipropilen homopolimer) ki jih izdeluje podjetje Peštan. Kupila sva jih v trgovini s tehničnim blagom
+		in jih razžagala na primerno dolžino.
+		Cev je certificirana s standardom EN 1451. \cite{Katalog_HTPP}Tako bi morala pri temperaturi 353 K zdržati, četudi za kratek čas, tlak do 6,0 MPa .\cite{EN1451}
+		Cevi sva izmerila notrananji premer 36mm in debelino stene 1.90mm. Ko sva odžagala primerno dolžino cevi sva plastiko,
+		ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. 
 		S tem sva cev polepšala, predvsem pa olajšala vstavljanje izolatorja.
 		
 			\subsubsection{Zaprtje cevi}
-			Za pravilno delovanje raketnega motorja je potreben visok pritisk, ki pa ni dosežen, če sta konca cevi odprta. Ker želimo tudi, da rezultanta sil na telo v fazi pospeševanja
-			oziroma izgorevanja ni enaka nič, ni dovolj da konce cevi zožamo, eno od strani je potrebno neprodušno zapreti na način, ki tudi premore visoke pritiske, po možnosti brez
+			Za pravilno delovanje raketnega motorja je potreben visok tlak, ki pa ni dosežen, če sta konca cevi odprta. Ker želimo tudi, da rezultanta sil na telo v fazi pospeševanja
+			oziroma izgorevanja ni enaka nič, ni dovolj da konce cevi zožamo, eno od strani je potrebno neprodušno zapreti na način, ki tudi premore visoke tlake, po možnosti brez
 			mehanskih okvar. Za ta namen sva uporabila epoksi smolo.
 			
 		
 		\subsection{Izolator}
 		Izolator je, sploh v amaterskem raketarstvu, nepogrešljiv del motorja. Da je material primeren za ohišje mora imeti nizko gostoto
-		in tudi tanke plasti morajo biti zmožne prenesti visoke pritiske brez deformacij. Navedene lastnosti mora obdržati tudi pri velikih spremembah temperature.
+		in tudi tanke plasti morajo biti zmožne prenesti visoke tlake brez deformacij. Navedene lastnosti mora obdržati tudi pri velikih spremembah temperature.
 		Ker so takšni materiali redki, težko dostopni oziroma dragi, pogosto niso primerni niti za velike organizacije,
 		kaj šele za amaterje. Zato se uporabi več različnih materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
 		za obvarovanje dotične cevi pred visokimi temperaturami pa risalne liste (papir) z debelino 0,03 mm, ki so razrezani na primerne velikosti in vstavljeni v cev,
@@ -321,7 +325,7 @@
 		je zmanjšal tudi čas sestavljanja posameznih šob.
 		Zadnji test izolatorja sva spremljala tudi s toplotno kamero in tako merila temperaturo zunanje cevi.  Končna debelina izolatorja XXXXX je bila tista,
 		pri kateri se zunanja cev ni segrela nad 303 K, kar je krepko pod mejo 
-		kritičnega padca zmožnosti prenašanja visokih pritisko v. 
+		kritičnega padca zmožnosti prenašanja visokih pritisko. 
 
 			\FloatBarrier
 			\subsubsection{Prvi test}
@@ -394,8 +398,10 @@
 		Gorivo gori po enčbi \ref{eq:gorjenje-goriva}
 
 			\subsubsection{Ulivanje goriva}
-			Ulivanje goriva je zelo zapleten proces. Potrebna je predpriprava in potrpežljivost, in nikoli ne smemo pozabiti na prepotrebno varnost, saj obstajajo primeri načrtnega vsutja mešanice saharoze in kalijevega
-			nitrata v posodo, ki je bila zaradi nepazljivosti preveč segreta. Mešanica se je spontano vžgala. Ko gorivo enkrat začne goreti ga je virtualno nemogoče ugasniti, saj reakcija ni odvisna od kisika v ozračju. 
+			Ulivanje goriva je zelo zapleten proces. Potrebna je predpriprava in potrpežljivost, in nikoli ne smemo pozabiti na prepotrebno varnost,
+			saj obstajajo primeri načrtnega vsutja mešanice saharoze in kalijevega nitrata v posodo, ki je bila zaradi nepazljivosti preveč segreta.
+			Mešanica se je spontano vžgala. Ko gorivo enkrat začne goreti ga je virtualno nemogoče ugasniti,
+			saj reakcija ni odvisna od kisika v ozračju. 
 			Postopek je nepredvidljiv in težko je dobiti ponovljive rezultate.
 
 			V predpripravo spada priprava modelčkov, v katere se gorivo uliva oziroma pakira. Ker sva shranjevala gorivo ločeno od ostalih delov motorja sva jih ulivala v modelčke,
@@ -406,7 +412,8 @@
 		Še posebej je na udaru grlo, ki, ko je razširjeno, ne opravlja več svoje funkcije. Nameravala sva tudi zalepiti šobo na zunanjo cev. Tako sva že od samega začetka 
 		vedela da bodo šobe za enkratno uporabo. Tako dražji materiali nikoli niso prišli v poštev. 
 
-		Vendar pa imajo tudi dražje alternative svoje slabosti. Čeprav grafit dobro prenaša temperaturo in je lahek je struženje grafita izjemno umazan proces. Nastali grafitni prah je tudi abraziven 
+		Vendar pa imajo tudi dražje alternative svoje slabosti. Čeprav grafit dobro prenaša temperaturo in je lahek je struženje grafita izjemno umazan proces.
+		Nastali grafitni prah je tudi abraziven 
 		za vsa vodila stružnice in zanjo posledično nevaren.
 		Zaradi krhkosti je vsakršna obdelava zahtevna, tudi hitro erodira. 
 		Kovine so pretežke, in imajo prenizka tališča. Njih struženje prav tako vzame veliko časa. Želela sva se držati tudi cilja prostodostopnosti.
@@ -438,8 +445,10 @@
 		\subsection{Sestavljanje motorja}
 		V zunanjo cev primerne dolžine nalijemo epoksi smolo, tako da tvori 1,5 cm debelo plast. Da se smola ne razlije odprtino zalepimo z silver tapom. 
 		Ko se smola strdi lahko v zunanjo cev vstavimo izolator, zvit v tulec.
-		V tako pripravljeno ohišje potisnemo gorivno celico, ki ima svojo plast izolatorja in potem v cev, na gorivo vstavimo šobo. Na koncu v prostor med šobo in zunanjo cev vlijemo še epoksi smole. 
-		Tako sestavljen motor je po strjevanju smole pripravljen na testiranje. Paziti pa moramo da ni predolgo izpostavljen kakršnikoli vlagi, saj to močno vpliva na hitrost gorenja in izkoristek.
+		V tako pripravljeno ohišje potisnemo gorivno celico, ki ima svojo plast izolatorja in potem v cev, na gorivo vstavimo šobo.
+		Na koncu v prostor med šobo in zunanjo cev vlijemo še epoksi smole. 
+		Tako sestavljen motor je po strjevanju smole pripravljen na testiranje. Paziti pa moramo da ni predolgo izpostavljen kakršnikoli vlagi,
+		saj to močno vpliva na hitrost gorenja in izkoristek.
 
 		\begin{figure}[H]
 		\centering
@@ -450,7 +459,8 @@
 		
 		\subsection{Merjenje potiska}
 		Za merjenje potiska sva uporabila Vernierjev Force Plate, katerega natančnost je 0,3 N na intervalu -85 N do 850 N ali 1 N na intervalu -350 N do 3500 N.
-		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo 0,3 N. Za držanje motorja sta nama hišnika Gimnazije Vič izdelala stojalo iz aluminija.
+		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo 0,3 N. Za držanje motorja sta nama hišnika Gimnazije Vič po najinem načrtu
+		izdelala stojalo iz aluminija.
 		Stojalo je narejeno iz dveh L-profilov iz in štirih kotnikov, kot je videno na sliki. %TODO
 		V aluminijasto ploščo in L-profila so bile zvrtane luknje in narejeni navoji. Z vijaki so bili kotniki pritrjeni na ploščo in L-profili na kotnike.
 		Za tako držalo sva se odločila, saj varno drži motor med testiranjem in a vidno ne pomaga k zadrževanju pritiska. Držalo je tudi narejeno tako,
@@ -470,7 +480,7 @@
 		\begin{equation}
 			P = I^2 R
 		\end{equation}
-		kjer je P moč in I električni tok. Moč je v tem primeru enaka toploti, ki jo prejme tanka žica vžigalice ($P = Q$).
+		kjer je P moč in I električni tok. V tem primeru je produkt moči in časa enaka toploti, ki jo prejme tanka žica vžigalice ($P t = Q$).
 		Zaradi nje se vžigalica segreje kot nam pravi ta enačba
 		\begin{equation}
 			Q = m c \Delta T
