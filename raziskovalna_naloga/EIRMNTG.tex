@@ -1,4 +1,4 @@
-	\documentclass[titlepage, a4paper, twoside, final]{article}
+\documentclass[titlepage, a4paper, twoside, final]{article}
 
 \setcounter{secnumdepth}{2} %Globina uštevilčnja naslovov
 \setcounter{tocdepth}{3} %Do katere globine bodo naslovi v kazalu
@@ -113,8 +113,8 @@
 	To vidimo tudi v spodnji enačbi \ref{eq:gorjenje-goriva}, kjer med reaktanti ni elementarnega kisika (\ce{O2}).
 	Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline.
 	Kot produkt reakcije se sproščajo plini, ki dražijo oči in dihala. Testiranje v zaprtih prostorih je tako odsvetovano, tudi zaradi tveganja materialne škode.
-	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja tlaka reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
-	To vodi v pozitivno povratno zanko, ki se ponavadi konča z eksplozijo, pri kateri je nevarnost šrapnelov in poškodbe sluha, zaradi udarnega vala.
+	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja pritiska reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
+	To vodi v pozitivno povratno zanko, ki se ponavadi konča z eksplozijo, pri kateri je nevarnost šrapnelov in poškodbe sluha zaradi udarnega vala.
 	
 
 	\section{Teoretičen del}
@@ -135,10 +135,31 @@
 		\end{split}
 		\end{equation}
 
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{lll}
+		\hline
+		Snov & Agregatno stanje & Kemijska formula \\
+		\hline \noalign{\vskip 0.3ex}
+		Saharoza & trdno & \ce{C12H22O11} \\
+		Kalijev nitrat & trdno & \ce{KNO3} \\
+		Ogljikov dioksid & plinasto & \ce{CO2} \\
+		Ogljikov monoksid & plinasto & \ce{CO} \\
+		Vodna para & plinasto & \ce{H2O} \\
+		Vodik & plinasto & \ce{H2} \\
+		Dušik & plinasto & \ce{N2} \\
+		Kalijev karbonat & tekoče & \ce{K2CO3} \\
+		Kalijev hidroksid & plinasto & \ce{KOH} \\
+		\hline
+		\end{tabular}
+
+		\caption{Seznam snovi, agregatnih stanj in kemijskih formul}
+		\end{table}
+
 		\subsection{Šoba}
-		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj izkoristi vroče produkte reakcije za potisk, ki pospeši raketo.
-		Od šobe je odvisen tudi največji deseženi tlak, katerega morajo zdržati tudi vsi ostali deli motorja. Šoba na notranji strani konvergira proti premeru grla
-		in nato divergira do izhodnega premera - od tod tudi prideta imeni kovergentno-divergentna ali kar KD šoba, z drugim imenom De Laval šoba.
+		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj pretvarja nekatere vroče produkte reakcije v potisk, ki pospeši raketo.
+		Od šobe je odvisen tlak, od katerega je odvisna hitrost rekacije in njena učinkovitost. Šoba določa tudi največji doseženi tlak, katerega morajo zdržati vsi deli motorja. Šoba na notranji strani konvergira proti premeru grla
+		in nato divergira do izhodnega premera - od tod tudi prideta imeni kovergentno-divergentna in KD šoba, poznana pa je tudi kot De Laval šoba.
 		Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba. \cite{nasa:nozzle_design}
 		\begin{equation} \label{eq:šoba-vA}
 			(1 - M^2) \frac{\dd v}{v} = - \frac{\dd A}{A}
@@ -153,7 +174,7 @@
 		Ko je $M < 1$, je hitrost tekočine manjša od zvočne hitrosti in je prvi del enačbe \ref{eq:šoba-vA} pozitiven in nam ta pove,
 		da v primeru, ko se površine preseka pomanjša, se bo hitrost tekočine povečala.
 
-		Če pa je $M > 1$, potem tekočina teče z nad zvočno hitrostjo in je prvi del enačbe \ref{eq:šoba-vA} negativen. To nam pove, da se bo z povečanje površine preseka,
+		Če pa je $M > 1$, potem tekočina teče z nad zvočno hitrostjo in je prvi del enačbe \ref{eq:šoba-vA} negativen. To nam pove, da se bo z povečanje površine preseka
 		povečala tudi hitrost tekočine.
 
 		V našem primeru želimo, da tekočina doseže zvočno hitrost ($v = c$) ravno v grlu šobe, kjer je premer najmanjši. Tako bodo vroči plini, ki nastanejo pri reakciji,
@@ -177,7 +198,7 @@
 		proti silomeru, ki ponavadi digitalne podatke pošilja do računalnika, ki jih shranjuje. Iz teh podatkov dobimo graf potiska
 		v odvisnosti od časa. Pri dinamičnih testih je raketni motor nameščen na primerno raketo. Podatke tako dobimo iz merilcev lokacije in pospoešla na raketi.
 		Statično testiranje je bolj varno, saj lažje nadziramo in zavarujemo okolje. \cite{static_firing}
-			
+
 		\subsection{Simulacija v openMotor}
 		Simulacije so v raketni znanosti zelo pomembno orodje, saj v naprej povejo lasnosti motorja, ki so ključnega pomena za njegovo izdelavo.
 		So tudi veliko bolj varne in bolj ekonomične od statičnega testiranja motorjev, kjer lahko motor nevarno in nepopravljivo spodleti.
@@ -207,7 +228,7 @@
 
 
 		\subsection{Toplotna Kamera}
-		Za merjenje temperatur sva uporabljala toplotno ka mero IME.(specifikacije). S funkcijo snemanja sva dobila natančne podatke o spreminjanju temperature s časom. Ker pa ima kamera omejitev zaznavanja do 300? C
+		Za merjenje temperatur sva uporabljala toplotno kamero IME.(specifikacije). S funkcijo snemanja sva dobila natančne podatke o spreminjanju temperature s časom. Ker pa ima kamera omejitev zaznavanja do 300? C
 		sva merila predvsem temperaturo zunanje cevi in tako preverila, da se ne pregreva. 
 
 		\subsection{Specifičen impulz}
@@ -226,11 +247,11 @@
 			I_{SP} &= \frac{F \Delta t}{m\vdot g_0} \nonumber \\[1em]
 			I_{SP} &= \frac{F}{\frac{m}{\Delta t}\vdot g_0} \nonumber \\[1em]
 			I_{SP} &= \frac{F}{\dv{m}{t}\vdot g_0} \nonumber \\[1em]
-			I_{SP} &= \frac{F}{\dot{m}\vdot g_0} \label{eq:ISP}
+			I_{SP} &= \frac{F}{\dot{m}\vdot g_0} \label{eq:ISP_F}
 		\end{align}
 		
-		Če v enačbo \ref{eq:ISP} vstavimo enačbo \ref{eq:potisk} dobimo:
-		\begin{equation}
+		Če v enačbo \ref{eq:ISP_F} vstavimo enačbo \ref{eq:potisk} dobimo:
+		\begin{equation} \label{eq:ISP_v}
 			I_{SP} = \frac{v_e}{g_0}
 		\end{equation}
 	
@@ -248,23 +269,17 @@
 			kjer je $v_e$ hitrost izpuhov, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
 			\begin{table}[H]
 				\centering
-				\begin{tabular}{||c c c||} 
+				\begin{tabular}{lll} 
 					\hline
-					Raketni motor & Vrsta & $I_{SP}$ [s] \\ [0.5ex] 
-					\hline\hline
+					Raketni motor & Vrsta & $I_{SP}$ [s]  \\
+					\hline \noalign{\vskip 0.3ex}
 					NERVA NRX A6 & Nuklearni & 869  \\ 
-					\hline
 					RS-25 & Tekoče gorivo & 453  \\ 
-					\hline
 					RD-843 & Tekoče gorivo & 315,5 \\
-					\hline
 					Merlin 1D & Tekoče gorivo & 310  \\
-					\hline
 					Avio Zefiro 9A & Trdno gorivo & 295,2\\
-					\hline
 					Avio Zefiro 23 & Trdno gorivo & 287,5 \\
-					\hline
-					Space Shuttle SRB & Trdno gorivo & 250 \\ [1ex] 
+					Space Shuttle SRB & Trdno gorivo & 250 \\  
 					\hline
 				\end{tabular}
 				\caption[Primeri specifičnih impulzov]{Primeri raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
@@ -274,12 +289,11 @@
 	\section{Empirični del}
 	
 		\subsection{Zunanja cev}
-		Za ohišje motorja sva uporabljala odtočne cevi iz plastike PPH (polipropilen homopolimer), ki sva jih kupila v trgovini Bauhaus, in jih razžagala na primerno dolžino.
-		Cev je certificirana s standardom EN 1451 in bi tako morala pri temperaturi 353 K zdržati, četudi za kratek čas, pritiske do 6,0 MPa .\cite{EN1451}
-		Po tem sva se tudi ravnala. Ko sva odžagala primerno dolžino cevi sva plastiko, ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. S tem sva 
-		cev polepšala, predvsem pa olajšala vstavljanje izolatorja.
-
-			
+		Za ohišje motorja sva uporabljala odtočne cevi iz plastike PP-H (polipropilen homopolimer) ki jih izdeluje podjetje Peštan. Kupila sva jih v trgovini Bauhaus in jih razžagala na primerno dolžino.
+		Cev je certificirana s standardom EN 1451. \cite{Katalog_HTPP}Tako bi morala pri temperaturi 353 K zdržati, četudi za kratek čas, pritiske do 6,0 MPa .\cite{EN1451}
+		Cevi sva izmerila notrananji premer 36mm in debelino stene 1.90mm. Ko sva odžagala primerno dolžino cevi sva plastiko, ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. 
+		S tem sva cev polepšala, predvsem pa olajšala vstavljanje izolatorja.
+		
 			\subsubsection{Zaprtje cevi}
 			Za pravilno delovanje raketnega motorja je potreben visok pritisk, ki pa ni dosežen, če sta konca cevi odprta. Ker želimo tudi, da rezultanta sil na telo v fazi pospeševanja
 			oziroma izgorevanja ni enaka nič, ni dovolj da konce cevi zožamo, eno od strani je potrebno neprodušno zapreti na način, ki tudi premore visoke pritiske, po možnosti brez
@@ -290,28 +304,24 @@
 		Izolator je, sploh v amaterskem raketarstvu, nepogrešljiv del motorja. Da je material primeren za ohišje mora imeti nizko gostoto
 		in tudi tanke plasti morajo biti zmožne prenesti visoke pritiske brez deformacij. Navedene lastnosti mora obdržati tudi pri velikih spremembah temperature.
 		Ker so takšni materiali redki, težko dostopni oziroma dragi, pogosto niso primerni niti za velike organizacije,
-		kaj šele za laike. Zato se uporabi več različnih materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
+		kaj šele za amaterje. Zato se uporabi več različnih materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
 		za obvarovanje dotične cevi pred visokimi temperaturami pa risalne liste (papir) z debelino 0,03 mm, ki so razrezani na primerne velikosti in vstavljeni v cev,
 		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Papirnat izolator pri najinem motorju je razdeljen na dva dela, za potrebe shranjevanja 
 		in premikanja gorivnih celic po ulivanju. 
-
 		Pomembno je poudariti da papir ni edini izolator. Gorivo samo tudi upočasnjuje prehod toplote proti steni motorja,
 		vendar pa se ta plast med samim gorenjem hitro zmanjšuje in večinoma ni zadostna.
 		Prav tako je med gorivom in grlom šobe kratek pas cevi, ki bi brez papirnatega izolatorja bil zaščiten le z tanko plastjo mavca in tako izpostavljen
 		občutno previsokim temperaturam že od začetka.
-
 		Omeniti je treba tudi, da izolator med izgorevanjem zaradi visokih temperatur razpada, predvsem na elementarni ogljik, kar za naju ni prevelik problem,
 		saj ima tudi ta zadovoljive izolacijske sposobnosti. \cite{Thermal_conductivity_of_Carbon}
-
 		Ker sprva nisva vedela kateri izolatorji delujejo oziroma katerega bi lahko uporabila sva testirala različne. Karton se je pokazal kot zelo obetaven,
-		a ker je bilo iskanje lahko dostopnega, ugodnega in
-		nespremenljivega vira neuspešno in ker z debelejšimi plastmi nastajajo problemi, kot so gubanje zvitih plasti zaradi prevelike razlike
-		v radijih zunanje in notranje ploskve ter problem navoja - plast izolatorja je različno oddaljena od cevi, 
+		a ker je bilo iskanje lahko dostopnega, ugodnega in zanesljivega vira neuspešno in ker z debelejšimi plastmi nastajajo problemi, kot so gubanje zvitih plasti zaradi prevelike razlike
+		v radijih zunanje in notranje ploskve ter opaznejši problem navoja (izolator je enakomerno razporejen toda različno oddaljen od zunanje cevi zaradi začetka in konca zvitja), 
 		sva se odločila za relativno ugodno, predvsem pa lahko dostopno alternativo risalnih listov. Ker so večji in debelejši od pisarniškega papirja se nama
 		je zmanjšal tudi čas sestavljanja posameznih šob.
-		Zadnji test izolatorja sva spremljala tudi s toplotno kamero in tako merila temperaturo zunanje cevi. Končna debelina izolatorja je bila tista,
+		Zadnji test izolatorja sva spremljala tudi s toplotno kamero in tako merila temperaturo zunanje cevi.  Končna debelina izolatorja XXXXX je bila tista,
 		pri kateri se zunanja cev ni segrela nad 303 K, kar je krepko pod mejo 
-		kritičnega padca zmožnosti prenašanja visokih pritiskov.
+		kritičnega padca zmožnosti prenašanja visokih pritisko v. 
 
 			\FloatBarrier
 			\subsubsection{Prvi test}
@@ -334,7 +344,7 @@
 			Da bi se zares prepričala o uporabnosti sva poiskala nekaj odpadnega kartona in ga preprosto navila v zunanjo cev.
 			Debelino sva izmerila in jo potem spreminjala kar z številom navojev. Zunanja cev prvega in drugega 
 			se je vsaj malo stopila, tretji pa je ostal nepoškodovan. S testom sva dobila boljšo predstavo o potrebni debelini izolatorja.
-
+			%različne debeline odpadnega kartona (4cm x 3, 11.11. 2025, 12. 11. 2025)
 
 			\begin{figure}[H]
 			\centering
@@ -344,8 +354,6 @@
 			\caption{Drugi test: prej in potem}
 			\end{figure}
 
-
-			%različne debeline odpadnega kartona (4cm x 3, 11.11. 2025, 12. 11. 2025)
 			\subsubsection{Tretji test}
 			Ker je bilo prej omenjeno iskanje vira kartona neuspešno sva začela z testiranjem zmožnosti papirja kot izolatorja.
 			Pojavila se je tudi ideja, da bi posamezne plasti izolatorja spojila skupaj z epoksi smolo, s čimer bi izboljšala 
