@@ -214,7 +214,7 @@
 		zato so statični in tudi dinamični testi motorjev nenadomstljiv del v procesu njihovega razvoja.
 		Motor sva se odločila simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
 		Program sva naložila iz svetovnega spleta (https://github.com/reilleya/openMotor).
-		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza).
+		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza), ki je primerljiv najinemu gorivu.
 		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej openMotor izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice :
 		\cite{openMotor}
 		\begin{enumerate}
@@ -401,22 +401,41 @@
 
 			\FloatBarrier
 		\subsection{Simuleranje motorja}
+		
 
 
 		\subsection{Gorivo}
 		Raketna goriva so mešanice goriva in oksidatorja, zato da oksidacija ni odvisna od  kisika v ozračju. Posledično lahko reakcija poteka tudi v zaprtih posodah. Skupina goriv, v kateri je tudi KNSU(--)
-		je sestavljena iz karbohidrata oziroma sladkorja in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35, v prid \ce{KNO3}.
+		je sestavljena iz karbohidrata oziroma sladkorja in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35, v prid \ce{KNO3},
+		a sva se midva odločila za razmerje 60/40, saj sva prišla do težav z ulivanjem.
 		Gorivo gori po enčbi \ref{eq:gorjenje-goriva}
+			\subsection{Priprava goriva}
+			Gorivne celice, ki sva jih uporabljala v motorju, so imele maso 70g. Zaradi izgub pri pripravi in vlivanju začneva z skupno maso goriva 100g.
+			Najprej sva odtehtala 40g saharoze in jih stresla v 1L čašo. Ker je za ta proces potrebno, da se vsa saharoza raztopi, sva dodala 20g vode. \cite{wiki:Sucrose}
+			Nato sva v čaši segrevala raztopino na električnem grelcu, dokler ni začela vreti. Takrat sva zmanjšala gretje in počasi brez mešanja izparela vso vodo.
+			S tem dolgotrajnim postopkom izparevanja vode sva dosegla, da je saharoza neposredno prešla iz raztopljene oblike v tekoče agregatno stanje. To se je zgodilo, brez
+			da bi se ta oborila, kar pripomore k homogenosti taline. Ker je segrevanje počasno in kontrolirano, predvsem zaradi vode, ki ima visoko specifično in izparilno toploto,
+			je talina zelo blede rjavkaste barve in ne temne karamelne barve kot sva jo dobila pri poskusih brez vode. Težava s najinimi testi brez vode je bila,
+			da se saharoza ni talila enakomerno in je bilo potrebno počakati več časa pri višjih temperaturah, kar pa je pomenilo, da je ta bolj karamelizirala.
+			Talina je tako bila že temne karamelne barve, a so v njej še vedno bili majhne grude nestaljene saharoze. Enak problem se je pojavil, tudi če sva saharozo fino zmlela v terilnici.
+			Barva takega goriva je bila temno rjava ali skoraj črna. V fazi izparevanja se je izkazalo, da mešanje ni primerno, saj je povzročilo, da se je saharoza hitro oborila.
+			Goriva, kjer se je saharoza oborila, nisva mogla več rešiti, saj sva prišla do enakega problema kot pri testih brez vode.
+			Naslednji korak je dodati \ce{KNO3}. Preden sva začela segrevati raztopino saharoze, sva natehtala 60g \ce{KNO3} in ga v terilnici fino zmlela. To sva počela v odduhi,
+			saj mali delci \ce{KNO3} dražijo dihala in oči. Ko se je vrenje upočasnilo in je talina začenjala dobivati blago barvo, sva začela počasi dodajati \ce{KNO3}.
+			To sva počela postopno. Dodala sva približno eno žlico \ce{KNO3} in ga popolnoma vmešala. Pri tem je zelo pomembno, da med dodajanjem mešanico še vedno grejemo mešanico na nizki moči.
+			V enem od testov se nama je gorivo v tem koraku strdilo, kar je vodilo do komplikacij, saj goriva nisva več mogla spraviti v tekoče stanje. Ko sva dodala ves \ce{KNO3} je bilo gorivo končano.
+			Rezultat je 100g zelo viskozne zmesi, ki ima barvo podobno kristaliziranem medu kot je vidno iz slike. Postopek priprave goriva je bil najtežji del te raziskovalne naloge,
+			ker je zelo nepredvidljiv in vzame veliko časa.
 
 			\subsubsection{Ulivanje goriva}
-			Ulivanje goriva je zelo zapleten proces. Potrebna je predpriprava in potrpežljivost, in nikoli ne smemo pozabiti na prepotrebno varnost,
-			saj obstajajo primeri načrtnega vsutja mešanice saharoze in kalijevega nitrata v posodo, ki je bila zaradi nepazljivosti preveč segreta.
-			Mešanica se je spontano vžgala. Ko gorivo enkrat začne goreti ga je virtualno nemogoče ugasniti,
-			saj reakcija ni odvisna od kisika v ozračju. 
-			Postopek je nepredvidljiv in težko je dobiti ponovljive rezultate.
-
-			V predpripravo spada priprava modelčkov, v katere se gorivo uliva oziroma pakira. Ker sva shranjevala gorivo ločeno od ostalih delov motorja sva jih ulivala v modelčke,
-			pripravljene posebej za ta namen. V njih je vstavljen izolator, in 
+			Gorivne celice so sestavljene iz goriva in notranjega izolatorja kot je razvidno iz sheme \ref{shema_motorja}.
+			Modelčki za vlivanje goriva so narejeni tako, da posnemajo zgradbo pravega motorja. Sestavlja jih zunanja cev in zunanji izolator enake debeline, kot je v motorju.
+			V zunanji izolator sva nato vstavila notranji izolator, ki bo po vlivanju ostal pritrjen na gorivo. Za tako konfiguracijo z dvema izolatorjema sva se odločila, zaradi lažjega transporta in shranjevanja gorivnih celic.
+			Spodnja stran modelčka je zaprta z srebrnim lepilnim trakom.
+			Zaradi visoke viskoznosti goriva, ga je bilo nemogoče vlivati zato sva ga s pomočjo žlice spravila v modelček.
+			Nato sva s plastično epruveto, ki ima premer 15mm, naredila luknji v gorivo in jo v njem postila dokler se ni ohladilo.
+			Iz hladnega in dokončno strjenega goriva sva odstranila epruveto in gorivno celico posušila v dehidratorju z uporabo silika gela.
+			Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
 		
 		\subsection{Šoba}
 		BLALAALA.  Uhajanje plinov in drugih produktov reakcije, ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodira površino šobe. 
@@ -436,6 +455,7 @@
 %TODO ELESFAU potek izdelave sobe, razmerje v masah, prezagana soba, razmerja cementa in vode, najdit specifikacije cement, myb prerez enega od testov, slike forceplata, 
 % slike toplotne kamere, usposobit svoj comp za testirat, teorija toplotne kamere, popravljat kar je ausec napisu, skozi celo stvar it, da se identificira luknje, base za simulacije?, se vec slik
 % prestavit del izolatorja v teoreticni del.
+%PROSIM SLIKE TESTIRANJA (vseh treh)
 
 %OB testiranju posnememo isti zorni zorni kot telefona kot toplotne kamere. SLikat setup, pa to
 
@@ -488,6 +508,7 @@
 		\centering
 		\includegraphics[scale=.3]{QFau_oznacen_final}
 		\caption{Shema motorja}
+			\label{shema_motorja}
 		\end{figure}
 
 		
@@ -521,8 +542,8 @@
 		\end{equation}
 		kjer je $Q$ toplota, $m$ masa, $c$ specifična toplota in $\Delta T$ sprememba temperature.
 		Žica nato segreje gorivo s katerim je v kontaktu in ga segreva do temprature vžiga, ki je nad 300°C. \cite{nakkaKNSUchem2025}
-		Žico priklopiva na električni potencial, ki ga proizvaja vir DC napetosti in ta proizvede električni tok, ki segreje žico
-		in vžge gorivo. %TODO dodaj specifikacije vira napetosti
+		Žico priklopiva na vir enosmerne napetosti, ki proizvede električni tok, ta pa segreje žico, ki vžge gorivo. %TODO dodaj specifikacije vira napetosti
+		Ta metoda vžiga se je izkazala za relativno neponovljivo. Po premisleku sva prišla do zaključka, da žica ne pride v stik z gorivom ali pa prehitro pregori. %Izbolšava: dodaj kpljo ogriva direktno na žico
 
 		\subsection{Statično testiranje}
 		Z statičnim testiranjem sva pridobila podatke o potisku motorja, času gorenja in temperaturi motorja.
