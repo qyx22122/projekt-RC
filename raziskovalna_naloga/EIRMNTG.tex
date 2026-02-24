@@ -1,4 +1,4 @@
-\documentclass[titlepage, a4paper, twoside, final]{article}
+\documentclass[titlepage, a4paper, twoside, final, 12pt]{article}
 
 \setcounter{secnumdepth}{2} %Globina uštevilčnja naslovov
 \setcounter{tocdepth}{3} %Do katere globine bodo naslovi v kazalu
@@ -59,10 +59,10 @@
 		\vfill
 		%\includegraphics{kul slika}
 		\normalsize
-		Raziskovalna naloga s področja ???
+		Raziskovalna naloga s področja fizike.
 		\vspace{1.5cm}	
 
-		\includegraphics{gimvic-logo}
+		\includegraphics{gimvic_logo}
 		\vspace{0cm}
 
 		Gimnazija Vič
@@ -77,7 +77,12 @@
 \begin{abstract}
     \thispagestyle{plain}
 	\setcounter{page}{2}
-    Sem gre povzetek
+    V tej raziskovalni nalogi sva se poglobila v delovanje, simuliranje in testiranje raketnih motorjev na trdno gorivo.
+	V teoretičnem delu sva opisala na katerih fizikalnih zakonih temeljijo raketni motorji in kakšno funkcijo imajo posamezni deli raketnega motorja na trdno gorivo.
+	Nato sva se lotila razvoja lastnega raketnega motorja na trdno gorivo, ki je narejen iz prosto dostopnih in cenovno ugodnih materialov ter ne potrebuje manj dostopnih strojev kot sta stružnica ali CNC rezkar.
+	Testirala sva različne vrste in debeline izolatorjev, dokler nisva prišla do primerne kombinacije. S simulacijo sva si pomagala pri načrtovanju šobe in ostalih kritičnih dimenzij motorja,
+	ki sva ga nato tudi testirala in iz pridobljenih podatkov potrdila primernost izolatorja in izračunala učinkovitost motorja.
+	Nazadnje sva pridobljene podatke primerjala s temi, ki sva jih dobila iz simulacije in poskušala prilagoditi simulacijo, da bi razložila, kaj se je zgodilo in zakaj so podatki takšni kot so.
 \end{abstract}
 
 \renewcommand{\thepage}{\Roman{page}}
@@ -85,7 +90,12 @@
 \begin{abstract}
     \thispagestyle{plain}
 	\setcounter{page}{3}
-    The abstract goes here
+	In this research project, we delved into the operation, simulation, and testing of solid fuel rocket engines.
+	In the theoretical part, we described the physical laws on which rocket engines are based and the function of individual parts of a solid fuel rocket engine.
+	We then set about developing our own solid fuel rocket engine, made from freely available and inexpensive materials and requiring no specialised equipment
+	such as a lathe or CNC milling machine. We tested different types and thicknesses of insulators until we found the right combination.
+	We used simulation to help us design the nozzle and other critical dimensions of the engine, which we then tested and used the data obtained to confirm the suitability of the insulator and calculate the efficiency of the engine.
+	Finally, we compared the data obtained with that obtained from the simulation and tried to adjust the simulation to explain what happened and why the data is as it is.
 \end{abstract}
 
 \tableofcontents
@@ -101,7 +111,7 @@
 \renewcommand{\thepage}{\arabic{page}}
 
 	\section{Uvod}
-	Z razvojem raketne znanosti se je razširilo tudi amatersko raketarstvo, in z njim različne velikosti raket, različni materiali in tipi goriva. Skozi čas so 
+	Z razvojem raketne znanosti se je razširilo tudi amatersko raketarstvo in z njim različne velikosti raket, različni materiali in tipi goriva. Skozi čas so 
 	materiali in znanje postajali vse bolj dostopni. Da bi prihranila na opremi, času in denarju
 	nasploh sva si izbrala najenostavnejše in najcenejše gorivo. Kaj kmalu se nama je porodilo vprašanje učinkovitosti in tako so nastali temelji za raziskovalno
 	nalogo. Želela sva dokazati, da je tudi z malo sredstvi in iz
@@ -214,7 +224,7 @@
 		zato so statični in tudi dinamični testi motorjev nenadomstljiv del v procesu njihovega razvoja.
 		Motor sva se odločila simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
 		Program sva naložila iz svetovnega spleta (https://github.com/reilleya/openMotor).
-		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza).
+		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza), ki je primerljiv najinemu gorivu.
 		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej openMotor izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice :
 		\cite{openMotor}
 		\begin{enumerate}
@@ -301,7 +311,7 @@
 		\subsection{Zunanja cev}
 		Za ohišje motorja sva uporabljala odtočne cevi iz plastike PP-H (polipropilen homopolimer) ki jih izdeluje podjetje Peštan. Kupila sva jih v trgovini s tehničnim blagom
 		in jih razžagala na primerno dolžino.
-		Cev je certificirana s standardom EN 1451. \cite{Katalog_HTPP}Tako bi morala pri temperaturi 353 K zdržati, četudi za kratek čas, tlak do 6,0 MPa .\cite{EN1451}
+		Cev je certificirana s standardom EN 1451. \cite{Katalog_HTPP} Tako bi morala pri temperaturi 353 K zdržati, četudi za kratek čas, tlak do 6,0 MPa. \cite{EN1451}
 		Cevi sva izmerila notrananji premer 36mm in debelino stene 1.90mm. Ko sva odžagala primerno dolžino cevi sva plastiko,
 		ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. 
 		S tem sva cev polepšala, predvsem pa olajšala vstavljanje izolatorja.
@@ -401,22 +411,41 @@
 
 			\FloatBarrier
 		\subsection{Simuleranje motorja}
+		
 
 
 		\subsection{Gorivo}
 		Raketna goriva so mešanice goriva in oksidatorja, zato da oksidacija ni odvisna od  kisika v ozračju. Posledično lahko reakcija poteka tudi v zaprtih posodah. Skupina goriv, v kateri je tudi KNSU(--)
-		je sestavljena iz karbohidrata oziroma sladkorja in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35, v prid \ce{KNO3}.
+		je sestavljena iz karbohidrata oziroma sladkorja in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35, v prid \ce{KNO3},
+		a sva se midva odločila za razmerje 60/40, saj sva prišla do težav z ulivanjem.
 		Gorivo gori po enčbi \ref{eq:gorjenje-goriva}
+			\subsubsection{Priprava goriva}
+			Gorivne celice, ki sva jih uporabljala v motorju, so imele maso 70g. Zaradi izgub pri pripravi in vlivanju začneva z skupno maso goriva 100g.
+			Najprej sva odtehtala 40g saharoze in jih stresla v 1L čašo. Ker je za ta proces potrebno, da se vsa saharoza raztopi, sva dodala 20g vode. \cite{wiki:Sucrose}
+			Nato sva v čaši segrevala raztopino na električnem grelcu, dokler ni začela vreti. Takrat sva zmanjšala gretje in počasi brez mešanja izparela vso vodo.
+			S tem dolgotrajnim postopkom izparevanja vode sva dosegla, da je saharoza neposredno prešla iz raztopljene oblike v tekoče agregatno stanje. To se je zgodilo, brez
+			da bi se ta oborila, kar pripomore k homogenosti taline. Ker je segrevanje počasno in kontrolirano, predvsem zaradi vode, ki ima visoko specifično in izparilno toploto,
+			je talina zelo blede rjavkaste barve in ne temne karamelne barve kot sva jo dobila pri poskusih brez vode. Težava s najinimi testi brez vode je bila,
+			da se saharoza ni talila enakomerno in je bilo potrebno počakati več časa pri višjih temperaturah, kar pa je pomenilo, da je ta bolj karamelizirala.
+			Talina je tako bila že temne karamelne barve, a so v njej še vedno bili majhne grude nestaljene saharoze. Enak problem se je pojavil, tudi če sva saharozo fino zmlela v terilnici.
+			Barva takega goriva je bila temno rjava ali skoraj črna. V fazi izparevanja se je izkazalo, da mešanje ni primerno, saj je povzročilo, da se je saharoza hitro oborila.
+			Goriva, kjer se je saharoza oborila, nisva mogla več rešiti, saj sva prišla do enakega problema kot pri testih brez vode.
+			Naslednji korak je dodati \ce{KNO3}. Preden sva začela segrevati raztopino saharoze, sva natehtala 60g \ce{KNO3} in ga v terilnici fino zmlela. To sva počela v odduhi,
+			saj mali delci \ce{KNO3} dražijo dihala in oči. Ko se je vrenje upočasnilo in je talina začenjala dobivati blago barvo, sva začela počasi dodajati \ce{KNO3}.
+			To sva počela postopno. Dodala sva približno eno žlico \ce{KNO3} in ga popolnoma vmešala. Pri tem je zelo pomembno, da med dodajanjem mešanico še vedno grejemo mešanico na nizki moči.
+			V enem od testov se nama je gorivo v tem koraku strdilo, kar je vodilo do komplikacij, saj goriva nisva več mogla spraviti v tekoče stanje. Ko sva dodala ves \ce{KNO3} je bilo gorivo končano.
+			Rezultat je 100g zelo viskozne zmesi, ki ima barvo podobno kristaliziranem medu kot je vidno iz slike. Postopek priprave goriva je bil najtežji del te raziskovalne naloge,
+			ker je zelo nepredvidljiv in vzame veliko časa.
 
 			\subsubsection{Ulivanje goriva}
-			Ulivanje goriva je zelo zapleten proces. Potrebna je predpriprava in potrpežljivost, in nikoli ne smemo pozabiti na prepotrebno varnost,
-			saj obstajajo primeri načrtnega vsutja mešanice saharoze in kalijevega nitrata v posodo, ki je bila zaradi nepazljivosti preveč segreta.
-			Mešanica se je spontano vžgala. Ko gorivo enkrat začne goreti ga je virtualno nemogoče ugasniti,
-			saj reakcija ni odvisna od kisika v ozračju. 
-			Postopek je nepredvidljiv in težko je dobiti ponovljive rezultate.
-
-			V predpripravo spada priprava modelčkov, v katere se gorivo uliva oziroma pakira. Ker sva shranjevala gorivo ločeno od ostalih delov motorja sva jih ulivala v modelčke,
-			pripravljene posebej za ta namen. V njih je vstavljen izolator, in 
+			Gorivne celice so sestavljene iz goriva in notranjega izolatorja kot je razvidno iz sheme na sliki \ref{shema_motorja}.
+			Modelčki za vlivanje goriva so narejeni tako, da posnemajo zgradbo pravega motorja. Sestavlja jih zunanja cev in zunanji izolator enake debeline, kot je v motorju.
+			V zunanji izolator sva nato vstavila notranji izolator, ki bo po vlivanju ostal pritrjen na gorivo. Za tako konfiguracijo z dvema izolatorjema sva se odločila, zaradi lažjega transporta in shranjevanja gorivnih celic.
+			Spodnja stran modelčka je zaprta z srebrnim lepilnim trakom.
+			Zaradi visoke viskoznosti goriva, ga je bilo nemogoče vlivati zato sva ga s pomočjo žlice spravila v modelček.
+			Nato sva s plastično epruveto, ki ima premer 15mm, naredila luknji v gorivo in jo v njem postila dokler se ni ohladilo.
+			Iz hladnega in dokončno strjenega goriva sva odstranila epruveto in gorivno celico posušila v dehidratorju z uporabo silika gela.
+			Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
 		
 		\subsection{Šoba}
 		BLALAALA.  Uhajanje plinov in drugih produktov reakcije, ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodira površino šobe. 
@@ -436,6 +465,7 @@
 %TODO ELESFAU potek izdelave sobe, razmerje v masah, prezagana soba, razmerja cementa in vode, najdit specifikacije cement, myb prerez enega od testov, slike forceplata, 
 % slike toplotne kamere, usposobit svoj comp za testirat, teorija toplotne kamere, popravljat kar je ausec napisu, skozi celo stvar it, da se identificira luknje, base za simulacije?, se vec slik
 % prestavit del izolatorja v teoreticni del.
+%PROSIM SLIKE TESTIRANJA (vseh treh)
 
 %OB testiranju posnememo isti zorni zorni kot telefona kot toplotne kamere. SLikat setup, pa to
 
@@ -450,16 +480,29 @@
 			\includegraphics[height=4cm]{šoba_1}
 			\hspace{0.3cm}
 			\includegraphics[height=4cm]{šoba_2}
-			\caption{Načrt modelčka za ulivanje šob}
+			\caption{Načrt kalupa za ulivanje šob}
 			\end{figure}
 
 			\begin{figure}[H]
 			\centering
-			\includegraphics[height=4cm]{model-razstavljen}
+			\includegraphics[height=4cm]{model_razstavljen}
 			\hspace{0.3cm}
-			\includegraphics[height=4cm]{model-krilo}
+			\includegraphics[height=4cm]{model_krilo}
 			\hspace{0.3cm}
 			\includegraphics[height=4cm]{model}
+			\caption{3D printan plastičen kalup za ulivanje šob}
+			\end{figure}
+
+			\begin{figure}[H]
+			\centering
+			\includegraphics[height=4cm]{model_poln}
+			\hspace{0.3cm}
+			\includegraphics[height=4cm]{model_poln_strjen}
+			\hspace{0.3cm}
+			\includegraphics[height=4cm]{model_krilo_poln}
+			\hspace{0.3cm}
+			\includegraphics[height=4cm]{model_s_sobo}
+
 			\caption{3D printan plastičen kalup za ulivanje šob}
 			\end{figure}
 
@@ -474,7 +517,7 @@
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=.3]{QFau_oznacen_final}
-		\caption{Shema motorja}
+		\caption{Shema motorja} \label{shema_motorja}
 		\end{figure}
 
 		
@@ -501,15 +544,15 @@
 		\begin{equation}
 			P = I^2 R
 		\end{equation}
-		kjer je P moč in I električni tok. V tem primeru je produkt moči in časa enaka toploti, ki jo prejme tanka žica vžigalice ($P t = Q$).
+		kjer je P moč in I električni tok. V tem primeru je produkt moči in časa enaka toploti, ki jo prejme tanka žica vžigalice ($Q = P t$).
 		Zaradi nje se vžigalica segreje kot nam pravi ta enačba
 		\begin{equation}
 			Q = m c \Delta T
 		\end{equation}
 		kjer je $Q$ toplota, $m$ masa, $c$ specifična toplota in $\Delta T$ sprememba temperature.
 		Žica nato segreje gorivo s katerim je v kontaktu in ga segreva do temprature vžiga, ki je nad 300°C. \cite{nakkaKNSUchem2025}
-		Žico priklopiva na električni potencial, ki ga proizvaja vir DC napetosti in ta proizvede električni tok, ki segreje žico
-		in vžge gorivo. %TODO dodaj specifikacije vira napetosti
+		Žico priklopiva na vir enosmerne napetosti, ki proizvede električni tok, ta pa segreje žico, ki vžge gorivo. %TODO dodaj specifikacije vira napetosti
+		Ta metoda vžiga se je izkazala za relativno neponovljivo. Po premisleku sva prišla do zaključka, da žica ne pride v stik z gorivom ali pa prehitro pregori. %Izbolšava: dodaj kapljo ogriva direktno na žico
 
 		\subsection{Statično testiranje}
 		Z statičnim testiranjem sva pridobila podatke o potisku motorja, času gorenja in temperaturi motorja.
@@ -524,8 +567,10 @@
 	\section{Rezultati}
 
 	\section{Razprava}
+	%Izbolšave
 
 	\section{Zaključek}
+	%Ideje za nadalno raziskovanje (različna goriva, različni materiali za šobe, pridobivanje podatkov z dinamičnimi testi, sistem za nadzorovanje leta rakete)
 
 	\newpage
 	\printbibliography
