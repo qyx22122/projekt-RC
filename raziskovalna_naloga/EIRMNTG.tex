@@ -123,7 +123,7 @@
 	To vidimo tudi v spodnji enačbi \ref{eq:gorjenje-goriva}, kjer med reaktanti ni elementarnega kisika (\ce{O2}).
 	Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline.
 	Kot produkt reakcije se sproščajo plini, ki dražijo oči in dihala. Testiranje v zaprtih prostorih je tako odsvetovano, tudi zaradi tveganja materialne škode.
-	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja pritiska reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
+	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja tlaka reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
 	To vodi v pozitivno povratno zanko, ki se ponavadi konča z eksplozijo, pri kateri je nevarnost šrapnelov in poškodbe sluha zaradi udarnega vala.
 	
 
@@ -168,7 +168,7 @@
 
 		\subsection{Šoba}
 		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj pretvarja nekatere vroče produkte reakcije v potisk, ki pospeši raketo.
-		Od šobe je odvisen tlak, od katerega je odvisna hitrost rekacije in njena učinkovitost. Šoba določa tudi največji doseženi tlak, katerega morajo zdržati vsi deli motorja. Šoba na notranji strani konvergira proti premeru grla
+		Od šobe je odvisen tlak, od katerega je odvisna hitrost rekacije in njena učinkovitost. Šoba določa tudi največji doseženi tlak, katerega morajo zdržati vsi ostali deli motorja. Šoba na notranji strani konvergira proti premeru grla
 		in nato divergira do izhodnega premera - od tod tudi prideta imeni kovergentno-divergentna in KD šoba, poznana pa je tudi kot De Laval šoba.
 		Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba. \cite{nasa:nozzle_design}
 		\begin{equation} \label{eq:šoba-vA}
@@ -195,7 +195,7 @@
 			\begin{equation} \label{eq:potisk_1}
 				F = \dot{m} v_e + (P_e - P_a)A_e
 			\end{equation}
-			kjer je $v_e$ hitrost izpuhov relativno na raketo, $P_e$ tlak plinov, ki zapustijo motor, $P_a$ tlak zunaj motorja (v najinem primeru je to kar atmosferski tlak)
+			kjer je $v_e$ hitrost izpuhov relativno na raketo, $\dot{m}$ masni tok goriva, $P_e$ tlak plinov, ki zapustijo motor, $P_a$ tlak zunaj motorja (v najinem primeru je to kar atmosferski tlak)
 			in $A_e$ površina izhodnega dela šobe.
 			Če predpostavimo, da šoba izpušne pline spravi do atmosferskega tlaka, potem je člen $(P_e - P_a)A_e = 0$ in dobimo poenostavljeno obliko enačbe.
 			\begin{equation} \label{eq:potisk_2}
@@ -206,8 +206,8 @@
 		Statično testiranje raketnih motorjev je izrednega pomena v razvoju novih raketnih motorjev. Pri statičnem testiranju je
 		motorju omejeno gibanje tako, da se lahko premika samo po osi vzporedni z silo potiska, ki jo proizvaja. Motor potiska
 		proti silomeru, ki ponavadi digitalne podatke pošilja do računalnika, ki jih shranjuje. Iz teh podatkov dobimo graf potiska
-		v odvisnosti od časa. Pri dinamičnih testih je raketni motor nameščen na primerno raketo. Podatke tako dobimo iz merilcev lokacije in pospoešla na raketi.
-		Statično testiranje je bolj varno, saj lažje nadziramo in zavarujemo okolje. \cite{static_firing}
+		v odvisnosti od časa. Pri dinamičnih testih je raketni motor nameščen na primerno raketo. Podatke tako dobimo iz merilcev lokacije in pospeška na raketi.
+		Statično testiranje je bolj varno, saj lažje nadziramo in zavarujemo okolje okoli testnega mesta. \cite{static_firing}
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=.75]{shema_merjenja_potiska}
@@ -225,7 +225,7 @@
 		Motor sva se odločila simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
 		Program sva naložila iz svetovnega spleta (https://github.com/reilleya/openMotor).
 		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza), ki je primerljiv najinemu gorivu.
-		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej openMotor izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice :
+		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice, ki so postavljene ena za drugo :
 		\cite{openMotor}
 		\begin{enumerate}
 			\item Regresijo goriva; to  izračuna tako, da pomnoži majhen korak v času z hitrostjo gorenja, ki je funkcija pritiska.
@@ -251,13 +251,13 @@
 		sva merila predvsem temperaturo zunanje cevi in tako preverila, da se ne pregreva. 
 
 		\subsection{Specifičen impulz}
-		Impulz ali sunek sile je fizikalna količina, ki spremenja gibalno količino telesa. Izračunamo ga kot spremembo gibalne količine ali kot produkt sile in spremembe časa.
+		Impulz ali sunek sile je fizikalna količina, ki spreminja gibalno količino telesa. Izračunamo ga kot spremembo gibalne količine ali kot produkt sile in spremembe časa.
 		To lahko zapišemo tudi v diferencialni obliki
 		kot integral sile po času.
 		\begin{equation}
 			I = F \Delta t = G_1 - G_0 = \int F dt
 		\end{equation}
-			Iz impulza izpeljemo količino raketnih motorjev, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
+			Iz impulza izpeljemo fizikalno količino, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
 			\cite{wiki:Specific_impulse2025}
 		\begin{equation}
 			I_{SP} = \frac{I}{m \vdot g_0}
@@ -279,14 +279,14 @@
 	
 			\subsubsection{Zakaj prav specifičen impulz?}
 		 	Specifičen impulz nam pove učinkovitost raketnega motorja in sicer koliko sekund bo ta motor proizvajal 1N potiska z gorivom, ki tehta 1N.
-			Če imata dva motorja različna specifična impulza, bo motor z večjim specifičnim impulzom proizvedel večji sunek sile. \cite{nasa:specific_impulse}
+			Če imata dva motorja različna specifična impulza in enako maso goriva, bo motor z večjim specifičnim impulzom proizvedel večji sunek sile. \cite{nasa:specific_impulse}
 			Specifičen impulz je tudi priročen, ker je merjen v sekundah, ki se uporabljajo tako v metričnem kot tudi v imperialnem sistemu. Z njim se da
 			tudi oceniti količino goriva potrebnega za določeno spremembo hitrosti rakete ($\Delta v$) in s tem za določen manever.
 			To naredimo z enačbo Ciolkovskega. \cite{nasa:ideal_rocket_equation}
 			\begin{equation}
 				\Delta v = v_e \ln{\frac{m_0}{m_1}} = I_{SP} g_0 \ln{\frac{m_0}{m_1}}
 			\end{equation}
-			kjer je $v_e$ hitrost izpuhov, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
+			kjer je $v_e$ hitrost izpuhov relativno na gibanje rakete, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
 			\begin{table}[H]
 				\centering
 				\begin{tabular}{lll} 
@@ -340,16 +340,13 @@
 		a ker je bilo iskanje lahko dostopnega, ugodnega in zanesljivega vira neuspešno in ker z debelejšimi plastmi nastajajo problemi, kot so gubanje zvitih plasti zaradi prevelike razlike
 		v radijih zunanje in notranje ploskve ter opaznejši problem navoja (izolator je enakomerno razporejen toda različno oddaljen od zunanje cevi zaradi začetka in konca zvitja), 
 		sva se odločila za relativno ugodno, predvsem pa lahko dostopno alternativo risalnih listov. Ker so večji in debelejši od pisarniškega papirja se nama
-		je zmanjšal tudi čas sestavljanja posameznih šob.
-		Zadnji test izolatorja sva spremljala tudi s toplotno kamero in tako merila temperaturo zunanje cevi.  Končna debelina izolatorja XXXXX je bila tista,
-		pri kateri se zunanja cev ni segrela nad 303 K, kar je krepko pod mejo 
-		kritičnega padca zmožnosti prenašanja visokih pritisko. 
+		je zmanjšal tudi čas sestavljanja posameznih motorjev.
 
 			\FloatBarrier
 			\subsubsection{Prvi test}
 			S tem testom sva testirala različne vrste izolatorjev. Preizkusila sva karton, debel nanos tekstilnega lepilnega traku in
 			relativno tanek nanos električaskega mavca (isti mavec sva uporabljala za šobe). Imela sva tudi kontrolo.
-			Po pričakovanjh se je zunanja cev kontrole med testiranjem prižgala in se popolnoma stopila. Enako se je zgodilo z lepilnim trakom.
+			Po pričakovanjh se je zunanja cev kontrole med testiranjem vnela in se popolnoma stopila. Enako se je zgodilo z lepilnim trakom.
 			Karton je zelo dobro deloval, mavec pa le delno, saj nima dovolj izolacijskih sposobnosti in
 			se je zunanja cev delno stopila. Težava je tudi, da je nanašanje enakomerne, dovolj tanke plasti mavca zahtevno.
 
@@ -396,9 +393,10 @@
 
 
 			\subsubsection{Četrti test}
-			Povečala sva debelino izolatorja, velikost testnih modelov in količino goriva, s čimer sva izboljšala reprezentativnost.
-			Merila sva tudi temperaturo zunanje cevi z toplotno kamero.TREBA JO JE PREJ OMENIT. Tako sva dobila
-			uporabne podatke za izbiranje varne debeline izolatorja.
+			Povečala sva debelino izolatorja, velikost testnih modelov in količino goriva, s čimer sva izboljšala reprezentativnost,
+			saj sva enake dimenzije gorivnih celic uporabila tudi v končni verziji motorja.
+			Merila sva tudi temperaturo zunanje cevi z toplotno kamero. Tako sva dobila
+			uporabne podatke za izbiranje varne debeline izolatorja, ki so prikazani v tabeli \ref{tabela_četrti_test}.
 			%različne debeline risalnega papirje 2.0 (6cm x 4+1, 5. 12. 2025, 8. 12. 2025)ž
 
 			\begin{figure}[H]
@@ -408,6 +406,24 @@
 			\includegraphics[scale=.12]{termalni_posnetek_kasneje}
 			\caption{Četrti test: primerjava takoj po izgorevanju in 80 sekund kasneje}
 			\end{figure}
+
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{llll} 
+					\hline
+					Število plasti & Debelina [mm] & Masa goriva [g] & Najvišja dosežena temperatura [K] \\
+					\hline \noalign{\vskip 0.3ex}
+					8 & 1,3 & 75,4 & 321 \\
+					9 & 1,6 & 75,0 & 385 \\
+					10 & 1,8 & 75,2 & 312 \\
+					11 & 2,0 & 75,4 & 303 \\
+					12 & 2,1 & 75,1 & 303 \\
+					\hline
+				\end{tabular}
+				\caption[Podatki o četrtem testu izolatorjev]{Podatki o četrtem testu izulatorjev \\ (pri prvem testu opazimo zelo nizko najvišjo doseženo temperaturo, kar je posledica prežganega goriva)}
+				\label{tabela_četrti_test}
+			\end{table}
+
 
 			\FloatBarrier
 		\subsection{Simuleranje motorja}
@@ -441,7 +457,7 @@
 			Gorivne celice so sestavljene iz goriva in notranjega izolatorja kot je razvidno iz sheme na sliki \ref{shema_motorja}.
 			Modelčki za vlivanje goriva so narejeni tako, da posnemajo zgradbo pravega motorja. Sestavlja jih zunanja cev in zunanji izolator enake debeline, kot je v motorju.
 			V zunanji izolator sva nato vstavila notranji izolator, ki bo po vlivanju ostal pritrjen na gorivo. Za tako konfiguracijo z dvema izolatorjema sva se odločila, zaradi lažjega transporta in shranjevanja gorivnih celic.
-			Spodnja stran modelčka je zaprta z srebrnim lepilnim trakom.
+			Spodnja stran modelčka je zaprta z tekstilnim lepilnim trakom.
 			Zaradi visoke viskoznosti goriva, ga je bilo nemogoče vlivati zato sva ga s pomočjo žlice spravila v modelček.
 			Nato sva s plastično epruveto, ki ima premer 15mm, naredila luknji v gorivo in jo v njem postila dokler se ni ohladilo.
 			Iz hladnega in dokončno strjenega goriva sva odstranila epruveto in gorivno celico posušila v dehidratorju z uporabo silika gela.
@@ -459,15 +475,15 @@
 		Kovine so pretežke, in imajo prenizka tališča. Njih struženje prav tako vzame veliko časa. Želela sva se držati tudi cilja prostodostopnosti.
 		Na idejo nama je prišel cement, ki je pogost material za šobe v amaterskem raketarstvu.%TEGA JE NA NETU ZELO VELIKO (npr. https://www.youtube.com/watch?v=7ydLaY3Zn_Y)
 		Ker pa ima cement daljše čase strjevanja in večja zrna sva se odločila za električarski mavec. Da bi mavec zavzel želeno obliko pa sva ga ulivala v kalupe,
-		ki sva jih sama zmodelirala in jih je naredil 3D tiskalnik (IME TISKALNIKA) uporabljala 
-		sva plastiko PLA (polilaktična kislina). Model je sestavljen iz štirih delov, zato da je šobo kasneje sploh možno dobiti iz modela.
+		ki sva jih sama zmodelirala v odprtokodnem programu za modeliranje FreeCAD in jih je naredil 3D tiskalnik (Bambu Lab A1) uporabljala 
+		sva plastiko PLA (polilaktična kislina), saj je enostavna za tiskanje in dovlje trpežna za najino uporabo. Model je sestavljen iz štirih delov, zato da je šobo kasneje sploh možno dobiti iz modela.
 
 %TODO ELESFAU potek izdelave sobe, razmerje v masah, prezagana soba, razmerja cementa in vode, najdit specifikacije cement, myb prerez enega od testov, slike forceplata, 
 % slike toplotne kamere, usposobit svoj comp za testirat, teorija toplotne kamere, popravljat kar je ausec napisu, skozi celo stvar it, da se identificira luknje, base za simulacije?, se vec slik
 % prestavit del izolatorja v teoreticni del.
 %PROSIM SLIKE TESTIRANJA (vseh treh)
 
-%OB testiranju posnememo isti zorni zorni kot telefona kot toplotne kamere. SLikat setup, pa to
+%OB testiranju posnememo isti zorni zorni kot telefona kot toplotne kamere. SLikat setup, pa to ==> L ig fuck it
 
 
 %TODO QYX 
@@ -507,10 +523,10 @@
 			\end{figure}
 
 		\subsection{Sestavljanje motorja}
-		V zunanjo cev primerne dolžine nalijemo epoksi smolo, tako da tvori 1,5 cm debelo plast. Da se smola ne razlije odprtino zalepimo s srebrnim lepilnim trakom. 
+		V zunanjo cev primerne dolžine nalijemo epoksi smolo, tako da tvori 1,5 cm debelo plast. Da se smola ne razlije odprtino zalepimo s tekstilnim lepilnim trakom. 
 		Ko se smola strdi lahko v zunanjo cev vstavimo izolator, zvit v tulec.
 		V tako pripravljeno ohišje potisnemo gorivno celico, ki ima svojo plast izolatorja in potem v cev, na gorivo vstavimo šobo.
-		Na koncu v prostor med šobo in zunanjo cev vlijemo še epoksi smole. 
+		Na koncu v prostor med šobo in zunanjo cev s pomočjo kapalke za enkratno uporabo dodamo še epoksi smole. 
 		Tako sestavljen motor je po strjevanju smole pripravljen na testiranje. Paziti pa moramo da ni predolgo izpostavljen kakršnikoli vlagi,
 		saj to močno vpliva na hitrost gorenja in izkoristek.
 
@@ -551,16 +567,20 @@
 		\end{equation}
 		kjer je $Q$ toplota, $m$ masa, $c$ specifična toplota in $\Delta T$ sprememba temperature.
 		Žica nato segreje gorivo s katerim je v kontaktu in ga segreva do temprature vžiga, ki je nad 300°C. \cite{nakkaKNSUchem2025}
-		Žico priklopiva na vir enosmerne napetosti, ki proizvede električni tok, ta pa segreje žico, ki vžge gorivo. %TODO dodaj specifikacije vira napetosti
+		Žico priklopiva na vir enosmerne napetosti, ki lahko proizvede vsaj 10A toka, ta pa segreje žico, ki vžge gorivo.
 		Ta metoda vžiga se je izkazala za relativno neponovljivo. Po premisleku sva prišla do zaključka, da žica ne pride v stik z gorivom ali pa prehitro pregori. %Izbolšava: dodaj kapljo ogriva direktno na žico
 
 		\subsection{Statično testiranje}
 		Z statičnim testiranjem sva pridobila podatke o potisku motorja, času gorenja in temperaturi motorja.
 		To sva merila z prej opisanim Force Plateom in termalno kamero. Motorje sva vžigala z elektronskim vžigom.
-			\subsubsection{Prvi test} %sneg in dež :(
+			\subsubsection{Prvi test}
 			Prvi test je spodletel zaradi slabih vremenskih pogojev. Meniva da je dež zelo slabo vplival na gorivo, saj nisva izmerila nič potiska.
-			Potisk, ki sva ga izmerila ni bil večji od merske napake.
-			\subsubsection{Drugi test} %shiti gorivo :(
+			Potisk, ki sva ga izmerila ni bil večji od merske napake. Gorenje motorja je bilo tudi vidno manj čisto kot bi želela. Ta test sva tudi posnela s termalno kamero in potrdila delovanje izolatorja, ki je ohranil zunanjo cev pri nizkih temperaturah.
+			V tem testu sva izvedela, kako pomembna je izbira dneva z dobrim vremeno in kako močno vpliva vlaga na kvaliteto delovanja njinega motorja.
+			Tu sva tudi opazila pomankljivosti vžiga z najinim elektronskim vžigom, ki se je prej izkazal za uspešnega, a nama je zdaj povzročal veliko težav.
+			Pokazala se je tudi ena od slabosti z vertikalno orientacijo motorja v stojalu, saj je dež padal naravnost v motor in pripomogel k nedelovanju motorja.
+			\subsubsection{Drugi test}
+			Za drugi test sva zibrala dan z primernejšim vremenom.
 			Pri drugem testu sva testirala tri motorje. Vsi trije niso proizvajali potiska. Sumiva, da je gorivo absorbiralo vlago iz zraka, med tem ko sva ga shranjevala.
 			\subsubsection{Tretji test} %upava da bo delal
 		
