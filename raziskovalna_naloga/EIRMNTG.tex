@@ -175,7 +175,7 @@
 
 		\subsection{Toplotni izolatorji}
 		Toplota večinoma potuje s konvekcijo, ki je značilna za tekočine, radiacijo in z prevajanjem ali kondukcijo, ki je značilna za materiale v trdnem agregatnem stanju. 
-		Pri kondukciji se toplotna prevodnost $P$ računa po Fourirjevem zakonu, z enačbo \ref{eq:t.prevodnost}, kjer je $\lambda$ toplotna prevodnost materiala, $S$  ploščina preseka, $\Delta T$ razlika 
+		Pri kondukciji se toplotni tok $P$ računa po Fourirjevem zakonu, z enačbo \ref{eq:t.prevodnost}, kjer je $\lambda$ toplotna prevodnost materiala, $S$  ploščina preseka, $\Delta T$ razlika 
 		v temperaturah krajišč in $d$ razdalja, skozi katero toplota potuje. \cite{Thermal_Conductivity}
 		Kot toplotne izolatorje navadno označujemo materiale, ki slabo prevajajo toploto, oziroma imajo majhno vrednost  $\lambda$ .
 
@@ -376,8 +376,7 @@
 		sva se odločila za relativno ugodno, predvsem pa lahko dostopno alternativo risalnih listov. Ker so večji in debelejši od pisarniškega papirja se nama
 		je zmanjšal tudi čas sestavljanja posameznih motorjev.
 
-			\FloatBarrier
-			\subsubsection{Prvi test}
+			\subsubsection{Prvi test} \FloatBarrier
 			S tem testom sva testirala različne vrste izolatorjev. Preizkusila sva karton, debel nanos tekstilnega lepilnega traku in
 			relativno tanek nanos električaskega mavca (isti mavec sva uporabljala za šobe). Imela sva tudi kontrolni model, brez izolatorja. Za višino zunanje cevi sva določila 4 cm, 
 			zato, da sva imela testne modele z manj goriva in je tveganje za hujše nesreče ostalo minimalno. Testi so tako vsebovali približno 25 gramov goriva.
@@ -482,14 +481,14 @@
 			\FloatBarrier
 		\subsection{Simuleranje motorja}
 		Za simuleranje sva se odločila, ker nisva želela prekoračiti zmogljivosti zunanje cevi in ker sva želela oceniti, kakšen potisk lahko pričakujeva od motorja.
-		S programom openMotor sva si pomagala tudi izbrati količino goriva ($75 g$)
+		S programom openMotor sva si pomagala tudi izbrati količino goriva (75 g)
 
 
-		\subsection{Gorivo}
+		\subsection{Gorivo} \label{gorivo}
 		Raketna goriva so mešanice goriva in oksidatorja, zato da oksidacija ni odvisna od  kisika v ozračju. Posledično lahko reakcija poteka tudi v zaprtih posodah. Skupina goriv, v kateri je tudi KNSU
 		je sestavljena iz karbohidrata oziroma sladkorja in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35, v prid \ce{KNO3},
 		a sva se midva odločila za razmerje 60/40, saj sva prišla do težav z ulivanjem.
-		Gorivo gori po enčbi \ref{eq:gorjenje-goriva}
+		Gorivo gori po enčbi \ref{eq:gorjenje-goriva}.
 			\subsubsection{Priprava goriva}
 			Gorivne celice, ki sva jih uporabljala v motorju, so imele maso 70 g. Zaradi izgub pri pripravi in ulivanju začneva z skupno maso goriva 100 g.
 			Najprej sva odtehtala 40 g saharoze in jih stresla v 1 L čašo. Ker je za ta proces potrebno, da se vsa saharoza raztopi, sva dodala 20 g vode. \cite{wiki:Sucrose}
@@ -638,9 +637,23 @@
 			Tu sva tudi opazila pomankljivosti vžiga z najinim elektronskim vžigom, ki se je prej izkazal za uspešnega, a nama je zdaj povzročal veliko težav.
 			Pokazala se je tudi ena od slabosti z vertikalno orientacijo motorja v stojalu, saj je dež padal naravnost v motor in pripomogel k nedelovanju motorja.
 			\subsubsection{Drugi test}
-			Za drugi test sva zibrala dan z primernejšim vremenom.
-			Pri drugem testu sva testirala tri motorje. Vsi trije niso proizvajali potiska. Sumiva, da je gorivo absorbiralo vlago iz zraka, med tem ko sva ga shranjevala.
-			\subsubsection{Tretji test} %upava da bo delal
+			Za drugi test sva zibrala dan z primernejšim vremenom. Pripravila sva tri motorje, enake kot v prvem testu.
+			Gorivo v teh testih je bilo slabše kvalitete, saj metode iz odstavka \ref{gorivo} še nisva dokončno razvila.
+			Zato je bilo gorivo bolj karamelizirano. V času izdelave motorjev za tretji test se še nisva zavedala, kako katastrofalen vpliv ima vlaga na gorenje goriva.
+			Ker gorivnih celic in kasneje sestavljenih motorjev nisva shranjevala v tesno zaprtih posodah v prisotnosti silika gela,
+			predvidevava, da so absorbirali veliko količino vlage. To sva opazila tudi kot ne čisto gorenje, primarno pa kot primankljaj potiska.
+			Vsi trije motorji so proizvedli nič potiska, kot poslidica premajhnega tlaka v komori, ki ga je povzročila počasnejša reakcija.
+			\subsubsection{Tretji test}
+			V tretjem testu sva metodo iz odstavka \ref{gorivo} dodelala do trenutnega stanja. To se je izkazalo za neprecenljivo izbolšavo v kvaliteti goriva.
+			Gorivne celice in motor sam sva začela tudi shranjevati v nepredušno zatesnjenih posodah v prisotnosti prej omenjenega silika gela.
+			Gorivno celico tretjega testa žal nisva takoj po ulitju dala v dehidrator, kot sva kasnejše celice, sva pa jo kasneje dala k ostalim celicam v dehidrator.
+			Ta je bila zaradi nepremišljenosti iz najine strani že vstavljene v cev in se je zato na zadnji strani slabše posušila, kar bi lahko pripomoglo k odklonu
+			izmerjenih podatkov od začetne simulacije. Tretji test, za razliko od prvega in drugega, je bil delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki X. %TODO dodaj sliko originalne krivulje
+			Temperatura površine zunanje cevi je tudi pri tem motorju bila zmerna, kar dokončno potrdi izolativne sposobnosti papirja kot izolator v raketnem motorju.
+			Večina papirja, kot je vidno na sliki X, kjer sva motor iz tretjega testa prerezala po dolžini za analizo, je preživelo visok tlak in temperaturo ekstremnih pogojev v raketnem motorju in s tem opravilo svojo nalogo z odliko. %TODO dodaj sliko prerezanega motorja
+			Iz prerezanega motorja sva izmerila tudi končni premer grla šobe, ki je 15 mm. To je kar 5 mm več od začetnega premera, kar nakazuje na močno erozijo šobe in relativno slabo vzdržljivost šob iz mavca.
+			To je drugi razlog za neskladanje podatkov, ki sva jih izmerila in teh, ki sva jih pridobila s simulacijo. V prerezu motorja sva tudi dobro videla, da je epoksi smola, tako zaprtje cevi kot tudi tak, ki je držala šobo,
+			dobro preživela testiranje motorja.
 		
 	\section{Rezultati}
 
