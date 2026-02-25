@@ -77,12 +77,13 @@
 \begin{abstract}
     \thispagestyle{plain}
 	\setcounter{page}{2}
-    V tej raziskovalni nalogi sva se poglobila v delovanje, simuliranje in testiranje raketnih motorjev na trdno gorivo.
-	V teoretičnem delu sva opisala na katerih fizikalnih zakonih temeljijo raketni motorji in kakšno funkcijo imajo posamezni deli raketnega motorja na trdno gorivo.
-	Nato sva se lotila razvoja lastnega raketnega motorja na trdno gorivo, ki je narejen iz prostodostopnih in cenovno ugodnih materialov ter ne potrebuje manj dostopnih strojev kot sta stružnica ali CNC rezkar.
-	Testirala sva različne vrste in debeline izolatorjev, dokler nisva prišla do primerne kombinacije. S simulacijo sva si pomagala pri načrtovanju šobe in ostalih kritičnih dimenzij motorja,
-	ki sva ga nato tudi testirala in iz pridobljenih podatkov potrdila primernost izolatorja in izračunala učinkovitost motorja.
-	Nazadnje sva pridobljene podatke primerjala s temi, ki sva jih dobila iz simulacije in poskušala prilagoditi simulacijo, da bi razložila, kaj se je zgodilo in zakaj so podatki takšni kakršni so.
+	V raziskovalni nalogi sva se poglobila v delovanje, simuliranje in testiranje raketnih motorjev na trdno gorivo.
+	V teoretičnem delu sva opisala, na katerih fizikalnih zakonih temeljijo raketni motorji in kakšno funkcijo imajo posamezni deli raketnega motorja na trdno gorivo.
+	Nato sva se lotila razvoja lastnega raketnega motorja na trdno gorivo, ki je narejen iz prosto dostopnih in cenovno ugodnih materialov ter ne potrebuje manj dostopnih strojev kot sta npr. stružnica ali CNC rezkar.
+	Testirala sva različne vrste in debeline izolatorjev, dokler nisva našla najprimernejšega. S simulacijo sva si pomagala pri načrtovanju šobe in ostalih kritičnih dimenzij motorja, ki sva ga nato tudi sestavila in testirala.
+	Iz pridobljenih podatkov sva potrdila primernost izolatorja in izračunala učinkovitost motorja. Nazadnje sva primerjala izmerjene vrednosti s tistimi iz simulacije, da sva lahko prilagodila parametre simulacije za natančnejše napovedi.
+
+	Ugotovila sva, da je raketo na trdo gorivo mogoče izdelati iz splošno dostopnih in poceni materialov. Na koncu predlagava še nekaj že ugotovljenih izboljšav in nakaževa možnosti za nadaljnje raziskovanje in testiranje.
 \end{abstract}
 
 \renewcommand{\thepage}{\Roman{page}}
@@ -90,12 +91,14 @@
 \begin{abstract}
     \thispagestyle{plain}
 	\setcounter{page}{3}
-	In this research project, we delved into the operation, simulation, and testing of solid fuel rocket motors.
-	In the theoretical part, we described the physical laws upon which rocket motors are based and the function of individual parts of a solid fuel rocket motor.
-	We then set about developing our own solid fuel rocket motor, made from freely available and inexpensive materials and requiring no specialised equipment such as a lathe or CNC milling machine.
-	We tested different types and thicknesses of insulators until we found the right combination. We used simulation to help us design the nozzle and other critical dimensions of the engine,
-	which we then tested and used the data obtained to confirm the suitability of the insulator and calculate the efficiency of the engine.
-	Finally, we compared the data obtained with that obtained from the simulation and tried to adjust the simulation to explain what happened and why the data is as it is.
+	In our research project, we delved into the operation, simulation, and testing of solid fuel rocket engines.
+	In the theoretical part, we described the physical laws on which rocket engines are based and the function of individual parts of a solid fuel rocket engine.
+	We then set about developing our own solid fuel rocket engine, made from freely available and inexpensive materials and requiring no specialised equipment such as a lathe or CNC milling machine.
+	We tested different types and thicknesses of insulators until we found the most suitable ones. We used simulation to help us design the nozzle and other critical dimensions of the engine, which we then assembled and tested.
+	From the data obtained, we confirmed the suitability of the insulator and calculated the efficiency of the engine.
+	Finally, we compared the measured values with those from the simulation so that we could adjust the simulation parameters for more accurate predictions.
+
+	We found that a solid fuel rocket can be made from commonly available and inexpensive materials. Finally, we suggest some improvements that have already been identified and point out opportunities for further research and testing.
 \end{abstract}
 
 \tableofcontents
@@ -359,7 +362,7 @@
 		Ker so takšni materiali redki, težko dostopni oziroma dragi, pogosto niso primerni niti za velike organizacije,
 		kaj šele za amaterje. Zato se tako profesionalno kot amatersko uporablja več različnih, cenejših, materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
 		za obvarovanje dotične cevi pred visokimi temperaturami pa risalne liste (papir) z debelino 0,03 mm, ki so razrezani na primerne velikosti in vstavljeni v cev,
-		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Skozi testiranje sva prišla do debeline XXXX.  
+		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Skozi testiranje sva prišla do debeline 1,75 mm.  
 		Papirnat izolator pri najinem motorju je razdeljen na dva dela, za potrebe shranjevanja 
 		in premikanja gorivnih celic po ulivanju. 
 
@@ -481,8 +484,12 @@
 			\FloatBarrier
 		\subsection{Simuleranje motorja}
 		Za simuleranje sva se odločila, ker nisva želela prekoračiti zmogljivosti zunanje cevi in ker sva želela oceniti, kakšen potisk lahko pričakujeva od motorja.
-		S programom openMotor sva si pomagala tudi izbrati količino goriva (75 g)
-
+		S programom openMotor sva si pomagala tudi izbrati količino goriva (75 g), ki sva jo nato uporabila v vseh statičnih testih motorja.
+		Že v teoretičnem delu sva omenila profil KNSU, ki obstaja v openMotorju in je po sestavi primerljiv najinemu gorivu.
+		Premer luknje v gorivu sva nastavila na 15 mm, dolžino 70 mm pa sva dobila tako, da sva jo spreminjala, dokler nisva dobila primerne mase (75 g) in tlaka znotraj omejitev cevi.
+		Premer grla šobe sva določila kot 10 mm, ker sva želela ohraniti nizek tlak. %TODO dodaj vrednost tlaka iz simulacije
+		Kot se jasno vidi iz slike X, naj bi motor proizvedel do približno 100 N potiska in samo gorenje naj bi trajalo okoli XX s. %TODO slika openMotorja in odčitanje časa gorenja
+		
 
 		\subsection{Gorivo} \label{gorivo}
 		Raketna goriva so mešanice goriva in oksidatorja, zato da oksidacija ni odvisna od  kisika v ozračju. Posledično lahko reakcija poteka tudi v zaprtih posodah. Skupina goriv, v kateri je tudi KNSU
@@ -654,6 +661,8 @@
 			Iz prerezanega motorja sva izmerila tudi končni premer grla šobe, ki je 15 mm. To je kar 5 mm več od začetnega premera, kar nakazuje na močno erozijo šobe in relativno slabo vzdržljivost šob iz mavca.
 			To je drugi razlog za neskladanje podatkov, ki sva jih izmerila in teh, ki sva jih pridobila s simulacijo. V prerezu motorja sva tudi dobro videla, da je epoksi smola, tako zaprtje cevi kot tudi tak, ki je držala šobo,
 			dobro preživela testiranje motorja.
+
+		\subsection{Analiza podatkov}
 		
 	\section{Rezultati}
 
