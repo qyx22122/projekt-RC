@@ -224,7 +224,7 @@
 		So tudi veliko bolj varne in bolj ekonomične od statičnega testiranja motorjev, kjer lahko motor nevarno in nepopravljivo spodleti.
 		Ponavadi vzamejo tudi manj časa. Na žalost pa so v veliko primerih simulacije nepopolne, saj ne upoštevajo vseh pojavov, ki jih opazimo pri pravih raketnih motorjih,
 		zato so statični in tudi dinamični testi motorjev nenadomstljiv del v procesu njihovega razvoja.
-		Motor sva se odločila simulirati v odprto kodnem programu openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
+		Odločila sva se za uporabo odprtokodnega programa openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
 		Program sva naložila iz svetovnega spleta (https://github.com/reilleya/openMotor).
 		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza), ki je primerljiv najinemu gorivu.
 		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice, ki so postavljene ena za drugo :
@@ -429,7 +429,8 @@
 
 			\FloatBarrier
 		\subsection{Simuleranje motorja}
-		
+		Za simuleranje sva se odločila, ker nisva želela prekoračiti zmogljivosti zunanje cevi in ker sva želela oceniti, kakšen potisk lahko pričakujeva od motorja.
+		S programom openMotor sva si pomagala tudi izbrati količino goriva ($75 g$)
 
 
 		\subsection{Gorivo}
