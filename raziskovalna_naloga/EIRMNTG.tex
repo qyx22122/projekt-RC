@@ -121,10 +121,15 @@
 	Za raketne pogone so značilne eksotermne kemijske reakcije in gorivo ki ga uporabljava ni nič drugačno. Ob vžigu gori z vročim plamenom in
 	ga je skoraj nemogoče pogasiti, saj gori neodvisno od kisika v ozračju, ker vsebuje oksidator; v najinem primeru \ce{KNO3}.
 	To vidimo tudi v spodnji enačbi \ref{eq:gorjenje-goriva}, kjer med reaktanti ni elementarnega kisika (\ce{O2}).
-	Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline.
+	Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline. Dober primer je vsuvanje mešanice  v prevročo posodo pri pripravi goriva, saj se v tem primeru spontano vžge. 
 	Kot produkt reakcije se sproščajo plini, ki dražijo oči in dihala. Testiranje v zaprtih prostorih je tako odsvetovano, tudi zaradi tveganja materialne škode.
 	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja tlaka reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
 	To vodi v pozitivno povratno zanko, ki se ponavadi konča z eksplozijo, pri kateri je nevarnost šrapnelov in poškodbe sluha zaradi udarnega vala.
+
+	Da bi zagotovila tako lastno varnost, kot tudi preprečila materialno škodo sva uporabljala minimalne količine goriva, potrebne za reprezentativno testiranje. Pri pripravi goriva sva 
+	bila pozorna na temperaturo. Gorivo sva pripravljala v odduhi, da sva se
+	zavarovala pred prašnimi delci \ce{KNO3}. Testirala sva na prostem, testne modele 
+	varno pritrdila, in  bila pozorna, da ne bi presegla tlaka, ki ga prenese zunanja cev pri določeni temperaturi.  
 	
 
 	\section{Teoretičen del}
@@ -166,14 +171,36 @@
 		\caption{Seznam snovi, agregatnih stanj in kemijskih formul}
 		\end{table}
 
+		\subsection{Toplotni izolatorji}
+		Toplota večinoma potuje s konvekcijo, ki je značilna za tekočine, radiacijo in z prevajanjem ali kondukcijo, ki je značilna za materiale v trdnem agregatnem stanju. 
+		Pri kondukciji se toplotna prevodnost $P$ računa po Fourirjevem zakonu, z enačbo \ref{eq:t.prevodnost}, kjer je $\lambda$ toplotna prevodnost materiala, $S$  ploščina preseka, $\Delta T$ razlika 
+		v temperaturah krajišč in $d$ razdalja, skozi katero toplota potuje. \cite{Thermal_Conductivity}
+		Kot toplotne izolatorje navadno označujemo materiale, ki slabo prevajajo toploto, oziroma imajo majhno vrednost  $\lambda$ .
+
+		\begin{equation} \label{eq:t.prevodnost}
+			P = \frac{\lambda S \Delta T}{d}
+		\end{equation}
+		
+		Izolator ne sme biti predebel, saj je raketa s težjim ohišjem manj učinkovita. 
+		Vsak izolator prav tako zavzema prostornino, ki bi jo lahko zasedalo gorivo. Če lahko enako maso goriva ulijemo v krajšo cev pa to pomeni lažje ohišje in posledično učinkovitejši motor.
+
 		\subsection{Šoba}
-		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj pretvarja nekatere vroče produkte reakcije v potisk, ki pospeši raketo.
-		Od šobe je odvisen tlak, od katerega je odvisna hitrost rekacije in njena učinkovitost. Šoba določa tudi največji doseženi tlak, katerega morajo zdržati vsi ostali deli motorja. Šoba na notranji strani konvergira proti premeru grla
+		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj z omejevanjem in usmerjanjem nekaterih vročih produktov 
+		reakcije povzroči potisk, ki pospeši raketo.
+		Od šobe je odvisen tlak, od katerega je odvisna hitrost rekacije in njena učinkovitost. Šoba določa tudi največji doseženi tlak, katerega morajo zdržati vsi ostali deli motorja. 
+		Šoba na notranji strani konvergira proti premeru grla
 		in nato divergira do izhodnega premera - od tod tudi prideta imeni kovergentno-divergentna in KD šoba, poznana pa je tudi kot De Laval šoba.
 		Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba. \cite{nasa:nozzle_design}
 		\begin{equation} \label{eq:šoba-vA}
 			(1 - M^2) \frac{\dd v}{v} = - \frac{\dd A}{A}
 		\end{equation}
+
+		\begin{figure}
+		\centering
+		\includegraphics[height = 4cm]{prerez_sobe}
+		\caption[Prerez šobe]{Šoba iz mavca, prerezana na polovico. Od leve proti desni konvergira do grla, nato divergira} \label{prerez_sobe}
+		\end{figure}
+
 		Enačba \ref{eq:šoba-vA} povezuje spremembo hitrosti tekočine ($\dd v$) z spremembo v preseku šobe ($\dd A$). V enačbi \ref{eq:šoba-vA} nastopa tudi M,
 		ki je Machovo število in je po definicije razmerje med hitrostjo tekočine in zvočno hitrostjo v tej tekočini.
 		Machovo število lahko izračunamo z enačbo \ref{eq:Mach}, kjer je $v$ hitrost tekočine in $c$ zvočna hitrost v tej tekočini.
@@ -215,7 +242,7 @@
 		\end{figure}
 		Kot prikazuje slika \ref{statičen_test} je najbolj pogosto raketni motor priterjen na vodoravne tirnice in potiska v enaki smeri.
 		Midva sva se odločila za vertikalno orientacijo motorja in da ta potiska navzdol, saj se nama je zdelo bolj varno in praktično.
-		Problem tega je da mervia tudi silo teže motorja, ki se pa skozi čas gorenja spreminja.
+		Problem tega je da mervia tudi silo teže motorja, ki pa se skozi čas gorenja spreminja.
 
 		\subsection{Simulacija v openMotor}
 		Simulacije so v raketni znanosti zelo pomembno orodje, saj v naprej povejo lasnosti motorja, ki so ključnega pomena za njegovo izdelavo.
@@ -238,7 +265,7 @@
 		Nato izračuna vrednost $K_n$, ki je razmerje med površino grla in vso gorenju izpostavljeno površino goriva. Ta vrednost je pomembna,
 		saj je funkcija pritiska odvisna zgolj od nje in lasnosti goriva. Potem izračuna tlak v motorju in izhodni tlak.
 		Iz teh dveh tlakov izračuna potisk motorja kot nam to opisuje enačba \ref{eq:potisk_1}.
-		Na koncu izračuna še nanos \ce{K2CO3} in \ce{KOH} na šobo in se premakne za en časovni korak naprej.
+		Na koncu izračuna še nanos žlindre na šobo, v najinem primeru \ce{K2CO3} in \ce{KOH} kot je razvidno iz enčbe \ref{eq:gorjenje-goriva}, in se premakne za en časovni korak naprej. 
 
 		Na koncu vsake iteracije preveri, če reakcija še poteka in se glede na to odloči ali naj simulacijo nadaljuje ali konča.
 		Ob koncu simulacije openMotor preveru, ali so bile prekoračene v naprej določene omejitve (npr. največji dovoljeni tlak).
@@ -247,8 +274,10 @@
 
 
 		\subsection{Toplotna Kamera}
-		Za merjenje temperatur sva uporabljala toplotno kamero IME.(specifikacije). S funkcijo snemanja sva dobila natančne podatke o spreminjanju temperature s časom. Ker pa ima kamera omejitev zaznavanja do 300? C
-		sva merila predvsem temperaturo zunanje cevi in tako preverila, da se ne pregreva. 
+		Za merjenje temperatur sva uporabljala toplotno kamero Seek ShotPRO. Na razponu 233 K do 603  K zaznava z občutljivostjo manj kot 70 mK. 
+		Prav tako ima visoko resolucijo 320 x 240 (78 600 pikslov). Kamera zaznava dolgovaloven infrardeč spekter, natančneje valovne dolžine med 7,5 in 14 $\mu m$.
+		\cite{seekshotpro_specsheet} S funkcijo snemanja sva dobila natančne podatke o spreminjanju temperature s časom. Ker pa ima kamera prenizek 
+		razpon zaznavanja za merjenje temperature izpuha motorja sva merila predvsem temperaturo zunanje cevi in tako preverila, da se ne pregreva. 
 
 		\subsection{Specifičen impulz}
 		Impulz ali sunek sile je fizikalna količina, ki spreminja gibalno količino telesa. Izračunamo ga kot spremembo gibalne količine ali kot produkt sile in spremembe časa.
@@ -310,7 +339,7 @@
 	
 		\subsection{Zunanja cev}
 		Za ohišje motorja sva uporabljala odtočne cevi iz plastike PP-H (polipropilen homopolimer) ki jih izdeluje podjetje Peštan. Kupila sva jih v trgovini s tehničnim blagom
-		in jih razžagala na primerno dolžino.
+		in jih razžagala na primerno dolžino - Za prve teste izolatorja 4 cm, potem 6 cm ter 12,5 cm za dejanski motor.
 		Cev je certificirana s standardom EN 1451. \cite{Katalog_HTPP} Tako bi morala pri temperaturi 353 K zdržati, četudi za kratek čas, tlak do 6,0 MPa. \cite{EN1451}
 		Cevi sva izmerila notrananji premer 36mm in debelino stene 1.90mm. Ko sva odžagala primerno dolžino cevi sva plastiko,
 		ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. 
@@ -326,14 +355,17 @@
 		Izolator je, sploh v amaterskem raketarstvu, nepogrešljiv del motorja. Da je material primeren za ohišje mora imeti nizko gostoto
 		in tudi tanke plasti morajo biti zmožne prenesti visoke tlake brez deformacij. Navedene lastnosti mora obdržati tudi pri velikih spremembah temperature.
 		Ker so takšni materiali redki, težko dostopni oziroma dragi, pogosto niso primerni niti za velike organizacije,
-		kaj šele za amaterje. Zato se uporabi več različnih materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
+		kaj šele za amaterje. Zato se tako profesionalno kot amatersko uporablja več različnih, cenejših, materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
 		za obvarovanje dotične cevi pred visokimi temperaturami pa risalne liste (papir) z debelino 0,03 mm, ki so razrezani na primerne velikosti in vstavljeni v cev,
-		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Papirnat izolator pri najinem motorju je razdeljen na dva dela, za potrebe shranjevanja 
+		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Skozi testiranje sva prišla do debeline XXXX.  
+		Papirnat izolator pri najinem motorju je razdeljen na dva dela, za potrebe shranjevanja 
 		in premikanja gorivnih celic po ulivanju. 
+
 		Pomembno je poudariti da papir ni edini izolator. Gorivo samo tudi upočasnjuje prehod toplote proti steni motorja,
 		vendar pa se ta plast med samim gorenjem hitro zmanjšuje in večinoma ni zadostna.
 		Prav tako je med gorivom in grlom šobe kratek pas cevi, ki bi brez papirnatega izolatorja bil zaščiten le z tanko plastjo mavca in tako izpostavljen
 		občutno previsokim temperaturam že od začetka.
+
 		Omeniti je treba tudi, da izolator med izgorevanjem zaradi visokih temperatur razpada, predvsem na elementarni ogljik, kar za naju ni prevelik problem,
 		saj ima tudi ta zadovoljive izolacijske sposobnosti. \cite{Thermal_conductivity_of_Carbon}
 		Ker sprva nisva vedela kateri izolatorji delujejo oziroma katerega bi lahko uporabila sva testirala različne. Karton se je pokazal kot zelo obetaven,
@@ -356,7 +388,7 @@
 			\begin{figure}
 			\centering
 			\includegraphics[scale=.1]{prvi_test}
-			\caption{Prvi test (različne vrste izolatorjev): karton, tekstilnini lepilni trak, kontrola, cement}
+			\caption[Prvi test (različne vrste izolatorjev)]{Prvi test (različne vrste izolatorjev): karton, tekstilnini lepilni trak, kontrola, cement}
 			\end{figure}
 
 
@@ -364,7 +396,7 @@
 			\subsubsection{Drugi test}
 			Da bi se zares prepričala o uporabnosti sva poiskala nekaj odpadnega kartona in ga preprosto navila v zunanjo cev.
 			Debelino sva izmerila in jo potem spreminjala kar z številom navojev. Zunanja cev prvega in drugega 
-			se je vsaj malo stopila, tretji pa je ostal nepoškodovan.\ref{tabela_četrti_test} Višina zunanje cevi je ostala enaka kot pri prvem testu, kot tudi mase goriva. 
+			se je vsaj malo stopila, tretji pa je ostal nepoškodovan- tabela \ref{tabela_drugi_test}. Višina zunanje cevi je ostala enaka kot pri prvem testu, kot tudi mase goriva. 
 			S testom sva dobila boljšo predstavo o potrebni debelini izolatorja.
 			%različne debeline odpadnega kartona (4cm x 3, 11.11. 2025, 12. 11. 2025)
 
@@ -408,7 +440,7 @@
 			\includegraphics[scale=.12]{test3_5}
 			\hspace{0.3cm}
 			\includegraphics[scale=.3207]{test3_6}
-			\caption{Tretji test (različne debeline papirja in epoksi smola): gorenje dveh primerov}
+			\caption[Tretji test (različne debeline papirja in epoksi smola)]{Tretji test (različne debeline papirja in epoksi smola): gorenje dveh primerov}
 			\end{figure}
 
 
@@ -440,7 +472,7 @@
 					12 & 2,1 & 75,1 & 303 \\
 					\hline
 				\end{tabular}
-				\caption[Podatki o četrtem testu izolatorjev]{Podatki o četrtem testu izulatorjev \\ (pri prvem testu opazimo zelo nizko najvišjo doseženo temperaturo, kar je posledica prežganega goriva)}
+				\caption[Podatki o četrtem testu izolatorjev]{Podatki o četrtem testu izolatorjev \\ (pri prvem testu opazimo zelo nizko najvišjo doseženo temperaturo, kar je posledica prežganega goriva)}
 				\label{tabela_četrti_test}
 			\end{table}
 
@@ -482,7 +514,7 @@
 			zaradi lažjega transporta in shranjevanja gorivnih celic.
 			Spodnja stran modelčka je zaprta z tekstilnim lepilnim trakom.
 			Zaradi visoke viskoznosti goriva, ga je bilo nemogoče vlivati zato sva ga s pomočjo žlice spravila v modelček.
-			Nato sva s plastično epruveto, ki ima premer 15mm, naredila luknji v gorivo in jo v njem postila dokler se ni ohladilo.
+			Nato sva s plastično epruveto, ki ima premer 15 mm, naredila luknjo v gorivo in jo v njem postila dokler se ni ohladilo.
 			Iz hladnega in dokončno strjenega goriva sva odstranila epruveto in gorivno celico posušila v dehidratorju z uporabo silika gela.
 			Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
 		
@@ -505,7 +537,7 @@
 % slike toplotne kamere, usposobit svoj comp za testirat, teorija toplotne kamere, popravljat kar je ausec napisu, skozi celo stvar it, da se identificira luknje, base za simulacije?, se vec slik
 % prestavit del izolatorja v teoreticni del.
 %PROSIM SLIKE TESTIRANJA (vseh treh)
-
+ 
 %OB testiranju posnememo isti zorni zorni kot telefona kot toplotne kamere. SLikat setup, pa to ==> L ig fuck it
 
 
@@ -590,7 +622,7 @@
 		\end{equation}
 		kjer je $Q$ toplota, $m$ masa, $c$ specifična toplota in $\Delta T$ sprememba temperature.
 		Žica nato segreje gorivo s katerim je v kontaktu in ga segreva do temprature vžiga, ki je nad 300°C. \cite{nakkaKNSUchem2025}
-		Žico priklopiva na vir enosmerne napetosti, ki lahko proizvede vsaj 10A toka, ta pa segreje žico, ki vžge gorivo.
+		Žico priklopiva na vir enosmerne napetosti, ki lahko proizvede vsaj 10 A toka, ta pa segreje žico, ki vžge gorivo.
 		Ta metoda vžiga se je izkazala za relativno neponovljivo. Po premisleku sva prišla do zaključka, da žica ne pride v stik z gorivom ali pa prehitro pregori. %Izbolšava: dodaj kapljo ogriva direktno na žico
 
 		\subsection{Statično testiranje}
