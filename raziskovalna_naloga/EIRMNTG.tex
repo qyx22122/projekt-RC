@@ -23,7 +23,7 @@
 }
 
 
-\usepackage[nameinlink]{cleveref} % za lepse, auto reference. sintaksa: v sliki /label{label}  in potem /cref{label} za lepo naslavljanje slik in tabel
+\usepackage[nameinlink]{cleveref} % za lepse, auto reference. sintaksa: v sliki /label{label} in potem /cref{label} za lepo naslavljanje slik in tabel
 
 \graphicspath{{./slike/}}
 
@@ -75,7 +75,7 @@
 \renewcommand{\thepage}{\Roman{page}}
 \renewcommand{\abstractname}{Povzetek}
 \begin{abstract}
-    \thispagestyle{plain}
+	\thispagestyle{plain}
 	\setcounter{page}{2}
 	V raziskovalni nalogi sva se poglobila v delovanje, simuliranje in testiranje raketnih motorjev na trdno gorivo. V teoretičnem delu sva opisala, na katerih fizikalnih zakonih temeljijo raketni motorji in kakšno funkcijo imajo posamezni deli raketnega motorja na trdno gorivo. Nato sva se lotila razvoja lastnega raketnega motorja na trdno gorivo, ki je narejen iz dostopnih in cenovno ugodnih materialov ter ne potrebuje manj dostopnih strojev, kot sta naprimer stružnica in CNC rezkar. Testirala sva različne vrste in debeline izolatorjev, dokler nisva našla najprimernejšega. S simulacijo sva si pomagala pri načrtovanju šobe in ostalih kritičnih dimenzij motorja, ki sva ga nato tudi sestavila in testirala. Iz pridobljenih podatkov sva potrdila primernost izolatorja in izračunala učinkovitost motorja. Nazadnje sva primerjala izmerjene vrednosti s tistimi iz simulacije, da sva lahko prilagodila parametre simulacije za natančnejše napovedi.
 
@@ -87,7 +87,7 @@
 \renewcommand{\thepage}{\Roman{page}}
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
-    \thispagestyle{plain}
+	\thispagestyle{plain}
 	\setcounter{page}{3}
 	In our research project, we delved into the operation, simulation, and testing of solid fuel rocket engines. In the theoretical part, we described the physical laws on which rocket engines are based and the function of individual parts of a solid fuel rocket engine. We then set about developing our own solid fuel rocket engine, made from readily available and inexpensive materials and requiring no specialised equipment such as a lathe or CNC milling machine. We tested different types and thicknesses of insulators until we found the most suitable ones. We used simulation to help us design the nozzle and other critical dimensions of the engine, which we then assembled and tested. From the data obtained, we confirmed the suitability of the insulator and calculated the efficiency of the engine. Finally, we compared the measured values with those from the simulation so that we could adjust the simulation parameters for more accurate predictions.
 
@@ -119,7 +119,7 @@
 	Za raketne pogone so značilne eksotermne kemijske reakcije in gorivo ki ga uporabljava ni nič drugačno. Ob vžigu gori z vročim plamenom in
 	ga je skoraj nemogoče pogasiti, saj gori neodvisno od kisika v ozračju, ker vsebuje oksidator; v najinem primeru \ce{KNO3}.
 	To vidimo tudi v spodnji enačbi \ref{eq:gorjenje-goriva}, kjer med reaktanti ni elementarnega kisika (\ce{O2}).
-	Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline. Dober primer je vsuvanje mešanice  v prevročo posodo pri pripravi goriva, saj se v tem primeru spontano vžge. 
+	Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline. Dober primer je vsuvanje mešanice v prevročo posodo pri pripravi goriva, saj se v tem primeru spontano vžge. 
 	Kot produkt reakcije se sproščajo plini, ki dražijo oči in dihala. Testiranje v zaprtih prostorih je tako odsvetovano, tudi zaradi tveganja materialne škode.
 	Pri prižganju v posodah kjer omejujemo uhajanje plinov zaradi skokovitega naraščanja tlaka reakcija poteka še hitreje in s tem tudi pospešeno narašča tlaka.
 	To vodi v pozitivno povratno zanko, ki se ponavadi konča z eksplozijo, pri kateri je nevarnost šrapnelov in poškodbe sluha zaradi udarnega vala.
@@ -127,7 +127,7 @@
 	Da bi zagotovila tako lastno varnost, kot tudi preprečila materialno škodo sva uporabljala minimalne količine goriva, potrebne za reprezentativno testiranje. Pri pripravi goriva sva 
 	bila pozorna na temperaturo. Gorivo sva pripravljala v odduhi, da sva se
 	zavarovala pred prašnimi delci \ce{KNO3}. Testirala sva na prostem, testne modele 
-	varno pritrdila, in  bila pozorna, da ne bi presegla tlaka, ki ga prenese zunanja cev pri določeni temperaturi.  
+	varno pritrdila, in bila pozorna, da ne bi presegla tlaka, ki ga prenese zunanja cev pri določeni temperaturi. 
 	
 
 	\section{Teoretičen del}
@@ -173,9 +173,9 @@
 
 		\subsection{Toplotni izolatorji}
 		Toplota večinoma potuje s konvekcijo, ki je značilna za tekočine, radiacijo in z prevajanjem ali kondukcijo, ki je značilna za materiale v trdnem agregatnem stanju. 
-		Pri kondukciji se toplotni tok $P$ računa po Fourirjevem zakonu, z enačbo \ref{eq:t.prevodnost}, kjer je $\lambda$ toplotna prevodnost materiala, $S$  ploščina preseka, $\Delta T$ razlika 
+		Pri kondukciji se toplotni tok $P$ računa po Fourirjevem zakonu, z enačbo \ref{eq:t.prevodnost}, kjer je $\lambda$ toplotna prevodnost materiala, $S$ ploščina preseka, $\Delta T$ razlika 
 		v temperaturah krajišč in $d$ razdalja, skozi katero toplota potuje. \cite{Thermal_Conductivity}
-		Kot toplotne izolatorje navadno označujemo materiale, ki slabo prevajajo toploto, oziroma imajo majhno vrednost  $\lambda$ .
+		Kot toplotne izolatorje navadno označujemo materiale, ki slabo prevajajo toploto, oziroma imajo majhno vrednost $\lambda$ .
 
 		\begin{equation} \label{eq:t.prevodnost}
 			P = \frac{\lambda S \Delta T}{d}
@@ -218,7 +218,7 @@
 		pospeševali do zvočne hitrosti v zožanju šobe in nato pospešili tudi preko zvočne hitrosti, ko se v končnem delu šobe presek spet povečuje.
 
 			\subsubsection{Potisk}
-			Potisk motorja ja ena najpomembnejših lasnosti raketnega motorja. Izračunamo ga s sledečo enačbo : \cite{nasa:rocket_thrust}
+			Potisk motorja ja ena najpomembnejših lasnosti raketnega motorja. Izračunamo ga s sledečo enačbo: \cite{nasa:rocket_thrust}
 			\begin{equation} \label{eq:potisk_1}
 				F = \dot{m} v_e + (P_e - P_a)A_e
 			\end{equation}
@@ -252,10 +252,10 @@
 		Odločila sva se za uporabo odprtokodnega programa openMotor, ki je namenjen simuliranju raketnih motorjev na trdno gorivo.
 		Program sva naložila iz svetovnega spleta (https://github.com/reilleya/openMotor).
 		OpenMotor najprej inicializira parametre simulacije, kot so lasnosti goriva in dimenzije šobe. Kot gorivo sva uporabila že obstoječi profil KNSU (Kalijev nitrat in saharoza), ki je primerljiv najinemu gorivu.
-		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice, ki so postavljene ena za drugo :
+		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice, ki so postavljene ena za drugo:
 		\cite{openMotor}
 		\begin{enumerate}
-			\item Regresijo goriva; to  izračuna tako, da pomnoži majhen korak v času z hitrostjo gorenja, ki je funkcija pritiska.
+			\item Regresijo goriva; to izračuna tako, da pomnoži majhen korak v času z hitrostjo gorenja, ki je funkcija pritiska.
 				Za pritisk uporabi vrednost iz prejšnjega koraka simulacije.
 			\item Masni pretok, ki ga izračuna iz masnih pretokov gorivnih celic nad zdajšnjo.
 			\item Maso gorivne celice; to izračuna iz gostote goriva in regresije, ki je bila izračunana v tem koraku
@@ -274,7 +274,7 @@
 
 
 		\subsection{Toplotna Kamera}
-		Za merjenje temperatur sva uporabljala toplotno kamero Seek ShotPRO. Na razponu 233 K do 603  K zaznava z občutljivostjo manj kot 70 mK. 
+		Za merjenje temperatur sva uporabljala toplotno kamero Seek ShotPRO. Na razponu 233 K do 603 K zaznava z občutljivostjo manj kot 70 mK. 
 		Prav tako ima visoko resolucijo 320 x 240 (78 600 pikslov). Kamera zaznava dolgovaloven infrardeč spekter, natančneje valovne dolžine med 7,5 in 14 $\mu m$.
 		\cite{seekshotpro_specsheet} S funkcijo snemanja sva dobila natančne podatke o spreminjanju temperature s časom. Ker pa ima kamera prenizek 
 		razpon zaznavanja za merjenje temperature izpuha motorja sva merila predvsem temperaturo zunanje cevi in tako preverila, da se ne pregreva. 
@@ -320,15 +320,15 @@
 				\centering
 				\begin{tabular}{lll} 
 					\hline
-					Raketni motor & Vrsta & $I_{SP}$ [s]  \\
+					Raketni motor & Vrsta & $I_{SP}$ [s] \\
 					\hline \noalign{\vskip 0.3ex}
-					NERVA NRX A6 & Nuklearni & 869  \\ 
-					RS-25 & Tekoče gorivo & 453  \\ 
+					NERVA NRX A6 & Nuklearni & 869 \\ 
+					RS-25 & Tekoče gorivo & 453 \\ 
 					RD-843 & Tekoče gorivo & 315,5 \\
-					Merlin 1D & Tekoče gorivo & 310  \\
+					Merlin 1D & Tekoče gorivo & 310 \\
 					Avio Zefiro 9A & Trdno gorivo & 295,2\\
 					Avio Zefiro 23 & Trdno gorivo & 287,5 \\
-					Space Shuttle SRB & Trdno gorivo & 250 \\  
+					Space Shuttle SRB & Trdno gorivo & 250 \\ 
 					\hline
 				\end{tabular}
 				\caption[Primeri specifičnih impulzov]{Primeri že testiranih raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
@@ -357,7 +357,7 @@
 		Ker so takšni materiali redki, težko dostopni oziroma dragi, pogosto niso primerni niti za velike organizacije,
 		kaj šele za amaterje. Zato se tako profesionalno kot amatersko uporablja več različnih, cenejših, materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
 		za obvarovanje dotične cevi pred visokimi temperaturami pa risalne liste (papir) z debelino 0,03 mm, ki so razrezani na primerne velikosti in vstavljeni v cev,
-		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Skozi testiranje sva prišla do debeline 1,75 mm.  
+		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Skozi testiranje sva prišla do debeline 1,75 mm. 
 		Papirnat izolator pri najinem motorju je razdeljen na dva dela, za potrebe shranjevanja 
 		in premikanja gorivnih celic po ulivanju. 
 
@@ -430,7 +430,7 @@
 			Opravila sva šest testov, velikosti vzorcev in mase goriva so ostale enake.
 			Precenila sva sposobnosti papirja in tako je bilo mnogo testnih primerov popolnoma stopljenih.
 			Ugotovila sva tudi da epoksi ne pripomore k izolacijskim sposobnostim. VIRR.
-			Pri tem testu sva temperaturo merila  tudi z laserskim termometrom. Če smo pozorni lahko na spodnji sliki opazimo piko laserja, ki je uperjen v zunanjo cev. 
+			Pri tem testu sva temperaturo merila tudi z laserskim termometrom. Če smo pozorni lahko na spodnji sliki opazimo piko laserja, ki je uperjen v zunanjo cev. 
 			Merjenje z laserjem sva opustila, saj se je izkazalo za nenatančno, sploh pri merjenju z varnostne razdalje.
 			%različne debeline risalnega papirja + epoksi (4cm x 6, 22. 11. 2025, 25. 11. 2025)
 
@@ -487,7 +487,7 @@
 		
 
 		\subsection{Gorivo} \label{gorivo}
-		Raketna goriva so mešanice goriva in oksidatorja, zato da oksidacija ni odvisna od  kisika v ozračju. Posledično lahko reakcija poteka tudi v zaprtih posodah. Skupina goriv, v kateri je tudi KNSU
+		Raketna goriva so mešanice goriva in oksidatorja, zato da oksidacija ni odvisna od kisika v ozračju. Posledično lahko reakcija poteka tudi v zaprtih posodah. Skupina goriv, v kateri je tudi KNSU
 		je sestavljena iz karbohidrata oziroma sladkorja in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35, v prid \ce{KNO3},
 		a sva se midva odločila za razmerje 60/40, saj sva prišla do težav z ulivanjem.
 		Gorivo gori po enčbi \ref{eq:gorjenje-goriva}.
@@ -523,7 +523,7 @@
 			Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
 		
 		\subsection{Šoba}
-		BLALAALA.  Uhajanje plinov in drugih produktov reakcije, ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodira površino šobe. 
+		BLALAALA. Uhajanje plinov in drugih produktov reakcije, ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodira površino šobe. 
 		Še posebej je na udaru grlo, ki, ko je razširjeno, ne opravlja več svoje funkcije. Nameravala sva tudi zalepiti šobo na zunanjo cev. Tako sva že od samega začetka 
 		vedela da bodo šobe za enkratno uporabo. Tako dražji materiali nikoli niso prišli v poštev. 
 
@@ -610,18 +610,18 @@
 		\subsection{Vžig motorja}
 		Ker bi bil vžig z vžigalico prenevaren, zaradi potencialne eksplozije, sva se odločila za elektronski vžig.
 		Za to sva pripravila elektronsko vžigalico. Izdelala sva jo iz dvo žilnega mehkožilnega kabla, tako da sva vzela po eno nit iz vsake žile in ju zvezala skupaj.
-		Ker je se presek žice močno zmanjša se njen upor poveča. To name pove sledeča enačba :
+		Ker je se presek žice močno zmanjša se njen upor poveča. To name pove sledeča enačba: \cite{wiki:resistance}
 		\begin{equation}
 			R = \frac{\zeta l}{S}
 		\end{equation}
 		kjer je $R$ upornost, $\zeta$ specifična upornost, $l$ dolžina vodnika in $S$ presek vodnika.
-		Iz upornosti lahko izračunamo električno moč :
+		Iz upornosti lahko izračunamo električno moč: \cite{wiki:joule_heating}
 		\begin{equation}
 			P = I^2 R
 		\end{equation}
 		kjer je P moč in I električni tok. V tem primeru je produkt moči in časa enaka toploti, ki jo prejme tanka žica vžigalice ($Q = P t$).
-		Zaradi nje se vžigalica segreje kot nam pravi ta enačba
-		\begin{equation}
+		Zaradi nje se vžigalica segreje kot nam pravi ta enačba \ref{eq:toplota}. \cite{openstax_heat}
+		\begin{equation} \label{eq:toplota}
 			Q = m c \Delta T
 		\end{equation}
 		kjer je $Q$ toplota, $m$ masa, $c$ specifična toplota in $\Delta T$ sprememba temperature.
@@ -646,7 +646,7 @@
 			predvidevava, da so absorbirali veliko količino vlage. To sva opazila tudi kot ne čisto gorenje, primarno pa kot primankljaj potiska.
 			Vsi trije motorji so proizvedli nič potiska, kot poslidica premajhnega tlaka v komori, ki ga je povzročila počasnejša reakcija.
 			\subsubsection{Tretji test}
-			V tretjem testu sva metodo iz odstavka \ref{gorivo} dodelala do trenutnega stanja. To se je izkazalo za neprecenljivo izbolšavo v kvaliteti goriva.
+			V tretjem testu sva metodo iz odstavka \ref{gorivo} dodelala do trenutnega stanja. To se je izkazalo za neprecenljivo, saj je zelo izbolšalo kvaliteto goriva.
 			Gorivne celice in motor sam sva začela tudi shranjevati v nepredušno zatesnjenih posodah v prisotnosti prej omenjenega silika gela.
 			Gorivno celico tretjega testa žal nisva takoj po ulitju dala v dehidrator, kot sva kasnejše celice, sva pa jo kasneje dala k ostalim celicam v dehidrator.
 			Ta je bila zaradi nepremišljenosti iz najine strani že vstavljene v cev in se je zato na zadnji strani slabše posušila, kar bi lahko pripomoglo k odklonu
@@ -658,6 +658,7 @@
 			dobro preživela testiranje motorja.
 
 		\subsection{Analiza podatkov}
+
 		
 	\section{Rezultati}
 
