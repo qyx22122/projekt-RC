@@ -12,6 +12,10 @@
 \usepackage{stackengine}
 \usepackage{physics}
 \usepackage{amsmath}
+\usepackage{siunitx}
+\sisetup{
+	output-decimal-marker = {,},
+}
 
 \usepackage{float} %za hard override placementa slik /begin{figure}[H]
 \usepackage{placeins} % za barierje placementa slik /FloatBarrier
@@ -288,7 +292,7 @@
 		\end{equation}
 			Iz impulza izpeljemo fizikalno količino, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
 			\cite{wiki:Specific_impulse2025}
-		\begin{equation}
+		\begin{equation}\label{eq:ISP}
 			I_{SP} = \frac{I}{m \vdot g_0}
 		\end{equation}
 			Specifični impulz je tudi razmerje med potiskom motorja in tokom teže goriva. To izpeljemo sledeče.
@@ -307,12 +311,13 @@
 		Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
 	
 			\subsubsection{Zakaj prav specifičen impulz?}
-		 	Specifičen impulz nam pove učinkovitost raketnega motorja in sicer koliko sekund bo ta motor proizvajal 1N potiska z gorivom, ki tehta 1N.
+		 	Specifičen impulz je sorazmeren z učinkovitostjo raketnega motorja in s tem tudi energisjskim izkoristkom. Specifični impulz si lahko predsatvljamo kot čas gorenja
+			med katerim bo motor, ki vsebuje gorivo, ki tehta \SI{1}{N}, proizvajal potisk \SI{1}{N}. 
 			Če imata dva motorja različna specifična impulza in enako maso goriva, bo motor z večjim specifičnim impulzom proizvedel večji sunek sile. \cite{nasa:specific_impulse}
 			Specifičen impulz je tudi priročen, ker je merjen v sekundah, ki se uporabljajo tako v metričnem kot tudi v imperialnem sistemu. Z njim se da
 			tudi oceniti količino goriva potrebnega za določeno spremembo hitrosti rakete ($\Delta v$) in s tem za določen manever.
 			To naredimo z enačbo Ciolkovskega. \cite{nasa:ideal_rocket_equation}
-			\begin{equation}
+			\begin{equation} \label{eq:Ciolkovskega}
 				\Delta v = v_e \ln{\frac{m_0}{m_1}} = I_{SP} g_0 \ln{\frac{m_0}{m_1}}
 			\end{equation}
 			kjer je $v_e$ hitrost izpuhov relativno na gibanje rakete, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
@@ -645,19 +650,65 @@
 			Ker gorivnih celic in kasneje sestavljenih motorjev nisva shranjevala v tesno zaprtih posodah v prisotnosti silika gela,
 			predvidevava, da so absorbirali veliko količino vlage. To sva opazila tudi kot ne čisto gorenje, primarno pa kot primankljaj potiska.
 			Vsi trije motorji so proizvedli nič potiska, kot poslidica premajhnega tlaka v komori, ki ga je povzročila počasnejša reakcija.
+			Kljub težavam z potiskom motorja, je izolator bovaroval zunanjo cev, kot sva pričakovala.
 			\subsubsection{Tretji test}
 			V tretjem testu sva metodo iz odstavka \ref{gorivo} dodelala do trenutnega stanja. To se je izkazalo za neprecenljivo, saj je zelo izbolšalo kvaliteto goriva.
 			Gorivne celice in motor sam sva začela tudi shranjevati v nepredušno zatesnjenih posodah v prisotnosti prej omenjenega silika gela.
 			Gorivno celico tretjega testa žal nisva takoj po ulitju dala v dehidrator, kot sva kasnejše celice, sva pa jo kasneje dala k ostalim celicam v dehidrator.
 			Ta je bila zaradi nepremišljenosti iz najine strani že vstavljene v cev in se je zato na zadnji strani slabše posušila, kar bi lahko pripomoglo k odklonu
-			izmerjenih podatkov od začetne simulacije. Tretji test, za razliko od prvega in drugega, je bil delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki X. %TODO dodaj sliko originalne krivulje
+			izmerjenih podatkov od začetne simulacije. Tretji test je bil za razliko od prvega in drugega delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki X. %TODO dodaj sliko originalne krivulje
 			Temperatura površine zunanje cevi je tudi pri tem motorju bila zmerna, kar dokončno potrdi izolativne sposobnosti papirja kot izolator v raketnem motorju.
 			Večina papirja, kot je vidno na sliki X, kjer sva motor iz tretjega testa prerezala po dolžini za analizo, je preživelo visok tlak in temperaturo ekstremnih pogojev v raketnem motorju in s tem opravilo svojo nalogo z odliko. %TODO dodaj sliko prerezanega motorja
 			Iz prerezanega motorja sva izmerila tudi končni premer grla šobe, ki je 15 mm. To je kar 5 mm več od začetnega premera, kar nakazuje na močno erozijo šobe in relativno slabo vzdržljivost šob iz mavca.
-			To je drugi razlog za neskladanje podatkov, ki sva jih izmerila in teh, ki sva jih pridobila s simulacijo. V prerezu motorja sva tudi dobro videla, da je epoksi smola, tako zaprtje cevi kot tudi tak, ki je držala šobo,
+			To je drugi razlog za neskladanje podatkov, ki sva jih izmerila in teh, ki sva jih pridobila s simulacijo. V prerezu motorja sva tudi dobro videla, da je epoksi smola, tako zaprtje cevi kot tudi ta, ki je držala šobo,
 			dobro preživela testiranje motorja.
 
+		\FloatBarrier
 		\subsection{Analiza podatkov}
+		Podatke, ki sva jih pridobila z Force Plateom sva analizirala v programu Logger Pro verzije 3.16.2, ki nama omogoča funkcije, kot sta integriranje podatkov po času in
+		avtomatsko ustvarjanje polinoma, ki se prilega podatkom. Velika večina ostalih verzij programa ni kapatibila z Vernierjevim LabPro vmesnikom, ki ga lahko vidimo na sliki X.
+		Podatke sva najprej pomaknila navzgor za 1,0 N, saj je ničla, ki sva jo nastavila ob testiranju, ni bila skladna z podatki.
+		Da sva ugotovila, da ničla odstopa za približno 1 N, sva funkcijo zgladila in odčitala, za koliko jo morava dvigniti.
+		Z zglajenimi podatki sva tudi odšitala največji potisk, ki je $6,3 \pm 0,3$ N. Motor je vse skupaj gorel 3,6 s.
+		Nato sva odsek grafa, kjer je motor proizvajal potisk, integrirala in dobila, da je impulz, ki ga je proizvedel motor tretjega testa enak 17,26 Ns.
+		Iz impulza in časa gorenja lahko izračunamo povpreče potisk motorja:
+		\begin{equation}
+			\bar{F} = \frac{I}{t} = \frac{\SI{17,26}{Ns}}{\SI{3,6}{s}} = \SI{4,79}{N}
+		\end{equation}
+		Iz enačbe \ref{eq:ISP} sva izračunala tudi specifični impulz.
+		\begin{equation}
+			I_{SP} = \frac{I}{m \vdot g_0} = \frac{\SI{17,26}{Ns}}{\SI{0,075}{kg} \vdot \SI{9.80665}{m/s^2}} = \SI{23,47}{s}
+		\end{equation}
+		Z enačbo Ciolkovskega \ref{eq:Ciolkovskega} sva izračunala tudi spremembo hitrosti ($\Delta v$).
+		Za $m_0$ sva vzela maso XXX in za $m_1$ sva vzela maso XXX. %TODO stehtaj
+		\begin{equation}
+			\Delta v = v_e \ln{\frac{m_0}{m_1}} 
+		\end{equation}
+
+
+
+		\begin{figure}
+		\centering
+		\includegraphics[width = 16cm]{potisk}
+		\caption{Graf potiska v odvisnosti od časa}
+		\end{figure}
+
+		\begin{figure}
+		\centering
+		\includegraphics[width = 16cm]{potisk_zglajen}
+		\caption{Graft potiska v odvisnosti od časa in zglajeni podatki}
+		\end{figure}
+
+		\begin{figure}
+		\centering
+		\includegraphics[width = 16cm]{integral}
+		\caption{Integral grafa potiska v odvisnosti od časa po času}
+		\end{figure}
+
+
+		\FloatBarrier
+
+
 
 		
 	\section{Rezultati}
