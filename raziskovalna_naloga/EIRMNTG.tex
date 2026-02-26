@@ -146,7 +146,7 @@
 		tudi nekaterih primesi (npr. \ce{Fe2O3}, ki je katalizator in pospešuje reakcijo).
 		Ko je "rocket candy" narejen iz saharoze in kalijevega nitrata, ga lahko poimenujemo kar z kratico KNSU.
 		V mešanici "rocket candy" lahko zamenjamo saharozo z drugimi ogljikovimi hidrati kot je sorbitol.
-		Po literaturi, ki sva jo našla, je optimalno razmerje saharoze in \ce{KNO3} 35/65. \cite{nakkaKNSU2025}
+		Po literaturi, ki sva jo našla, je optimalno razmerje saharoze in \ce{KNO3} 35/65 \cite{nakkaKNSU2025}, učinkovitost in hitrost gorjenja goriv pa je sorazmerno povezana z tlakom. \cite{nakka_thrust}
 		Kemijska enačba za gorenje je sledeča \cite{nakkaKNSUchem2025}
 		\begin{equation} \label{eq:gorjenje-goriva}
 		\begin{split} 
@@ -188,7 +188,7 @@
 		Izolator ne sme biti predebel, saj je raketa s težjim ohišjem manj učinkovita. 
 		Vsak izolator prav tako zavzema prostornino, ki bi jo lahko zasedalo gorivo. Če lahko enako maso goriva ulijemo v krajšo cev pa to pomeni lažje ohišje in posledično učinkovitejši motor.
 
-		\subsection{Šoba}
+		\subsection{Šoba} \label{soba}
 		Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj z omejevanjem in usmerjanjem nekaterih vročih produktov 
 		reakcije povzroči potisk, ki pospeši raketo.
 		Od šobe je odvisen tlak, od katerega je odvisna hitrost rekacije in njena učinkovitost. Šoba določa tudi največji doseženi tlak, katerega morajo zdržati vsi ostali deli motorja. 
@@ -353,7 +353,9 @@
 			\subsubsection{Zaprtje cevi}
 			Za pravilno delovanje raketnega motorja je potreben visok tlak, ki pa ni dosežen, če sta konca cevi odprta. Ker želimo tudi, da rezultanta sil na telo v fazi pospeševanja
 			oziroma izgorevanja ni enaka nič, ni dovolj da konce cevi zožamo, eno od strani je potrebno neprodušno zapreti na način, ki tudi premore visoke tlake, po možnosti brez
-			mehanskih okvar. Za ta namen sva uporabila epoksi smolo.
+			mehanskih okvar. Za ta namen sva uporabila epoksi smolo, katere sva v cev vlila toliko, da je ustvarila 1 cm debelo plast. VIRR Ker se epoksi ne spaja dobro na PP-H cev 
+			sva del, ki sva ga zalila, prej napraskala z brusilnim papirjem granulacije 40. Tako sva zagotovila zareze, v katere se je ujela smola. Ko se je strdila spoj tako ni bil več odvisen od 
+ 
 			
 		
 		\subsection{Izolator}
@@ -482,7 +484,7 @@
 
 
 			\FloatBarrier
-		\subsection{Simuleranje motorja}
+		\subsection{Simuliranje motorja}
 		Za simuleranje sva se odločila, ker nisva želela prekoračiti zmogljivosti zunanje cevi in ker sva želela oceniti, kakšen potisk lahko pričakujeva od motorja.
 		S programom openMotor sva si pomagala tudi izbrati količino goriva (75 g), ki sva jo nato uporabila v vseh statičnih testih motorja.
 		Že v teoretičnem delu sva omenila profil KNSU, ki obstaja v openMotorju in je po sestavi primerljiv najinemu gorivu.
@@ -496,6 +498,7 @@
 		je sestavljena iz karbohidrata oziroma sladkorja in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35, v prid \ce{KNO3},
 		a sva se midva odločila za razmerje 60/40, saj sva prišla do težav z ulivanjem.
 		Gorivo gori po enčbi \ref{eq:gorjenje-goriva}.
+
 			\subsubsection{Priprava goriva}
 			Gorivne celice, ki sva jih uporabljala v motorju, so imele maso 70 g. Zaradi izgub pri pripravi in ulivanju začneva z skupno maso goriva 100 g.
 			Najprej sva odtehtala 40 g saharoze in jih stresla v 1 L čašo. Ker je za ta proces potrebno, da se vsa saharoza raztopi, sva dodala 20 g vode. \cite{wiki:Sucrose}
@@ -528,12 +531,14 @@
 			Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
 		
 		\subsection{Šoba}
-		BLALAALA. Uhajanje plinov in drugih produktov reakcije, ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodira površino šobe. 
+		Šoba je pomemben del motorja, saj kot omenjeno že v poglavju \cite{soba} z omejevanjem in usmerjanjem nekaterih vročih produktov 
+		reakcije povzroči potisk, ki pospeši raketo. Šoba tudi uravnava pritisk, ki je  Šoba prav tako uravnava tlak znotraj motorja, ki je, kot opisano v poglavju   Uhajanje plinov in drugih produktov reakcije, 
+		ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodira površino šobe. 
 		Še posebej je na udaru grlo, ki, ko je razširjeno, ne opravlja več svoje funkcije. Nameravala sva tudi zalepiti šobo na zunanjo cev. Tako sva že od samega začetka 
 		vedela da bodo šobe za enkratno uporabo. Tako dražji materiali nikoli niso prišli v poštev. 
 
 		Vendar pa imajo tudi dražje alternative svoje slabosti. Čeprav grafit dobro prenaša temperaturo in je lahek je struženje grafita izjemno umazan proces.
-		Nastali grafitni prah je tudi abraziven 
+		Nastali grafitni prah je tudi abraziven VIRRR
 		za vsa vodila stružnice in zanjo posledično nevaren.
 		Zaradi krhkosti je vsakršna obdelava zahtevna, tudi hitro erodira. 
 		Kovine so pretežke, in imajo prenizka tališča. Njih struženje prav tako vzame veliko časa. Želela sva se držati tudi cilja prostodostopnosti.
