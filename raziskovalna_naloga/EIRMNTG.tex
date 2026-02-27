@@ -645,11 +645,41 @@
 		da ima dve reži, skozi kateri lahko termalna kamera meri temperaturo cevi motorja.
 		Stojalo sva postavila na Force Plate in se zaščitila z pleksi steklom. Force Plate sva preko Vernirjevega vmesnika povezala na računalnik,
 		ki bere in shranjuje podatke o potisku motorja, sproti pa tudi izrisuje graf.
+		
+		
+			\begin{figure}
+		\centering
+		
+		\begin{minipage}{0.45\textwidth}
+		    \centering
+		    \includegraphics[height=4cm]{stojalo}
+		    \hspace{0.3cm}
+		    \includegraphics[height=4cm]{stojalo_motor}
+		\end{minipage}
+		\hspace{1cm}
+		\begin{minipage}{0.45\textwidth}
+		    \centering
+		    \includegraphics[height=4cm]{stojalo2}
+		    \hspace{0.3cm}
+		    \includegraphics[height=4cm]{stojalo3}
+		\end{minipage}
+		
+		\caption[Stojalo iz aluminija]{Stojalo iz aluminija iz različnih zornih kotov in z motorjem}
+		\end{figure}
+
 
 		\subsection{Vžig motorja}
 		Ker bi bil vžig z vžigalico lahko nevaren, zaradi potencialne eksplozije, sva se odločila za poizkusiti elektronski vžig.
-		Za to sva pripravila elektronsko vžigalico. Izdelala sva jo iz dvo žilnega mehkožilnega kabla, tako da sva vzela po eno nit iz vsake žile in ju zvezala skupaj.
+		Za to sva pripravila elektronsko "vžigalico". Izdelala sva jo iz dvo žilnega mehkožilnega kabla, tako da sva vzela po eno nit iz vsake žile in ju zvezala skupaj.
 		Ker je se presek žice močno zmanjša se njen upor poveča. To name pove sledeča enačba: \cite{wiki:resistance}
+
+			\begin{figure}
+			\centering
+			\includegraphics[height = 6cm]{zicka}
+			\caption{Žička za elektronski vžig}
+			\label{zicka}
+			\end{figure}
+
 		\begin{equation}
 			R = \frac{\zeta l}{S}
 		\end{equation}
@@ -670,11 +700,21 @@
 
 		\FloatBarrier
 		\subsection{Statično testiranje}
+
+			\begin{figure}
+			\centering
+			\includegraphics[height = 8cm]{setup_anotiran}
+			\caption{Postavitev za testiranje}
+			\label{setup}
+			\end{figure}
+
+		
 		Z statičnim testiranjem sva pridobila podatke o potisku motorja, času gorenja in temperaturi motorja.
 		To sva merila z prej opisanim Force Platom in termalno kamero. Motorje sva vžigala z elektronskim vžigom.
 			\subsubsection{Prvi test}
 			V prvem statičnem test sva se namenila testirati samo en motor. Ta je bil sestavljen kot je opisano v odstavku \ref{sestavljanje_motorja}. Meniva, da je dež zelo slabo vplival na gorenje gorivo, saj nisva izmerila nič potiska.
-			Potisk, ki sva ga izmerila ni bil večji od merske napake. Gorenje motorja je bilo tudi vidno manj čisto kot bi želela. Ta test sva tudi posnela s termalno kamero in potrdila delovanje izolatorja, ki je ohranil zunanjo cev pri nizkih temperaturah.
+			Potisk, ki sva ga izmerila ni bil večji od merske napake. Gorenje motorja je bilo tudi vidno manj čisto kot bi želela. Ta test sva tudi posnela s termalno kamero in potrdila delovanje izolatorja, 
+			ki je ohranil zunanjo cev pri nizkih temperaturah.
 			V tem testu sva izvedela, kako pomembna je izbira dneva z dobrim vremeno in kako močno vpliva vlaga na kvaliteto delovanja njinega motorja.
 			Tu sva tudi opazila pomankljivosti vžiga z najinim elektronskim vžigom, ki se je prej izkazal za uspešnega, a nama je zdaj povzročal veliko težav.
 			Pokazala se je tudi ena od slabosti z vertikalno orientacijo motorja v stojalu, saj je dež padal naravnost v motor in pripomogel k nedelovanju motorja.
