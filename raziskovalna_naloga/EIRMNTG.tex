@@ -531,7 +531,7 @@
 			Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
 		
 		\subsection{Šoba}
-		Šoba je pomemben del motorja, saj kot omenjeno že v poglavju \cite{soba} z omejevanjem in usmerjanjem nekaterih vročih produktov 
+		Šoba je pomemben del motorja, saj kot omenjeno že v poglavju \ref{soba} z omejevanjem in usmerjanjem nekaterih vročih produktov 
 		reakcije povzroči potisk, ki pospeši raketo. Šoba tudi uravnava pritisk, ki je  Šoba prav tako uravnava tlak znotraj motorja, ki je, kot opisano v poglavju   Uhajanje plinov in drugih produktov reakcije, 
 		ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodira površino šobe. 
 		Še posebej je na udaru grlo, ki, ko je razširjeno, ne opravlja več svoje funkcije. Nameravala sva tudi zalepiti šobo na zunanjo cev. Tako sva že od samega začetka 
@@ -639,6 +639,7 @@
 		Žico priklopiva na vir enosmerne napetosti, ki lahko proizvede vsaj 10 A toka, ta pa segreje žico, ki vžge gorivo.
 		Ta metoda vžiga se je izkazala za relativno neponovljivo. Po premisleku sva prišla do zaključka, da žica ne pride v stik z gorivom ali pa prehitro pregori. %Izbolšava: dodaj kapljo ogriva direktno na žico
 
+		\FloatBarrier
 		\subsection{Statično testiranje}
 		Z statičnim testiranjem sva pridobila podatke o potisku motorja, času gorenja in temperaturi motorja.
 		To sva merila z prej opisanim Force Plateom in termalno kamero. Motorje sva vžigala z elektronskim vžigom.
@@ -648,6 +649,11 @@
 			V tem testu sva izvedela, kako pomembna je izbira dneva z dobrim vremeno in kako močno vpliva vlaga na kvaliteto delovanja njinega motorja.
 			Tu sva tudi opazila pomankljivosti vžiga z najinim elektronskim vžigom, ki se je prej izkazal za uspešnega, a nama je zdaj povzročal veliko težav.
 			Pokazala se je tudi ena od slabosti z vertikalno orientacijo motorja v stojalu, saj je dež padal naravnost v motor in pripomogel k nedelovanju motorja.
+			\begin{figure}
+			\centering
+			\includegraphics[height = 8cm]{prvi_test_motorja}
+			\caption{Prvo statično testiranje motrja}
+			\end{figure}
 			\subsubsection{Drugi test}
 			Za drugi test sva zibrala dan z primernejšim vremenom. Pripravila sva tri motorje, enake kot v prvem testu.
 			Gorivo v teh testih je bilo slabše kvalitete, saj metode iz odstavka \ref{gorivo} še nisva dokončno razvila.
@@ -666,7 +672,11 @@
 			Večina papirja, kot je vidno na sliki X, kjer sva motor iz tretjega testa prerezala po dolžini za analizo, je preživelo visok tlak in temperaturo ekstremnih pogojev v raketnem motorju in s tem opravilo svojo nalogo z odliko. %TODO dodaj sliko prerezanega motorja
 			Iz prerezanega motorja sva izmerila tudi končni premer grla šobe, ki je 15 mm. To je kar 5 mm več od začetnega premera, kar nakazuje na močno erozijo šobe in relativno slabo vzdržljivost šob iz mavca.
 			To je drugi razlog za neskladanje podatkov, ki sva jih izmerila in teh, ki sva jih pridobila s simulacijo. V prerezu motorja sva tudi dobro videla, da je epoksi smola, tako zaprtje cevi kot tudi ta, ki je držala šobo,
-			dobro preživela testiranje motorja.
+			\begin{figure}
+			\centering
+			\includegraphics[height = 6cm]{tretji_test_motorja}
+			\caption{Tretje statično testiranje motrja}
+			\end{figure}
 
 		\FloatBarrier
 		\subsection{Analiza podatkov}
@@ -676,18 +686,26 @@
 		Da sva ugotovila, da ničla odstopa za približno 1 N, sva funkcijo zgladila in odčitala, za koliko jo morava dvigniti.
 		Z zglajenimi podatki sva tudi odšitala največji potisk, ki je $6,3 \pm 0,3$ N. Motor je vse skupaj gorel 3,6 s.
 		Nato sva odsek grafa, kjer je motor proizvajal potisk, integrirala in dobila, da je impulz, ki ga je proizvedel motor tretjega testa enak 17,26 Ns.
+		Kako sva integrirala je jasno razvidno iz grafa na sliki \ref{graf:integral}.
 		Iz impulza in časa gorenja lahko izračunamo povpreče potisk motorja:
 		\begin{equation}
 			\bar{F} = \frac{I}{t} = \frac{\SI{17,26}{Ns}}{\SI{3,6}{s}} = \SI{4,79}{N}
 		\end{equation}
+
 		Iz enačbe \ref{eq:ISP} sva izračunala tudi specifični impulz.
 		\begin{equation}
 			I_{SP} = \frac{I}{m \vdot g_0} = \frac{\SI{17,26}{Ns}}{\SI{0,075}{kg} \vdot \SI{9.80665}{m/s^2}} = \SI{23,47}{s}
 		\end{equation}
-		Z enačbo Ciolkovskega \ref{eq:Ciolkovskega} sva izračunala tudi spremembo hitrosti ($\Delta v$).
-		Za $m_0$ sva vzela maso XXX in za $m_1$ sva vzela maso XXX. %TODO stehtaj
+
+		Če enačimo enačbi \ref{eq:ISP} in \ref{eq:ISP_v} dobimo enačbo, s katero lahko izračunamo povprečno izhodno hitrost plinov relativno na raketo.
 		\begin{equation}
-			\Delta v = v_e \ln{\frac{m_0}{m_1}} 
+			v_e = \frac{I}{m} = \frac{\SI{17,26}{Ns}}{\SI{0,075}{kg}} = \SI{230}{m/s}
+		\end{equation}
+
+		Z enačbo Ciolkovskega \ref{eq:Ciolkovskega} sva izračunala tudi spremembo hitrosti ($\Delta v$).
+		Za $m_0$ sva vzela maso \SI{170}{g} in za $m_1$ sva vzela maso \SI{95}{g}.
+		\begin{equation}
+			\Delta v = v_e \ln{\frac{m_0}{m_1}} = \SI{230}{m/s} \vdot \ln{\frac{\SI{0,170}{kg}}{\SI{0,095}{kg}}} = \SI{134}{m/s}
 		\end{equation}
 
 
@@ -707,7 +725,7 @@
 		\begin{figure}
 		\centering
 		\includegraphics[width = 16cm]{integral}
-		\caption{Integral grafa potiska v odvisnosti od časa po času}
+			\caption{Integral grafa potiska v odvisnosti od časa po času} \label{graf:integral}
 		\end{figure}
 
 
