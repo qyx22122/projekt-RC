@@ -531,16 +531,24 @@
 			Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
 		
 		\subsection{Šoba}
-		Šoba je pomemben del motorja, saj kot omenjeno že v poglavju \ref{soba} z omejevanjem in usmerjanjem nekaterih vročih produktov 
-		reakcije povzroči potisk, ki pospeši raketo. Šoba tudi uravnava pritisk, ki je  Šoba prav tako uravnava tlak znotraj motorja, ki je, kot opisano v poglavju   Uhajanje plinov in drugih produktov reakcije, 
-		ki jih le-ti nosijo s sabo je tako nasilno da pogosto močno erodira površino šobe. 
-		Še posebej je na udaru grlo, ki, ko je razširjeno, ne opravlja več svoje funkcije. Nameravala sva tudi zalepiti šobo na zunanjo cev. Tako sva že od samega začetka 
+		Šoba je pomemben del motorja, saj z omejevanjem in usmerjanjem nekaterih vročih produktov 
+		reakcije povzroči potisk, ki pospeši raketo. Šoba prav tako uravnava tlak znotraj motorja, ki je sorazmeren z učinkovitostjo. \ref{soba} Tako je izpostavljena visokim temperaturam in silam, 
+		zaradi česar zanjo niso primerni vsi materiali. Prav tako je uhajanje plinov in drugih produktov reakcije, 
+		ki jih le-ti nosijo s sabo tako nasilno, da pogosto močno erodira površino šobe. 
+		Še posebej je na udaru grlo, ki, ko je razširjeno, ne opravlja več svoje funkcije. To se dogaja tudi najinim šobam, kar je razvidno s slike \ref{erodirana_šoba}. Ker sva nameravala šobo tudi zalepiti na zunanjo cev, sva že od samega začetka 
 		vedela da bodo šobe za enkratno uporabo. Tako dražji materiali nikoli niso prišli v poštev. 
 
+		\begin{figure}
+		\centering
+		\includegraphics[height=4cm]{erozija_sobe}
+		\caption{Primerjava erodirane in sveže šobe}
+		\label{erodirana_šoba}
+		\end{figure}
+
 		Vendar pa imajo tudi dražje alternative svoje slabosti. Čeprav grafit dobro prenaša temperaturo in je lahek je struženje grafita izjemno umazan proces.
-		Nastali grafitni prah je tudi abraziven VIRRR
-		za vsa vodila stružnice in zanjo posledično nevaren.
-		Zaradi krhkosti je vsakršna obdelava zahtevna, tudi hitro erodira. 
+		Nastali grafitni prah je tudi abraziven 
+		za vsa vodila stružnice in zanjo posledično nevaren. \cite{graphite_machining_damage}
+		Zaradi krhkosti je vsakršna obdelava zahtevna, tudi hitro erodira. \cite{graphite_properties_brittle}
 		Kovine so pretežke, in imajo prenizka tališča. Njih struženje prav tako vzame veliko časa. Želela sva se držati tudi cilja prostodostopnosti.
 		Na idejo nama je prišel cement, ki je pogost material za šobe v amaterskem raketarstvu.%TEGA JE NA NETU ZELO VELIKO (npr. https://www.youtube.com/watch?v=7ydLaY3Zn_Y)
 		Ker pa ima cement daljše čase strjevanja in večja zrna sva se odločila za električarski mavec. Da bi mavec zavzel želeno obliko pa sva ga ulivala v kalupe,
@@ -558,9 +566,21 @@
 %TODO QYX 
 
 			\subsubsection{Ulivanje šob}
-			Ulivanje šob je v primerjavi z ulivanjem goriva zelo enostavno. Ko imamo čist kalup pripravimo 
+			Ulivanje šob je v primerjavi z ulivanjem goriva zelo enostavno. Ko imamo čist kalup zatehtamo mavec ter vodo in ju zmešamo v razmerju $1/0.7$. Pripravljeno mešanico vlijemo v kalup, 
+			kot prikazano na sliki  \ref{napolnjen_kalup}. Opazimo lahko, da mešanica ne doseže roba kalupa, saj ko na kalup postavimo pokrov le-ta mešanico izpodrine. Pravšnja masa mešanice za eno šobo je približno 30 gramov.
+			Da šoba nima nepravilnosti zaradi ujetih zračnih mehurčkov kalup, v katerem je mešanica, večkrat potolčemo ob trdno podlago. Mešanica se strjuje približno 15 minut. Po tem času lahko iz kalupa vzamemo šobo tako, 
+			da daljše ploščato kovinsko orodje zataknemo med pokrov in ročaja in na tako ustvarjen vzvod delujemo s silo. Enako naredimo s spodnjim pokrovom kalupa. Potem lahko isto orodje vtaknemo še med ročaja in ju po istem
+			principu ločimo. Če se je šoba strdila jo bomo ven dobili celo, lahko pa se nam tudi razlomi. Pri majhnih šobah je težava tudi, da se oddrobijo njeni tanjši deli. Za šobe sva uporabljala električarski mavec Murexin Gips GI 70, 
+			ki je bil, enako kot cevi, kupljen v trgovini z tehničnim blagom. 
 
-			\begin{figure}[H]
+			\begin{figure}
+			\centering
+			\includegraphics[height=4cm]{model_poln}
+			\caption{Napolnjen kalup}
+			\label{napolnjen_kalup}
+			\end{figure}
+
+			\begin{figure}
 			\centering
 			\includegraphics[height=4cm]{šoba_1}
 			\hspace{0.3cm}
@@ -568,7 +588,7 @@
 			\caption{Načrt kalupa za ulivanje šob}
 			\end{figure}
 
-			\begin{figure}[H]
+			\begin{figure}
 			\centering
 			\includegraphics[height=4cm]{model_razstavljen}
 			\hspace{0.3cm}
@@ -578,9 +598,8 @@
 			\caption{3D printan plastičen kalup za ulivanje šob}
 			\end{figure}
 
-			\begin{figure}[H]
+			\begin{figure}
 			\centering
-			\includegraphics[height=4cm]{model_poln}
 			\hspace{0.3cm}
 			\includegraphics[height=4cm]{model_poln_strjen}
 			\hspace{0.3cm}
@@ -639,7 +658,6 @@
 		Žico priklopiva na vir enosmerne napetosti, ki lahko proizvede vsaj \SI{10}{A} toka, ta pa segreje žico, ki vžge gorivo.
 		Ta metoda vžiga se je izkazala za relativno neponovljivo. Po premisleku sva prišla do zaključka, da žica ne pride v stik z gorivom ali pa prehitro pregori. %Izbolšava: dodaj kapljo ogriva direktno na žico
 
-		\FloatBarrier
 		\subsection{Statično testiranje}
 		Z statičnim testiranjem sva pridobila podatke o potisku motorja, času gorenja in temperaturi motorja.
 		To sva merila z prej opisanim Force Plateom in termalno kamero. Motorje sva vžigala z elektronskim vžigom.
