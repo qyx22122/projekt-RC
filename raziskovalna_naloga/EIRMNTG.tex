@@ -259,15 +259,15 @@
 		Potem openMotor simulira gorenje goriva v motorju po majhnih časovnih inkrementih. Najprej izračuna regresijo in masni pretok, tako da iterira skozi vse gorivne celice, ki so postavljene ena za drugo:
 		\cite{openMotor}
 		\begin{enumerate}
-			\item Regresijo goriva; to izračuna tako, da pomnoži majhen korak v času z hitrostjo gorenja, ki je funkcija pritiska.
-				Za pritisk uporabi vrednost iz prejšnjega koraka simulacije.
+			\item Regresijo goriva; to izračuna tako, da pomnoži majhen korak v času z hitrostjo gorenja, ki je funkcija tlaka.
+				Za tlak uporabi vrednost iz prejšnjega koraka simulacije.
 			\item Masni pretok, ki ga izračuna iz masnih pretokov gorivnih celic nad zdajšnjo.
 			\item Maso gorivne celice; to izračuna iz gostote goriva in regresije, ki je bila izračunana v tem koraku
 			\item Kot zadnji korak doda masni pretok skozi to celico v skupen masni pretok in izračuna novo geometrijo gorivne celice.
 		\end{enumerate}
 
 		Nato izračuna vrednost $K_n$, ki je razmerje med površino grla in vso gorenju izpostavljeno površino goriva. Ta vrednost je pomembna,
-		saj je funkcija pritiska odvisna zgolj od nje in lasnosti goriva. Potem izračuna tlak v motorju in izhodni tlak.
+		saj je funkcija tlaka odvisna zgolj od nje in lasnosti goriva. Potem izračuna tlak v motorju in izhodni tlak.
 		Iz teh dveh tlakov izračuna potisk motorja kot nam to opisuje enačba \ref{eq:potisk_1}.
 		Na koncu izračuna še nanos žlindre na šobo, v najinem primeru \ce{K2CO3} in \ce{KOH} kot je razvidno iz enčbe \ref{eq:gorjenje-goriva}, in se premakne za en časovni korak naprej. 
 
@@ -363,7 +363,7 @@
 		Izolator je, sploh v amaterskem raketarstvu, nepogrešljiv del motorja. Da je material primeren za ohišje mora imeti nizko gostoto
 		in tudi tanke plasti morajo biti zmožne prenesti visoke tlake brez deformacij. Navedene lastnosti mora obdržati tudi pri velikih spremembah temperature.
 		Ker so takšni materiali redki, težko dostopni oziroma dragi, pogosto niso primerni niti za velike organizacije,
-		kaj šele za amaterje. Zato se tako profesionalno kot amatersko uporablja več različnih, cenejših, materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
+		kaj šele za amaterje. Zato se tako profesionalno kot amatersko uporablja več različnih, cenejših, materialov, v plasteh. Za prenašanje visokih tlakov tako uporabljava PP-H cev,
 		za obvarovanje dotične cevi pred visokimi temperaturami pa risalne liste (papir) z debelino \SI{0,03}{mm}, ki so razrezani na primerne velikosti in vstavljeni v cev,
 		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Skozi testiranje sva prišla do debeline \SI{1,75}{mm}. 
 		Papirnat izolator pri najinem motorju je razdeljen na dva dela, za potrebe shranjevanja 
@@ -386,7 +386,7 @@
 			S tem testom sva testirala različne vrste izolatorjev. Preizkusila sva karton, debel nanos tekstilnega lepilnega traku in
 			relativno tanek nanos električaskega mavca (isti mavec sva uporabljala za šobe). Imela sva tudi kontrolni model, brez izolatorja. Za višino zunanje cevi sva določila \SI{4}{cm}, 
 			zato, da sva imela testne modele z manj goriva in je tveganje za hujše nesreče ostalo minimalno. Testi so tako vsebovali približno 25 gramov goriva.
-			Po pričakovanjh se je zunanja cev kontrolnega vzorca med testiranjem vnela in se popolnoma stopila. Enako se je zgodilo z vzorcem z lepilnim trakom.
+			Po pričakovanjih se je zunanja cev kontrolnega vzorca med testiranjem vnela in se popolnoma stopila. Enako se je zgodilo z vzorcem z lepilnim trakom.
 			Karton je zelo dobro deloval, mavec pa le delno, saj nima dovolj dobrih izolacijskih sposobnosti in
 			se je zunanja cev delno stopila. Težava je tudi, da je nanašanje enakomerne, dovolj tanke plasti mavca zahtevno.
 			Tako sva kot najboljšo možnost določila karton.
@@ -633,7 +633,7 @@
 		izdelala stojalo iz aluminija.
 		Stojalo je narejeno iz dveh L-profilov iz in štirih kotnikov, kot je videno na sliki. %TODO
 		V aluminijasto ploščo in L-profila so bile zvrtane luknje in narejeni navoji. Z vijaki so bili kotniki pritrjeni na ploščo in L-profili na kotnike.
-		Za tako držalo sva se odločila, saj varno drži motor med testiranjem in a vidno ne pomaga k zadrževanju pritiska. Držalo je tudi narejeno tako,
+		Za tako držalo sva se odločila, saj varno drži motor med testiranjem in a vidno ne pomaga k zadrževanju tlaka. Držalo je tudi narejeno tako,
 		da ima dve reži, skozi kateri lahko termalna kamera meri temperaturo cevi motorja.
 		Stojalo sva postavila na Force Plate in se zaščitila z pleksi steklom. Force Plate sva preko Vernirjevega vmesnika povezala na računalnik,
 		ki bere in shranjuje podatke o potisku motorja, sproti pa tudi izrisuje graf.
@@ -662,7 +662,7 @@
 
 		\subsection{Statično testiranje}
 		Z statičnim testiranjem sva pridobila podatke o potisku motorja, času gorenja in temperaturi motorja.
-		To sva merila z prej opisanim Force Plateom in termalno kamero. Motorje sva vžigala z elektronskim vžigom.
+		To sva merila z prej opisanim Force Platom in termalno kamero. Motorje sva vžigala z elektronskim vžigom.
 			\subsubsection{Prvi test}
 			V prvem statičnem test sva se namenila testirati samo en motor. Ta je bil sestavljen kot je opisano v odstavku \ref{sestavljanje_motorja}. Meniva, da je dež zelo slabo vplival na gorenje gorivo, saj nisva izmerila nič potiska.
 			Potisk, ki sva ga izmerila ni bil večji od merske napake. Gorenje motorja je bilo tudi vidno manj čisto kot bi želela. Ta test sva tudi posnela s termalno kamero in potrdila delovanje izolatorja, ki je ohranil zunanjo cev pri nizkih temperaturah.
@@ -700,10 +700,10 @@
 
 		\FloatBarrier
 		\subsection{Analiza podatkov}
-		Podatke, ki sva jih pridobila z Force Plateom sva analizirala v programu Logger Pro verzije 3.16.2, ki nama omogoča funkcije, kot sta integriranje podatkov po času in
+		Podatke, ki sva jih pridobila z Force Platom sva analizirala v programu Logger Pro verzije 3.16.2, ki nama omogoča funkcije, kot sta integriranje podatkov po času in
 		avtomatsko ustvarjanje polinoma, ki se prilega podatkom. Velika večina ostalih verzij programa ni kapatibilnih z Vernierjevim LabPro vmesnikom, ki ga lahko vidimo na sliki X.
-		Podatke sva najprej pomaknila navzgor za \SI{1,0}{N}, saj je ničla, ki sva jo nastavila ob testiranju, ni bila skladna z podatki.
-		Da sva ugotovila, da ničla odstopa za približno 1 N, sva funkcijo zgladila in odčitala, za koliko jo morava dvigniti.
+		Podatke sva najprej pomaknila navzgor za \SI{1,0}{N}, saj je ničla, ki sva jo nastavila ob testiranju, ni bila skladna z realnostjo.
+		Da sva ugotovila, da ničla odstopa za približno 1 N, sva graf zgladila in odčitala, za koliko jo morava dvigniti, kot je lahko vidno na sliki \ref{graf:zglajen}.
 		Z zglajenimi podatki sva tudi odšitala največji potisk, ki je $6,3 \pm 0,3$ N. Motor je vse skupaj gorel \SI{3,6}{s}.
 		Nato sva odsek grafa, kjer je motor proizvajal potisk, integrirala in dobila, da je impulz, ki ga je proizvedel motor tretjega testa enak \SI{17,26}{Ns}.
 		Kako sva integrirala je jasno razvidno iz grafa na sliki \ref{graf:integral}.
@@ -728,8 +728,6 @@
 			\Delta v = v_e \ln{\frac{m_0}{m_1}} = \SI{230}{m/s} \vdot \ln{\frac{\SI{0,170}{kg}}{\SI{0,095}{kg}}} = \SI{134}{m/s}
 		\end{equation}
 
-
-
 		\begin{figure}
 		\centering
 		\includegraphics[width = 16cm]{potisk}
@@ -739,7 +737,7 @@
 		\begin{figure}
 		\centering
 		\includegraphics[width = 16cm]{potisk_zglajen}
-		\caption{Graft potiska v odvisnosti od časa in zglajeni podatki}
+			\caption{Graft potiska v odvisnosti od časa in zglajeni podatki} \label{graf:zglajen}
 		\end{figure}
 
 		\begin{figure}
@@ -750,8 +748,30 @@
 
 
 		\FloatBarrier
+		\subsubsection{Prilagajanje simulacije}
+		Izkazalo se je, da je motor tretjega testa proizvedel drugačno kriuljo potiska, kot sva jo pričakovala.
+		Največji doseženi potisk je manjši in čas gorenja je daljši. Tako impulz kot tudi specifični impulz sta manjša od pričakovanih vrednosti.
+		Simulacijo sva se odločila prilagoditi, da bo bolje opisovala pridobljene podatke.
+		Najprej sva spreminjala vrednost koeficienta erozije grla ("Throat Erosion Coefficien" v openMotorju), ki v simulaciji določa, kako hitro bodo izpuhi šobo erodirali.
+		Z metodo poizkušanja sva prišla do vrednosti \SI[per-mode = symbol]{4,25}{\micro\meter\per\second\per\milli\pascal}, ki je se je ujemala z najinimi podatki,
+		in sicer se je skozi celo gorenje premer šobe spremenil za \SI{5}{mm}. Zanimivo je, kako linearna je erozija šobe, kar je posledica skoraj konstantnega tlaka.
+		Ker nisva mogla simulacije prilagoditi na tak način, da bi v vseh aspektih ponazarjala realnost, sva se odločila realnosti približati na dva različna načina.
 
+		Najprej sva nastavila parametre simulacije tako, da je bil največji doseženi potisk enak kot ta, ki sva ga izmerila.
+		To sva v glavnem dosegla z spreminjanjem učinkovitosti šobe. Prišla sva do vrednosti 28,7 \%.
+		Na sliki \ref{graf:prilagojeno_potisk} je viden graf potiska, erozije šobe in tlaka v komori v odvisnosti od časa.
 
+		Nato sva poskusila prilagoditi simulacijo še na način, da bo impulz motorja enak kot sva ga izmerila pri statičnem testiranju.
+		Za to sva spet spreminjala učinkovitost šobe. Prišla sva do vrednosit 33,2 \%.
+
+		Obeh načinov nisva mogla združiti, saj se najino gorivo obnaša drugače od profila KNSU v openMotorju. Glavna razlika je bila čas gorenja, ki ga nisva mogla dovlj upočasnit.
+		V primeru, ko sva to poizkusila, sva prišla do rezultata, da večina goriva ne zgori, kar pa po najinih podatkih ne drži.
+
+		\begin{figure}
+		\centering
+		\includegraphics[width = 16cm]{prilagojeno_potisk}
+			\caption{Simulacija prilagojena za pravilen maksimalen potisk} \label{graf:prilagojeno_potisk}
+		\end{figure}
 
 		
 	\section{Rezultati}
