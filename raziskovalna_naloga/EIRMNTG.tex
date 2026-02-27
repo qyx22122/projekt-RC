@@ -490,8 +490,8 @@
 		S programom openMotor sva si pomagala tudi izbrati količino goriva (\SI{75}{g}), ki sva jo nato uporabila v vseh statičnih testih motorja.
 		Že v teoretičnem delu sva omenila profil KNSU, ki obstaja v openMotorju in je po sestavi primerljiv najinemu gorivu.
 		Premer luknje v gorivu sva nastavila na \SI{15}{mm}, dolžino \SI{70}{mm} pa sva dobila tako, da sva jo spreminjala, dokler nisva dobila primerne mase (\SI{75}{g}) in tlaka znotraj omejitev cevi.
-		Premer grla šobe sva določila kot \SI{10}{mm}, ker sva želela ohraniti nizek tlak. %TODO dodaj vrednost tlaka iz simulacije
-		Kot se jasno vidi iz slike X, naj bi motor proizvedel do približno \SI{100}{N} potiska in samo gorenje naj bi trajalo okoli XX s. %TODO slika openMotorja in odčitanje časa gorenja
+		Premer grla šobe sva določila kot \SI{10}{mm}, ker sva želela ohraniti nizek tlak. Iz simulacije sva dobila podatke o maksimalnem tlaku, ki je \SI{1,11}{MPa}.
+		Kot se jasno vidi iz slike X, naj bi motor proizvedel do približno \SI{100}{N} potiska in samo gorenje naj bi trajalo okoli \SI{1,11}{s}.
 		
 
 		\subsection{Gorivo} \label{gorivo}
@@ -620,13 +620,14 @@
 		Tako sestavljen motor je po strjevanju smole pripravljen na testiranje. Paziti pa moramo da ni predolgo izpostavljen kakršnikoli vlagi,
 		saj to močno vpliva na hitrost gorenja in izkoristek.
 
-		\begin{figure}[H]
+		\begin{figure}
 		\centering
 		\includegraphics[scale=.3]{QFau_oznacen_final}
 		\caption{Shema motorja} \label{shema_motorja}
 		\end{figure}
 
 		
+			\FloatBarrier
 		\subsection{Merjenje potiska}
 		Za merjenje potiska sva uporabila Vernierjev Force Plate, katerega natančnost je \SI{0,3}{N} na intervalu \SI{-85}{N} do \SI{850}{N} ali \SI{1}{N} na intervalu \SI{-350}{N} do \SI{3500}{N}.
 		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo \SI{0,3}{N}. Za držanje motorja sta nama hišnika Gimnazije Vič po najinem načrtu
@@ -727,7 +728,7 @@
 			Gorivne celice in motor sam sva začela tudi shranjevati v nepredušno zatesnjenih posodah v prisotnosti prej omenjenega silika gela.
 			Gorivno celico tretjega testa žal nisva takoj po ulitju dala v dehidrator, kot sva kasnejše celice, sva pa jo kasneje dala k ostalim celicam v dehidrator.
 			Ta je bila zaradi nepremišljenosti iz najine strani že vstavljene v cev in se je zato na zadnji strani slabše posušila, kar bi lahko pripomoglo k odklonu
-			izmerjenih podatkov od začetne simulacije. Tretji test je bil za razliko od prvega in drugega delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki X. %TODO dodaj sliko originalne krivulje
+			izmerjenih podatkov od začetne simulacije. Tretji test je bil za razliko od prvega in drugega delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki \ref{setup_anotiran}.
 			Temperatura površine zunanje cevi je tudi pri tem motorju bila zmerna, kar dokončno potrdi izolativne sposobnosti papirja kot izolator v raketnem motorju.
 			Večina papirja, kot je vidno na sliki X, kjer sva motor iz tretjega testa prerezala po dolžini za analizo, je preživelo visok tlak in temperaturo ekstremnih pogojev v raketnem motorju in s tem opravilo svojo nalogo z odliko. %TODO dodaj sliko prerezanega motorja
 			Iz prerezanega motorja sva izmerila tudi končni premer grla šobe, ki je \SI{15}{mm}. To je kar \SI{5}{mm} več od začetnega premera, kar nakazuje na močno erozijo šobe in relativno slabo vzdržljivost šob iz mavca.
@@ -787,7 +788,6 @@
 		\end{figure}
 
 
-		\FloatBarrier
 		\subsubsection{Prilagajanje simulacije}
 		Izkazalo se je, da je motor tretjega testa proizvedel drugačno kriuljo potiska, kot sva jo pričakovala.
 		Največji doseženi potisk je manjši in čas gorenja je daljši. Tako impulz kot tudi specifični impulz sta manjša od pričakovanih vrednosti.
@@ -814,6 +814,8 @@
 		\end{figure}
 
 		
+	\FloatBarrier
+
 	\section{Rezultati}
 
 	\section{Razprava}
