@@ -12,6 +12,10 @@
 \usepackage{stackengine}
 \usepackage{physics}
 \usepackage{amsmath}
+\usepackage{siunitx}
+\sisetup{
+	output-decimal-marker = {,},
+}
 
 \usepackage{float} %za hard override placementa slik /begin{figure}[H]
 \usepackage{placeins} % za barierje placementa slik /FloatBarrier
@@ -288,7 +292,7 @@
 		\end{equation}
 			Iz impulza izpeljemo fizikalno količino, ki jo imenujemo specifičen impulz. Ta nam pove razmerje med impulzom motorja in težo goriva.
 			\cite{wiki:Specific_impulse2025}
-		\begin{equation}
+		\begin{equation}\label{eq:ISP}
 			I_{SP} = \frac{I}{m \vdot g_0}
 		\end{equation}
 			Specifični impulz je tudi razmerje med potiskom motorja in tokom teže goriva. To izpeljemo sledeče.
@@ -307,12 +311,13 @@
 		Tej količini sva v raziskovalni nalogi posvetila največ pozornosti.
 	
 			\subsubsection{Zakaj prav specifičen impulz?}
-		 	Specifičen impulz nam pove učinkovitost raketnega motorja in sicer koliko sekund bo ta motor proizvajal 1N potiska z gorivom, ki tehta 1N.
+		 	Specifičen impulz je sorazmeren z učinkovitostjo raketnega motorja in s tem tudi energisjskim izkoristkom. Specifični impulz si lahko predsatvljamo kot čas gorenja
+			med katerim bo motor, ki vsebuje gorivo, ki tehta \SI{1}{N}, proizvajal potisk \SI{1}{N}. 
 			Če imata dva motorja različna specifična impulza in enako maso goriva, bo motor z večjim specifičnim impulzom proizvedel večji sunek sile. \cite{nasa:specific_impulse}
 			Specifičen impulz je tudi priročen, ker je merjen v sekundah, ki se uporabljajo tako v metričnem kot tudi v imperialnem sistemu. Z njim se da
 			tudi oceniti količino goriva potrebnega za določeno spremembo hitrosti rakete ($\Delta v$) in s tem za določen manever.
 			To naredimo z enačbo Ciolkovskega. \cite{nasa:ideal_rocket_equation}
-			\begin{equation}
+			\begin{equation} \label{eq:Ciolkovskega}
 				\Delta v = v_e \ln{\frac{m_0}{m_1}} = I_{SP} g_0 \ln{\frac{m_0}{m_1}}
 			\end{equation}
 			kjer je $v_e$ hitrost izpuhov relativno na gibanje rakete, $m_0$ začetna masa rakete in $m_1$ končna masa rakete.
@@ -339,16 +344,16 @@
 	
 		\subsection{Zunanja cev}
 		Za ohišje motorja sva uporabljala odtočne cevi iz plastike PP-H (polipropilen homopolimer) ki jih izdeluje podjetje Peštan. Kupila sva jih v trgovini s tehničnim blagom
-		in jih razžagala na primerno dolžino - Za prve teste izolatorja 4 cm, potem 6 cm ter 12,5 cm za dejanski motor.
-		Cev je certificirana s standardom EN 1451. \cite{Katalog_HTPP} Tako bi morala pri temperaturi 353 K zdržati, četudi za kratek čas, tlak do 6,0 MPa. \cite{EN1451}
-		Cevi sva izmerila notrananji premer 36mm in debelino stene 1.90mm. Ko sva odžagala primerno dolžino cevi sva plastiko,
+		in jih razžagala na primerno dolžino - Za prve teste izolatorja \SI{4}{cm}, potem \SI{6}{cm} ter \SI{12,5}{cm} za dejanski motor.
+		Cev je certificirana s standardom EN 1451. \cite{Katalog_HTPP} Tako bi morala pri temperaturi \SI{353}{K} zdržati, četudi za kratek čas, tlak do \SI{6,0}{MPa}. \cite{EN1451}
+		Cevi sva izmerila notrananji premer \SI{36}{mm} in debelino stene \SI{1.90}{mm}. Ko sva odžagala primerno dolžino cevi sva plastiko,
 		ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. 
 		S tem sva cev polepšala, predvsem pa olajšala vstavljanje izolatorja.
 		
 			\subsubsection{Zaprtje cevi}
 			Za pravilno delovanje raketnega motorja je potreben visok tlak, ki pa ni dosežen, če sta konca cevi odprta. Ker želimo tudi, da rezultanta sil na telo v fazi pospeševanja
 			oziroma izgorevanja ni enaka nič, ni dovolj da konce cevi zožamo, eno od strani je potrebno neprodušno zapreti na način, ki tudi premore visoke tlake, po možnosti brez
-			mehanskih okvar. Za ta namen sva uporabila epoksi smolo, katere sva v cev vlila toliko, da je ustvarila 1 cm debelo plast. VIRR Ker se epoksi ne spaja dobro na PP-H cev 
+			mehanskih okvar. Za ta namen sva uporabila epoksi smolo, katere sva v cev vlila toliko, da je ustvarila \SI{1}{cm} debelo plast. VIRR Ker se epoksi ne spaja dobro na PP-H cev 
 			sva del, ki sva ga zalila, prej napraskala z brusilnim papirjem granulacije 40. Tako sva zagotovila zareze, v katere se je ujela smola. Ko se je strdila spoj tako ni bil več odvisen od lepljenja na cev;
 			ampak od lastnosti spojev cev s cevjo in smola s smolo. 
  
@@ -359,8 +364,8 @@
 		in tudi tanke plasti morajo biti zmožne prenesti visoke tlake brez deformacij. Navedene lastnosti mora obdržati tudi pri velikih spremembah temperature.
 		Ker so takšni materiali redki, težko dostopni oziroma dragi, pogosto niso primerni niti za velike organizacije,
 		kaj šele za amaterje. Zato se tako profesionalno kot amatersko uporablja več različnih, cenejših, materialov, v plasteh. Za prenašanje visokih pritiskov tako uporabljava PP-H cev,
-		za obvarovanje dotične cevi pred visokimi temperaturami pa risalne liste (papir) z debelino 0,03 mm, ki so razrezani na primerne velikosti in vstavljeni v cev,
-		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Skozi testiranje sva prišla do debeline 1,75 mm. 
+		za obvarovanje dotične cevi pred visokimi temperaturami pa risalne liste (papir) z debelino \SI{0,03}{mm}, ki so razrezani na primerne velikosti in vstavljeni v cev,
+		tako da tvorijo več plasti debel izolator. \cite{Thermal_conductivity_of_Paper} Skozi testiranje sva prišla do debeline \SI{1,75}{mm}. 
 		Papirnat izolator pri najinem motorju je razdeljen na dva dela, za potrebe shranjevanja 
 		in premikanja gorivnih celic po ulivanju. 
 
@@ -379,7 +384,7 @@
 
 			\subsubsection{Prvi test} \FloatBarrier
 			S tem testom sva testirala različne vrste izolatorjev. Preizkusila sva karton, debel nanos tekstilnega lepilnega traku in
-			relativno tanek nanos električaskega mavca (isti mavec sva uporabljala za šobe). Imela sva tudi kontrolni model, brez izolatorja. Za višino zunanje cevi sva določila 4 cm, 
+			relativno tanek nanos električaskega mavca (isti mavec sva uporabljala za šobe). Imela sva tudi kontrolni model, brez izolatorja. Za višino zunanje cevi sva določila \SI{4}{cm}, 
 			zato, da sva imela testne modele z manj goriva in je tveganje za hujše nesreče ostalo minimalno. Testi so tako vsebovali približno 25 gramov goriva.
 			Po pričakovanjh se je zunanja cev kontrolnega vzorca med testiranjem vnela in se popolnoma stopila. Enako se je zgodilo z vzorcem z lepilnim trakom.
 			Karton je zelo dobro deloval, mavec pa le delno, saj nima dovolj dobrih izolacijskih sposobnosti in
@@ -447,7 +452,7 @@
 
 
 			\subsubsection{Četrti test}
-			Povečala sva debelino izolatorja, dolžino zunanje cevi testnih modelov na 6 cm in količino goriva na približno 75 gramov, s čimer sva izboljšala reprezentativnost,
+			Povečala sva debelino izolatorja, dolžino zunanje cevi testnih modelov na \SI{6}{cm} in količino goriva na približno 75 gramov, s čimer sva izboljšala reprezentativnost,
 			saj sva enake dimenzije gorivnih celic uporabila tudi v končni verziji motorja.
 			Merila sva tudi temperaturo zunanje cevi z toplotno kamero. Tako sva dobila
 			uporabne podatke za izbiranje varne debeline izolatorja, ki so prikazani v tabeli \ref{tabela_četrti_test}.
@@ -482,11 +487,11 @@
 			\FloatBarrier
 		\subsection{Simuliranje motorja}
 		Za simuleranje sva se odločila, ker nisva želela prekoračiti zmogljivosti zunanje cevi in ker sva želela oceniti, kakšen potisk lahko pričakujeva od motorja.
-		S programom openMotor sva si pomagala tudi izbrati količino goriva (75 g), ki sva jo nato uporabila v vseh statičnih testih motorja.
+		S programom openMotor sva si pomagala tudi izbrati količino goriva (\SI{75}{g}), ki sva jo nato uporabila v vseh statičnih testih motorja.
 		Že v teoretičnem delu sva omenila profil KNSU, ki obstaja v openMotorju in je po sestavi primerljiv najinemu gorivu.
-		Premer luknje v gorivu sva nastavila na 15 mm, dolžino 70 mm pa sva dobila tako, da sva jo spreminjala, dokler nisva dobila primerne mase (75 g) in tlaka znotraj omejitev cevi.
-		Premer grla šobe sva določila kot 10 mm, ker sva želela ohraniti nizek tlak. %TODO dodaj vrednost tlaka iz simulacije
-		Kot se jasno vidi iz slike X, naj bi motor proizvedel do približno 100 N potiska in samo gorenje naj bi trajalo okoli XX s. %TODO slika openMotorja in odčitanje časa gorenja
+		Premer luknje v gorivu sva nastavila na \SI{15}{mm}, dolžino \SI{70}{mm} pa sva dobila tako, da sva jo spreminjala, dokler nisva dobila primerne mase (\SI{75}{g}) in tlaka znotraj omejitev cevi.
+		Premer grla šobe sva določila kot \SI{10}{mm}, ker sva želela ohraniti nizek tlak. %TODO dodaj vrednost tlaka iz simulacije
+		Kot se jasno vidi iz slike X, naj bi motor proizvedel do približno \SI{100}{N} potiska in samo gorenje naj bi trajalo okoli XX s. %TODO slika openMotorja in odčitanje časa gorenja
 		
 
 		\subsection{Gorivo} \label{gorivo}
@@ -496,8 +501,8 @@
 		Gorivo gori po enčbi \ref{eq:gorjenje-goriva}.
 
 			\subsubsection{Priprava goriva}
-			Gorivne celice, ki sva jih uporabljala v motorju, so imele maso 70 g. Zaradi izgub pri pripravi in ulivanju začneva z skupno maso goriva 100 g.
-			Najprej sva odtehtala 40 g saharoze in jih stresla v 1 L čašo. Ker je za ta proces potrebno, da se vsa saharoza raztopi, sva dodala 20 g vode. \cite{wiki:Sucrose}
+			Gorivne celice, ki sva jih uporabljala v motorju, so imele maso \SI{70}{g}. Zaradi izgub pri pripravi in ulivanju začneva z skupno maso goriva \SI{100}{g}.
+			Najprej sva odtehtala \SI{40}{g} saharoze in jih stresla v \SI{1}{L} čašo. Ker je za ta proces potrebno, da se vsa saharoza raztopi, sva dodala \SI{20}{g} vode. \cite{wiki:Sucrose}
 			Nato sva v čaši segrevala raztopino na električnem grelcu, dokler ni začela vreti. Takrat sva zmanjšala gretje in počasi brez mešanja izparila vso vodo.
 
 			S tem dolgotrajnim postopkom izparevanja vode sva dosegla, da je saharoza neposredno prešla iz raztopljene oblike v tekoče agregatno stanje. To se je zgodilo, brez
@@ -508,7 +513,7 @@
 			Barva takega goriva je bila temno rjava ali skoraj črna. Izkazalo se je, da mešanje v fazi izparevanja ni primerno, saj je povzročilo hitro oboritev saharoze.
 			Goriva, kjer se je saharoza oborila, ni bilo mogoče več rešiti, saj sva prišla do enake težave kot pri testih brez vode.
 
-			Naslednji korak je dodajanje \ce{KNO3}. Preden sva začela segrevati raztopino saharoze, sva zatehtala 60 g \ce{KNO3} in ga v terilnici fino zmlela. To sva počela v odduhi,
+			Naslednji korak je dodajanje \ce{KNO3}. Preden sva začela segrevati raztopino saharoze, sva zatehtala \SI{60}{g} \ce{KNO3} in ga v terilnici fino zmlela. To sva počela v odduhi,
 			saj prašni delci \ce{KNO3} dražijo dihala in oči. Ko se je vrenje upočasnilo in je talina začela dobivati blago barvo, sva začela počasi dodajati \ce{KNO3}.
 			To sva počela postopno. Dodala sva približno eno žlico \ce{KNO3} in ga popolnoma vmešala. Pri tem je zelo pomembno, da med dodajanjem mešanico še vedno grejemo na nizki moči.
 			V enem od testov se nama je gorivo v tem koraku strdilo, kar je vodilo do komplikacij, saj goriva nisva več mogla spraviti v tekoče stanje. Ko sva dodala ves \ce{KNO3} je bilo gorivo končano.
@@ -522,7 +527,7 @@
 			zaradi lažjega transporta in shranjevanja gorivnih celic.
 			Spodnja stran modelčka je zaprta z tekstilnim lepilnim trakom.
 			Zaradi visoke viskoznosti goriva, ga je bilo nemogoče vlivati zato sva ga s pomočjo žlice spravila v modelček.
-			Nato sva s plastično epruveto, ki ima premer 15 mm, naredila luknjo v gorivo in jo v njem postila dokler se ni ohladilo.
+			Nato sva s plastično epruveto, ki ima premer \SI{15}{mm}, naredila luknjo v gorivo in jo v njem postila dokler se ni ohladilo.
 			Iz hladnega in dokončno strjenega goriva sva odstranila epruveto in gorivno celico posušila v dehidratorju z uporabo silika gela.
 			Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
 		
@@ -579,6 +584,13 @@
 
 			\begin{figure}
 			\centering
+			\includegraphics[height=6cm]{model_poln}
+			\caption{Napolnjen kalup}
+			\label{napolnjen_kalup}
+			\end{figure}
+
+			\begin{figure}
+			\centering
 			\includegraphics[height=4cm]{šoba_1}
 			\hspace{0.3cm}
 			\includegraphics[height=4cm]{šoba_2}
@@ -609,8 +621,8 @@
 
 			\FloatBarrier
 		\subsection{Sestavljanje motorja} \label{sestavljanje_motorja}
-		V spodaj napraskano zunanjo cev primerne dolžine, v najinem primeru 12.5 cm, nalijemo epoksi smolo, tako da tvori 1 cm debelo plast. Da se smola ne razlije odprtino zalepimo s tekstilnim lepilnim trakom. 
-		Ko se smola strdi lahko v zunanjo cev vstavimo izolator, zvit v tulec. 
+		V spodaj napraskano zunanjo cev primerne dolžine nalijemo epoksi smolo, tako da tvori \SI{1,5}{cm} debelo plast. Da se smola ne razlije odprtino zalepimo s tekstilnim lepilnim trakom. 
+		Ko se smola strdi lahko v zunanjo cev vstavimo izolator, zvit v tulec.
 		V tako pripravljeno ohišje potisnemo gorivno celico, ki ima svojo plast izolatorja in potem v cev, na gorivo vstavimo šobo.
 		Na koncu v prostor med šobo in zunanjo cev s pomočjo kapalke za enkratno uporabo dodamo še epoksi smole. 
 		Tako sestavljen motor je po strjevanju smole pripravljen na testiranje. Paziti pa moramo da ni predolgo izpostavljen kakršnikoli vlagi,
@@ -624,8 +636,8 @@
 
 		
 		\subsection{Merjenje potiska}
-		Za merjenje potiska sva uporabila Vernierjev Force Plate, katerega natančnost je 0,3 N na intervalu -85 N do 850 N ali 1 N na intervalu -350 N do 3500 N.
-		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo 0,3 N. Za držanje motorja sta nama hišnika Gimnazije Vič po najinem načrtu
+		Za merjenje potiska sva uporabila Vernierjev Force Plate, katerega natančnost je \SI{0,3}{N} na intervalu \SI{-85}{N} do \SI{850}{N} ali \SI{1}{N} na intervalu \SI{-350}{N} do \SI{3500}{N}.
+		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo \SI{0,3}{N}. Za držanje motorja sta nama hišnika Gimnazije Vič po najinem načrtu
 		izdelala stojalo iz aluminija.
 		Stojalo je narejeno iz dveh L-profilov iz in štirih kotnikov, kot je videno na sliki. %TODO
 		V aluminijasto ploščo in L-profila so bile zvrtane luknje in narejeni navoji. Z vijaki so bili kotniki pritrjeni na ploščo in L-profili na kotnike.
@@ -652,10 +664,11 @@
 			Q = m c \Delta T
 		\end{equation}
 		kjer je $Q$ toplota, $m$ masa, $c$ specifična toplota in $\Delta T$ sprememba temperature.
-		Žica nato segreje gorivo s katerim je v kontaktu in ga segreva do temprature vžiga, ki je nad 300°C. \cite{nakkaKNSUchem2025}
-		Žico priklopiva na vir enosmerne napetosti, ki lahko proizvede vsaj 10 A toka, ta pa segreje žico, ki vžge gorivo.
+		Žica nato segreje gorivo s katerim je v kontaktu in ga segreva do temprature vžiga, ki je nad \SI{300}{\degreeCelsius}. \cite{nakkaKNSUchem2025}
+		Žico priklopiva na vir enosmerne napetosti, ki lahko proizvede vsaj \SI{10}{A} toka, ta pa segreje žico, ki vžge gorivo.
 		Ta metoda vžiga se je izkazala za relativno neponovljivo. Po premisleku sva prišla do zaključka, da žica ne pride v stik z gorivom ali pa prehitro pregori. %Izbolšava: dodaj kapljo ogriva direktno na žico
 
+		\FloatBarrier
 		\subsection{Statično testiranje}
 		Z statičnim testiranjem sva pridobila podatke o potisku motorja, času gorenja in temperaturi motorja.
 		To sva merila z prej opisanim Force Plateom in termalno kamero. Motorje sva vžigala z elektronskim vžigom.
@@ -665,6 +678,11 @@
 			V tem testu sva izvedela, kako pomembna je izbira dneva z dobrim vremeno in kako močno vpliva vlaga na kvaliteto delovanja njinega motorja.
 			Tu sva tudi opazila pomankljivosti vžiga z najinim elektronskim vžigom, ki se je prej izkazal za uspešnega, a nama je zdaj povzročal veliko težav.
 			Pokazala se je tudi ena od slabosti z vertikalno orientacijo motorja v stojalu, saj je dež padal naravnost v motor in pripomogel k nedelovanju motorja.
+			\begin{figure}
+			\centering
+			\includegraphics[height = 8cm]{prvi_test_motorja}
+			\caption{Prvo statično testiranje motrja}
+			\end{figure}
 			\subsubsection{Drugi test}
 			Za drugi test sva zibrala dan z primernejšim vremenom. Pripravila sva tri motorje, enake kot v prvem testu.
 			Gorivo v teh testih je bilo slabše kvalitete, saj metode iz odstavka \ref{gorivo} še nisva dokončno razvila.
@@ -672,19 +690,77 @@
 			Ker gorivnih celic in kasneje sestavljenih motorjev nisva shranjevala v tesno zaprtih posodah v prisotnosti silika gela,
 			predvidevava, da so absorbirali veliko količino vlage. To sva opazila tudi kot ne čisto gorenje, primarno pa kot primankljaj potiska.
 			Vsi trije motorji so proizvedli nič potiska, kot poslidica premajhnega tlaka v komori, ki ga je povzročila počasnejša reakcija.
+			Kljub težavam z potiskom motorja, je izolator bovaroval zunanjo cev, kot sva pričakovala.
 			\subsubsection{Tretji test}
 			V tretjem testu sva metodo iz odstavka \ref{gorivo} dodelala do trenutnega stanja. To se je izkazalo za neprecenljivo, saj je zelo izbolšalo kvaliteto goriva.
 			Gorivne celice in motor sam sva začela tudi shranjevati v nepredušno zatesnjenih posodah v prisotnosti prej omenjenega silika gela.
 			Gorivno celico tretjega testa žal nisva takoj po ulitju dala v dehidrator, kot sva kasnejše celice, sva pa jo kasneje dala k ostalim celicam v dehidrator.
 			Ta je bila zaradi nepremišljenosti iz najine strani že vstavljene v cev in se je zato na zadnji strani slabše posušila, kar bi lahko pripomoglo k odklonu
-			izmerjenih podatkov od začetne simulacije. Tretji test, za razliko od prvega in drugega, je bil delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki X. %TODO dodaj sliko originalne krivulje
+			izmerjenih podatkov od začetne simulacije. Tretji test je bil za razliko od prvega in drugega delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki X. %TODO dodaj sliko originalne krivulje
 			Temperatura površine zunanje cevi je tudi pri tem motorju bila zmerna, kar dokončno potrdi izolativne sposobnosti papirja kot izolator v raketnem motorju.
 			Večina papirja, kot je vidno na sliki X, kjer sva motor iz tretjega testa prerezala po dolžini za analizo, je preživelo visok tlak in temperaturo ekstremnih pogojev v raketnem motorju in s tem opravilo svojo nalogo z odliko. %TODO dodaj sliko prerezanega motorja
-			Iz prerezanega motorja sva izmerila tudi končni premer grla šobe, ki je 15 mm. To je kar 5 mm več od začetnega premera, kar nakazuje na močno erozijo šobe in relativno slabo vzdržljivost šob iz mavca.
-			To je drugi razlog za neskladanje podatkov, ki sva jih izmerila in teh, ki sva jih pridobila s simulacijo. V prerezu motorja sva tudi dobro videla, da je epoksi smola, tako zaprtje cevi kot tudi tak, ki je držala šobo,
-			dobro preživela testiranje motorja.
+			Iz prerezanega motorja sva izmerila tudi končni premer grla šobe, ki je \SI{15}{mm}. To je kar \SI{5}{mm} več od začetnega premera, kar nakazuje na močno erozijo šobe in relativno slabo vzdržljivost šob iz mavca.
+			To je drugi razlog za neskladanje podatkov, ki sva jih izmerila in teh, ki sva jih pridobila s simulacijo. V prerezu motorja sva tudi dobro videla, da je epoksi smola, tako zaprtje cevi kot tudi ta, ki je držala šobo,
+			\begin{figure}
+			\centering
+			\includegraphics[height = 6cm]{tretji_test_motorja}
+			\caption{Tretje statično testiranje motrja}
+			\end{figure}
 
+		\FloatBarrier
 		\subsection{Analiza podatkov}
+		Podatke, ki sva jih pridobila z Force Plateom sva analizirala v programu Logger Pro verzije 3.16.2, ki nama omogoča funkcije, kot sta integriranje podatkov po času in
+		avtomatsko ustvarjanje polinoma, ki se prilega podatkom. Velika večina ostalih verzij programa ni kapatibilnih z Vernierjevim LabPro vmesnikom, ki ga lahko vidimo na sliki X.
+		Podatke sva najprej pomaknila navzgor za \SI{1,0}{N}, saj je ničla, ki sva jo nastavila ob testiranju, ni bila skladna z podatki.
+		Da sva ugotovila, da ničla odstopa za približno 1 N, sva funkcijo zgladila in odčitala, za koliko jo morava dvigniti.
+		Z zglajenimi podatki sva tudi odšitala največji potisk, ki je $6,3 \pm 0,3$ N. Motor je vse skupaj gorel \SI{3,6}{s}.
+		Nato sva odsek grafa, kjer je motor proizvajal potisk, integrirala in dobila, da je impulz, ki ga je proizvedel motor tretjega testa enak \SI{17,26}{Ns}.
+		Kako sva integrirala je jasno razvidno iz grafa na sliki \ref{graf:integral}.
+		Iz impulza in časa gorenja lahko izračunamo povpreče potisk motorja:
+		\begin{equation}
+			\bar{F} = \frac{I}{t} = \frac{\SI{17,26}{Ns}}{\SI{3,6}{s}} = \SI{4,79}{N}
+		\end{equation}
+
+		Iz enačbe \ref{eq:ISP} sva izračunala tudi specifični impulz.
+		\begin{equation}
+			I_{SP} = \frac{I}{m \vdot g_0} = \frac{\SI{17,26}{Ns}}{\SI{0,075}{kg} \vdot \SI{9.80665}{m/s^2}} = \SI{23,47}{s}
+		\end{equation}
+
+		Če enačimo enačbi \ref{eq:ISP} in \ref{eq:ISP_v} dobimo enačbo, s katero lahko izračunamo povprečno izhodno hitrost plinov relativno na raketo.
+		\begin{equation}
+			v_e = \frac{I}{m} = \frac{\SI{17,26}{Ns}}{\SI{0,075}{kg}} = \SI{230}{m/s}
+		\end{equation}
+
+		Z enačbo Ciolkovskega \ref{eq:Ciolkovskega} sva izračunala tudi spremembo hitrosti ($\Delta v$).
+		Za $m_0$ sva vzela maso \SI{170}{g} in za $m_1$ sva vzela maso \SI{95}{g}.
+		\begin{equation}
+			\Delta v = v_e \ln{\frac{m_0}{m_1}} = \SI{230}{m/s} \vdot \ln{\frac{\SI{0,170}{kg}}{\SI{0,095}{kg}}} = \SI{134}{m/s}
+		\end{equation}
+
+
+
+		\begin{figure}
+		\centering
+		\includegraphics[width = 16cm]{potisk}
+		\caption{Graf potiska v odvisnosti od časa}
+		\end{figure}
+
+		\begin{figure}
+		\centering
+		\includegraphics[width = 16cm]{potisk_zglajen}
+		\caption{Graft potiska v odvisnosti od časa in zglajeni podatki}
+		\end{figure}
+
+		\begin{figure}
+		\centering
+		\includegraphics[width = 16cm]{integral}
+			\caption{Integral grafa potiska v odvisnosti od časa po času} \label{graf:integral}
+		\end{figure}
+
+
+		\FloatBarrier
+
+
 
 		
 	\section{Rezultati}
