@@ -21,16 +21,16 @@ data:
     convAngle: 30.0
     divAngle: 15.0
     efficiency: 0.2866
-    erosionCoeff: 1.7500000000000002e-09
+    erosionCoeff: 4.25e-09
     exit: 0.025
     slagCoeff: 0.0
     throat: 0.01
     throatLength: 0.0
   propellant:
     density: 1800.0
-    name: Nakka - KNSU
+    name: Nakka - KNSU (1)
     tabs:
-    - a: 0.00010073115141607291
+    - a: 8.073115000000001e-05
       k: 1.133
       m: 41.98
       maxPressure: 10342500.0
