@@ -846,10 +846,18 @@
 			\caption{Simulacija prilagojena za pravilen impulz} \label{graf:prilagojen_impulz}
 		\end{figure}
 
-		
+		\subsubsection{Neprimernost kovergentno-divergentne šobe}
+		Ko sva prilagajala simulacijo nama je openMotor javil opozorilo za nizek izhodni tlak in možnost odmika izpuhov od strani šobe.
+		Po premisleku sva s pomočjo enačbe \ref{eq:šoba-vA} sva prišla do zaključka, da je tlak v zgorevalni komori prenizek.
+		Ker je tlak prenizek, izpuhi v grlu šobe ne dosežejo zvočne hitrosti, kar pomeni, da v divergentnem delu šobe izpuhi
+		ne pospešujejo, ampak k večjemu izgubljajo hitrost, kot nam pravi prej omenjena enačba. Tako sva prišla do zaključka,
+		da je KD šoba v tem primeru škodi učinkovitosti motorja in da bi šoba brez divergentnega dela imela boljši izkoristek.
+		To sva tudi simulirala in opazila, da se je impulz povečal na \SI{19,64}{Ns}, kar je 14 \% več kot izmerjen impulz
+		z KD šobo.
 	\FloatBarrier
 
 	\section{Rezultati}
+	
 	
 	\section{Zaključek}
 	%Ideje za nadalno raziskovanje (različna goriva, različni materiali za šobe, pridobivanje podatkov z dinamičnimi testi, sistem za nadzorovanje leta rakete)
