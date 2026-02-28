@@ -127,6 +127,8 @@
 
 	\tableofcontents
 
+	\newpage
+
 	\listoftables
 
 	\listoffigures
@@ -146,12 +148,12 @@
 		\subsection{Hipoteze}
 		Že na začetku so se nama porodile številne hipoteza, ki sva jih skozi raziskovalno nalogo preizkusila in jih na koncu potrdila ali ovrgla.
 		Imela sva sledeče hipoteze:
-		\begin{itemize}
+		\begin{enumerate}
 				\item Raketni motor na trdno gorivo je mogoče narediti iz nizkocenovnih in dostopnih materialov.
 				\item Papir je primeren izolator in notranja plast zogrevalne komore raketnih motorjev na trdno gorivo.
 				\item Šobe narejene iz mavca lahko prenesejo tlak in vročino, kateri so izpostavljene v motorju.
 				\item Simulacije pridobljene z programom openMotor so primerljive empiričnim podatkom.
-		\end{itemize}
+		\end{enumerate}
 
 		\subsection{Namen}
 		Te raziskovalne naloge sva se lotila, ker sva želela razviti raketni motor na trdno gorivo, ki bo dostopen vsem, ki ga želijo uporabiti ali izvesti nadljne poizkuse.
@@ -352,6 +354,7 @@
 				Specifičen impulz je sorazmeren z učinkovitostjo raketnega motorja in s tem tudi energisjskim izkoristkom. Specifični impulz si lahko predsatvljamo kot čas gorenja
 				med katerim bo motor, ki vsebuje gorivo, ki tehta \SI{1}{N}, proizvajal potisk \SI{1}{N}. 
 				Če imata dva motorja različna specifična impulza in enako maso goriva, bo motor z večjim specifičnim impulzom proizvedel večji sunek sile. \cite{nasa:specific_impulse}
+				Za primerjavo so v tabeli \ref{tabela:ISP} navedene vrednosti specifičnega impulza za nekaj različne raketne motorje.
 				Specifičen impulz je tudi priročen, ker je merjen v sekundah, ki se uporabljajo tako v metričnem kot tudi v imperialnem sistemu. Z njim se da
 				tudi oceniti količino goriva potrebnega za določeno spremembo hitrosti rakete ($\Delta v$) in s tem za določen manever.
 				To naredimo z enačbo Ciolkovskega. \cite{nasa:ideal_rocket_equation}
@@ -375,6 +378,7 @@
 						\hline
 					\end{tabular}
 					\caption[Primeri specifičnih impulzov]{Primeri že testiranih raketnih motorjev in njihovih specifičnih impulzov. \cite{tabela_specific_impulse}}
+					\label{tabela:ISP}
 				\end{table}
 		
 
@@ -574,6 +578,12 @@
 				Nato sva s plastično epruveto, ki ima premer \SI{15}{mm}, naredila luknjo v gorivo in jo v njem postila dokler se ni ohladilo.
 				Iz hladnega in dokončno strjenega goriva sva odstranila epruveto in gorivno celico posušila v dehidratorju z uporabo silika gela.
 				Transportirala sva jih v tesno zaprtih posodah v prisotnosti silika gela, vse dokler jih nisva vgradila v motor.
+
+			\begin{figure}
+			\centering
+			\includegraphics[height=7cm]{setup}
+			\caption{Odduha, kjer je pripravljeno vse za pripravo gorivnih celic}
+			\end{figure}
 			
 			\subsection{Šoba}
 			Šoba je pomemben del motorja, saj z omejevanjem in usmerjanjem nekaterih vročih produktov 
@@ -757,7 +767,7 @@
 			Gorivne celice in motor sam sva začela tudi shranjevati v nepredušno zatesnjenih posodah v prisotnosti prej omenjenega silika gela.
 			Gorivno celico tretjega testa žal nisva takoj po ulitju dala v dehidrator, kot sva kasnejše celice, sva pa jo kasneje dala k ostalim celicam v dehidrator.
 			Ta je bila zaradi nepremišljenosti iz najine strani že vstavljene v cev in se je zato na zadnji strani slabše posušila, kar bi lahko pripomoglo k odklonu
-			izmerjenih podatkov od začetne simulacije. Tretji test je bil za razliko od prvega in drugega delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki \ref{setup}.
+			izmerjenih podatkov od začetne simulacije. Tretji test je bil za razliko od prvega in drugega delno uspešen. Izmerila sva krivuljo potiska, ki je vidna na sliki \ref{graf:potisk}.
 			Temperatura površine zunanje cevi je tudi pri tem motorju bila zmerna, kar dokončno potrdi izolativne sposobnosti papirja kot izolator v raketnem motorju.
 			Večina papirja, kot je vidno na sliki X, kjer sva motor iz tretjega testa prerezala po dolžini za analizo, je preživelo visok tlak in temperaturo ekstremnih pogojev v raketnem motorju in s tem opravilo svojo nalogo z odliko. %TODO dodaj sliko prerezanega motorja
 			Iz prerezanega motorja sva izmerila tudi končni premer grla šobe, ki je \SI{15}{mm}. To je kar \SI{5}{mm} več od začetnega premera, kar nakazuje na močno erozijo šobe in relativno slabo vzdržljivost šob iz mavca.
@@ -771,7 +781,7 @@
 		  
 		\subsection{Analiza podatkov}
 		Podatke, ki sva jih pridobila z Force Platom sva analizirala v programu Logger Pro verzije 3.16.2, ki nama omogoča funkcije, kot sta integriranje podatkov po času in
-		avtomatsko ustvarjanje polinoma, ki se prilega podatkom. Velika večina ostalih verzij programa ni kapatibilnih z Vernierjevim LabPro vmesnikom, ki ga lahko vidimo na sliki X.
+		avtomatsko ustvarjanje polinoma, ki se prilega podatkom. Velika večina ostalih verzij programa ni kapatibilnih z Vernierjevim LabPro vmesnikom, ki ga lahko vidimo na sliki \ref{setup}.
 		Podatke sva najprej pomaknila navzgor za \SI{1,0}{N}, saj je ničla, ki sva jo nastavila ob testiranju, ni bila skladna z realnostjo.
 		Da sva ugotovila, da ničla odstopa za približno 1 N, sva graf zgladila in odčitala, za koliko jo morava dvigniti, kot je lahko vidno na sliki \ref{graf:zglajen}.
 		Z zglajenimi podatki sva tudi odšitala največji potisk, ki je $6,3 \pm 0,3$ N. Motor je vse skupaj gorel \SI{3,6}{s}.
@@ -801,7 +811,7 @@
 		\begin{figure}
 		\centering
 		\includegraphics[width = 16cm]{potisk}
-		\caption{Graf potiska v odvisnosti od časa}
+		\caption{Graf potiska v odvisnosti od časa} \label{graf:potisk}
 		\end{figure}
 
 		\begin{figure}
@@ -850,7 +860,7 @@
 
 		\subsubsection{Neprimernost kovergentno-divergentne šobe}
 		Ko sva prilagajala simulacijo nama je openMotor javil opozorilo za nizek izhodni tlak in možnost odmika izpuhov od strani šobe.
-		Po premisleku sva s pomočjo enačbe \ref{eq:šoba-vA} sva prišla do zaključka, da je tlak v zgorevalni komori prenizek.
+		Po premisleku sva s pomočjo enačbe \ref{eq:šoba-vA} prišla do zaključka, da izpuhi ne dosegajo pravilnih hitrosti v šobi.
 		Ker je tlak prenizek, izpuhi v grlu šobe ne dosežejo zvočne hitrosti, kar pomeni, da v divergentnem delu šobe izpuhi
 		ne pospešujejo, ampak k večjemu izgubljajo hitrost, kot nam pravi prej omenjena enačba. Tako sva prišla do zaključka,
 		da je KD šoba v tem primeru škodi učinkovitosti motorja in da bi šoba brez divergentnega dela imela boljši izkoristek.
@@ -859,7 +869,22 @@
 	\FloatBarrier
 
 	\section{Rezultati}
+	Skozi ustvarjanje te raziskovalne naloge sva prišla do številnih rezultatov, s katerimi sva lahko potrdila ali ovrgla vse štiri hipoteze.
+	Raketni motor, ki sva ga razivla ima veliko potenciala za izbošanje in ni primerljiv s učinkovitostjo komercialnih motorjev za raketno modelarstvo.
+	Proizvedel je \SI{17,26}{Ns} impulza, kar ga uvršča v kategorijo D (10,1 - 20,0 Ns).\cite{wiki:MRMC} Ker je razmerje med potiskom in težo motorja večje od ena (približno 2,8 ob začetku gorenja)
+	vemo, da bi ta motor začel pospeševati. Ta motor bi zato lahko bil vgranje v lahko raketo, ki bi poletela. Tako lahko zagotovo potrdiva prvo hipotezo.
+
+	Velik del te naloge je bil posvečen testiranju izolatorjev, kjer sva prišla do rezultata, da je risalni papir debeline \SI{1,75}{mm} primeren izolator za raketne motorje na trdno gorivo.
+	Do teh podatkov sva prišla s testiranjem izolatorjev in jih potrdila z vsemi petimi motorji, ki so bili uporabljeni v statičnih testiranjih. To potrjuje hipotezo 2.
+
+	Proces priprave goriva nama je vzel daleč največ časa, saj je bilo potrebno veliko poizkušanja, da sva prišla do deluječe metode. Tudi metoda, do katere sva prišla je zamudna in ne deluje dobro za večje količine goriva.
 	
+	Zadnji pomemben del raketnega motorja, ki sva mu namenila čas, je šoba. Šobe, ki sva jih naredila iz mavca, so se izkazale za neprimerne.
+	Pri njih sva opazila močno erozijo, zaradi katere je tlak znotraj motorja manj predvidljiv. Tako se je hipoteza 3 izkazala za neresnično.
+
+	Hipotezo 4 lahko delno ovrževa, saj je simulacija potrebovala prilagoditve in še po njih ni mogla točno napovedati pridobljenih podatkov.
+	Predvidevava, da je težava v profilu KNSU in v lasnostih najinega motorja. Ta je relativno majhen in ima zelo nizek tlak v zgorevalni komori.
+	Najino gorivo je najverjetneje imelo tudi pri tretjem testu težave z vlago. Ugotovila sva, da je pri teh pogojih openMotor nezanesljiv.
 	
 	\section{Zaključek}
 	%Ideje za nadalno raziskovanje (različna goriva, različni materiali za šobe, pridobivanje podatkov z dinamičnimi testi, sistem za nadzorovanje leta rakete)
