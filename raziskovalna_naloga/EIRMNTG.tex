@@ -20,6 +20,17 @@
 \usepackage{float} %za hard override placementa slik /begin{figure}[H]
 \usepackage{placeins} % za barierje placementa slik /FloatBarrier
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}              % clear all header and footer fields
+\fancyhead[L]{Energijski izkoristek raketnega motorja na trdno gorivo}  % left header
+\fancyhead[C]{}    % center header
+\fancyhead[R]{Raziskovalna naloga} % right header
+
+\fancyfoot[C]{\thepage}
+\addtolength{\topmargin}{-2.49998pt}
+
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=false,
@@ -75,12 +86,26 @@
 	\end{center}
 \end{titlepage}
 
+\renewcommand{\thepage}{\Roman{page}}
+\renewcommand{\abstractname}{Zahvala}
+\begin{abstract}
+	\thispagestyle{plain}
+	\setcounter{page}{2}
+	Zahvalila bi se rada za vso pomoč, ki sva je bila delečna ob raziskovanju in ustvarjanju naloge. 
+
+	Posebno bi se rada zahvalila vsem uslužbencem Gimnazije Vič, ki so nama hitro priskočili na pomoč, in sicer prof. Alenki Ocvirk Zelič za lektoriranje povzetka, laborantki kemije Andreji Šporar za omogočanje dostopa do šolske odduhe, 
+	hišnikoma Slavku Gorniku in Bojanu Jakši za izdelavo stojala za testiranje, laborantu fizike Denisu Pavlinu za dostopnost, 
+	predloge in pomoč pri testiranju ter mentorju Juretu Auscu za predloge, pregledovanje in predlaganje popravkov ter izboljšav, pomoč pri testitranju, prisotnost in posledično omogočanje uporabe odduhe tudi na petkove popoldneve ter za odgovarjanje na vsakršna vprašanja in vsespološno odzivnost.
+	
+
+\end{abstract}
+
 
 \renewcommand{\thepage}{\Roman{page}}
 \renewcommand{\abstractname}{Povzetek}
 \begin{abstract}
 	\thispagestyle{plain}
-	\setcounter{page}{2}
+	\setcounter{page}{3}
 	V raziskovalni nalogi sva se poglobila v delovanje, simuliranje in testiranje raketnih motorjev na trdno gorivo. V teoretičnem delu sva opisala, na katerih fizikalnih zakonih temeljijo raketni motorji in kakšno funkcijo imajo posamezni deli raketnega motorja na trdno gorivo. Nato sva se lotila razvoja lastnega raketnega motorja na trdno gorivo, ki je narejen iz dostopnih in cenovno ugodnih materialov ter ne potrebuje manj dostopnih strojev, kot sta naprimer stružnica in CNC rezkar. Testirala sva različne vrste in debeline izolatorjev, dokler nisva našla najprimernejšega. S simulacijo sva si pomagala pri načrtovanju šobe in ostalih kritičnih dimenzij motorja, ki sva ga nato tudi sestavila in testirala. Iz pridobljenih podatkov sva potrdila primernost izolatorja in izračunala učinkovitost motorja. Nazadnje sva primerjala izmerjene vrednosti s tistimi iz simulacije, da sva lahko prilagodila parametre simulacije za natančnejše napovedi.
 
 	Ugotovila sva, da je raketo na trdno gorivo mogoče izdelati iz prostodostopnih in nizkocenovnih materialov. Na koncu predlagava še nekaj že ugotovljenih izboljšav in nakaževa možnosti za nadaljnje raziskovanje in testiranje.
@@ -92,7 +117,7 @@
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
 	\thispagestyle{plain}
-	\setcounter{page}{3}
+	\setcounter{page}{4}
 	In our research project, we delved into the operation, simulation, and testing of solid fuel rocket engines. In the theoretical part, we described the physical laws on which rocket engines are based and the function of individual parts of a solid fuel rocket engine. We then set about developing our own solid fuel rocket engine, made from readily available and inexpensive materials and requiring no specialised equipment such as a lathe or CNC milling machine. We tested different types and thicknesses of insulators until we found the most suitable ones. We used simulation to help us design the nozzle and other critical dimensions of the engine, which we then assembled and tested. From the data obtained, we confirmed the suitability of the insulator and calculated the efficiency of the engine. Finally, we compared the measured values with those from the simulation so that we could adjust the simulation parameters for more accurate predictions.
 
 	We found that a solid fuel rocket can be made from readily available and low-cost materials. Finally, we suggest some improvements that have already been identified and point out opportunities for further research and testing.
@@ -382,7 +407,7 @@
 		sva se odločila za relativno ugodno, predvsem pa lahko dostopno alternativo risalnih listov. Ker so večji in debelejši od pisarniškega papirja se nama
 		je zmanjšal tudi čas sestavljanja posameznih motorjev.
 
-			\subsubsection{Prvi test} \FloatBarrier
+			\subsubsection{Prvi test}  
 			S tem testom sva testirala različne vrste izolatorjev. Preizkusila sva karton, debel nanos tekstilnega lepilnega traku in
 			relativno tanek nanos električaskega mavca (isti mavec sva uporabljala za šobe). Imela sva tudi kontrolni model, brez izolatorja. Za višino zunanje cevi sva določila \SI{4}{cm}, 
 			zato, da sva imela testne modele z manj goriva in je tveganje za hujše nesreče ostalo minimalno. Testi so tako vsebovali približno 25 gramov goriva.
@@ -484,7 +509,7 @@
 			\end{table}
 
 
-			\FloatBarrier
+			
 		\subsection{Simuliranje motorja}
 		Za simuleranje sva se odločila, ker nisva želela prekoračiti zmogljivosti zunanje cevi in ker sva želela oceniti, kakšen potisk lahko pričakujeva od motorja.
 		S programom openMotor sva si pomagala tudi izbrati količino goriva (\SI{75}{g}), ki sva jo nato uporabila v vseh statičnih testih motorja.
@@ -566,7 +591,7 @@
 
 
 %TODO QYX 
-			\FloatBarrier
+			
 			\subsubsection{Ulivanje šob}
 			Ulivanje šob je v primerjavi z ulivanjem goriva zelo enostavno. Ko imamo čist kalup zatehtamo mavec ter vodo in ju zmešamo v razmerju $1/0.7$. Pripravljeno mešanico vlijemo v kalup, 
 			kot prikazano na sliki  \ref{napolnjen_kalup}. Opazimo lahko, da mešanica ne doseže roba kalupa, saj ko na kalup postavimo pokrov le-ta mešanico izpodrine. Pravšnja masa mešanice za eno šobo je približno 30 gramov.
@@ -619,7 +644,7 @@
 			\caption{Prikaz šobe v modelu na različne načine}
 			\end{figure}
 
-			\FloatBarrier
+			
 		\subsection{Sestavljanje motorja} \label{sestavljanje_motorja}
 		V spodaj napraskano zunanjo cev primerne dolžine nalijemo epoksi smolo, tako da tvori \SI{1,5}{cm} debelo plast. Da se smola ne razlije odprtino zalepimo s tekstilnim lepilnim trakom. 
 		Ko se smola strdi lahko v zunanjo cev vstavimo izolator, zvit v tulec.
@@ -698,7 +723,7 @@
 		Žico priklopiva na vir enosmerne napetosti, ki lahko proizvede vsaj \SI{10}{A} toka, ta pa segreje žico, ki vžge gorivo.
 		Ta metoda vžiga se je izkazala za relativno neponovljivo. Po premisleku sva prišla do zaključka, da žica ne pride v stik z gorivom ali pa prehitro pregori. %Izbolšava: dodaj kapljo ogriva direktno na žico
 
-		\FloatBarrier
+		
 		\subsection{Statično testiranje}
 
 			\begin{figure}
@@ -747,7 +772,7 @@
 			\caption{Tretje statično testiranje motrja}
 			\end{figure}
 
-		\FloatBarrier
+		  
 		\subsection{Analiza podatkov}
 		Podatke, ki sva jih pridobila z Force Platom sva analizirala v programu Logger Pro verzije 3.16.2, ki nama omogoča funkcije, kot sta integriranje podatkov po času in
 		avtomatsko ustvarjanje polinoma, ki se prilega podatkom. Velika večina ostalih verzij programa ni kapatibilnih z Vernierjevim LabPro vmesnikom, ki ga lahko vidimo na sliki X.
@@ -796,7 +821,7 @@
 		\end{figure}
 
 
-		\FloatBarrier
+		
 		\subsubsection{Prilagajanje simulacije}
 		Izkazalo se je, da je motor tretjega testa proizvedel drugačno kriuljo potiska, kot sva jo pričakovala.
 		Največji doseženi potisk je manjši in čas gorenja je daljši. Tako impulz kot tudi specifični impulz sta manjša od pričakovanih vrednosti.
