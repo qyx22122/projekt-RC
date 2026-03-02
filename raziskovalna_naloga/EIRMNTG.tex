@@ -311,7 +311,6 @@
 			Na koncu izpiše podatke, izriše grafe in javi vse zaznane napake in opozorila.
 			OpenMotor je izjemno orodje za amatersko raketarstvo, saj omogoča lažje in bolj varno načrtovanje raketnih motorjev.
 
-
 			\subsection{Toplotna kamera}
 			Za merjenje temperatur sva uporabljala toplotno kamero Seek ShotPRO. V razponu 233 K do 603 K zaznava z občutljivostjo manj kot 70 mK.
 			Prav tako ima visoko resolucijo 320 x 240 (78 600 pikslov). Kamera zaznava dolgovaloven infrardeč spekter, natančneje valovne dolžine med 7,5 in 14 $\mu m$.\cite{seekshotpro_specsheet}
@@ -485,9 +484,9 @@
 
 				\begin{figure}
 				\centering
-				\includegraphics[scale=.12]{test3_5}
+				\includegraphics[height=6cm]{test3_5}
 				\hspace{0.3cm}
-				\includegraphics[scale=.3207]{test3_6}
+				\includegraphics[height=6cm]{test3_6}
 				\caption[Tretji test (različne debeline papirja in epoksi smola)]{Tretji test (različne debeline papirja in epoksi smola): gorenje dveh primerov.}
 				\label{tretji_test_epoksi}
 				\end{figure}
@@ -502,13 +501,13 @@
 
 				\begin{figure}
 				\centering
-				\includegraphics[scale=.12]{termalni_posnetek_takoj_po}
+				\includegraphics[height=5cm]{termalni_posnetek_takoj_po}
 				\hspace{0.3cm}
-				\includegraphics[scale=.12]{termalni_posnetek_kasneje}
+				\includegraphics[height=5cm]{termalni_posnetek_kasneje}
 				\caption[Četrti test: primerjava temperature zunanje cevi]{Četrti test: primerjava temperature zunanje cevi takoj po končanem izgorevanju in 80 sekund kasneje.}
 				\end{figure}
 
-				\begin{table}
+				\begin{table}[H]
 					\centering
 					\begin{tabular}{llll} 
 						\hline
@@ -526,7 +525,7 @@
 				\end{table}
 
 
-				
+			\FloatBarrier
 			\subsection{Simuliranje motorja}
 			Za simuliranje sva se odločila, ker nisva želela prekoračiti zmogljivosti zunanje cevi in ker sva želela oceniti, kakšen potisk lahko pričakujeva od motorja.
 			S programom openMotor sva si pomagala tudi izbrati količino goriva (\SI{75}{g}), ki sva jo nato uporabila v vseh statičnih testih motorja.
@@ -538,7 +537,7 @@
 			
 			\begin{figure}
 			\centering
-			\includegraphics[width=14cm]{graf_originalen}
+			\includegraphics[height=7cm]{graf_originalen}
 			\caption{Simulacija: graf potiska in vrednosti $K_n$ v odvisnosti od časa.}
 			\label{graf_originalen}
 			\end{figure}
@@ -689,7 +688,6 @@
 		\end{figure}
 
 		
-			\FloatBarrier
 		\subsection{Merjenje potiska}
 		Za merjenje potiska sva uporabila Vernierjev Force Plate, katerega natančnost je \SI{0,3}{N} na intervalu \SI{-85}{N} do \SI{850}{N} ali \SI{1}{N} na intervalu \SI{-350}{N} do \SI{3500}{N}.
 		Ker najini motorji ne proizvedejo več kakor 850N potiska sva lahko merila z natančnostjo \SI{0,3}{N}. Za držanje motorja sta nama hišnika Gimnazije Vič po najinem načrtu
@@ -775,7 +773,7 @@
 			Pokazala se je tudi ena od slabosti z vertikalno orientacijo motorja v stojalu, saj je dež padal naravnost v motor in pripomogel k njegovemu slabšemu delovanju.
 			\begin{figure}
 			\centering
-			\includegraphics[height = 8cm]{prvi_test_motorja}
+			\includegraphics[height = 4cm]{prvi_test_motorja}
 			\caption{Prvo statično testiranje motorja.}
 			\end{figure}
 
@@ -847,19 +845,19 @@
 
 		\begin{figure}
 		\centering
-		\includegraphics[width = 16cm]{potisk}
+		\includegraphics[width = 14cm]{potisk}
 		\caption{Posnetek zaslona grafa potiska v odvisnosti od časa.} \label{graf:potisk}
 		\end{figure}
 
 		\begin{figure}
 		\centering
-		\includegraphics[width = 16cm]{potisk_zglajen}
-			\caption{Graft potiska v odvisnosti od časa in zglajeni podatki.} \label{graf:zglajen}
+		\includegraphics[width = 14cm]{potisk_zglajen}
+			\caption{Graf potiska v odvisnosti od časa in zglajeni podatki.} \label{graf:zglajen}
 		\end{figure}
 
 		\begin{figure}
 		\centering
-		\includegraphics[width = 16cm]{integral}
+		\includegraphics[width = 14cm]{integral}
 			\caption{Integral grafa potiska v odvisnosti od časa po času.} \label{graf:integral}
 		\end{figure}
 
@@ -885,13 +883,13 @@
 
 		\begin{figure}
 		\centering
-		\includegraphics[width = 16cm]{prilagojeno_potisk}
+		\includegraphics[width = 14cm]{prilagojeno_potisk}
 			\caption{Simulacija, prilagojena za pravilen maksimalen potisk.} \label{graf:prilagojeno_potisk}
 		\end{figure}
 
 		\begin{figure}
 		\centering
-		\includegraphics[width = 16cm]{prilagojen_impulz}
+		\includegraphics[width = 14cm]{prilagojen_impulz}
 			\caption{Simulacija, prilagojena za pravilen impulz.} \label{graf:prilagojen_impulz}
 		\end{figure}
 
@@ -903,7 +901,7 @@
 		da je KD šoba v tem primeru škodi učinkovitosti motorja in da bi šoba brez divergentnega dela imela boljši izkoristek.
 		To sva tudi simulirala in opazila, da se je impulz povečal na \SI{19,64}{Ns}, kar je 14 \% več kot izmerjen impulz
 		s KD šobo.
-	\FloatBarrier
+	
 
 	\section{Rezultati}
 	Skozi ustvarjanje te raziskovalne naloge sva prišla do številnih rezultatov, s katerimi sva lahko ovrednotila vse štiri hipoteze.
