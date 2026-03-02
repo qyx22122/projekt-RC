@@ -97,15 +97,14 @@
 
 	Posebno bi se rada zahvalila vsem uslužbencem Gimnazije Vič, ki so nama hitro priskočili na pomoč, in sicer prof. Alenki Ocvirk Zelič za lektoriranje povzetka, laborantki kemije Andreji Šporar za omogočanje dostopa do šolskega digestorija, 
 	hišnikoma Slavku Gorniku in Bojanu Jakši za izdelavo stojala za testiranje, laborantu fizike Denisu Pavlinu za dostopnost, 
-	predloge in pomoč pri testiranju ter obsežne zahvale mentorju Juretu Auscu za predloge, pregledovanje in predlaganje popravkov ter izboljšav, pomoč pri testitranju, prisotnost in posledično omogočanje uporabe digestorija tudi na petkove popoldneve, lektoriranje ter za odgovarjanje na vsakršna vprašanja in vsespološno odzivnost.
+	predloge in pomoč pri testiranju ter obsežne zahvale mentorju Juretu Auscu za predloge, pregledovanje in predlaganje popravkov ter izboljšav, pomoč pri testiranju, prisotnost in posledično omogočanje uporabe digestorija tudi na petkove popoldneve ter za odgovarjanje na vsakršna vprašanja in vsespološno odzivnost.
 \end{abstract}
 
 
 	\renewcommand{\thepage}{\Roman{page}}
-	\begin{abstract}
 		\thispagestyle{plain}
 		\setcounter{page}{3}
-		\textbf{povzetek}\\
+		\section*{Povzetek}
 		V raziskovalni nalogi sva se poglobila v delovanje, simuliranje in testiranje raketnih motorjev na trdno gorivo. V teoretičnem delu sva opisala, na katerih fizikalnih zakonih temeljijo raketni motorji in kakšno funkcijo imajo posamezni deli raketnega motorja na trdno gorivo. Nato sva se lotila razvoja lastnega raketnega motorja na trdno gorivo, ki je narejen iz dostopnih in cenovno ugodnih materialov ter ne potrebuje manj dostopnih strojev, kot sta naprimer stružnica in CNC rezkar. Testirala sva različne vrste in debeline izolatorjev, dokler nisva našla najprimernejšega. S simulacijo sva si pomagala pri načrtovanju šobe in ostalih kritičnih dimenzij motorja, ki sva ga nato tudi sestavila in testirala. Iz pridobljenih podatkov sva potrdila primernost izolatorja in izračunala učinkovitost motorja. Nazadnje sva primerjala izmerjene vrednosti s tistimi iz simulacije, da sva lahko prilagodila parametre simulacije za natančnejše napovedi.
 
 		Ugotovila sva, da je raketo na trdno gorivo mogoče izdelati iz prostodostopnih in nizkocenovnih materialov. Na koncu predlagava še nekaj že ugotovljenih izboljšav in nakaževa možnosti za nadaljnje raziskovanje in testiranje.
@@ -113,13 +112,13 @@
 		Ključne besede: raketni motor, trdno gorivno, izolator, šoba, specifični impulz
 
 \vspace{0.5cm}
-\textbf{Abstract}\\
+\section*{Abstract}
 		In our research project, we delved into the operation, simulation, and testing of solid fuel rocket engines. In the theoretical part, we described the physical laws on which rocket engines are based and the function of individual parts of a solid fuel rocket engine. We then set about developing our own solid fuel rocket engine, made from readily available and inexpensive materials and requiring no specialised equipment such as a lathe or CNC milling machine. We tested different types and thicknesses of insulators until we found the most suitable ones. We used simulation to help us design the nozzle and other critical dimensions of the engine, which we then assembled and tested. From the data obtained, we confirmed the suitability of the insulator and calculated the efficiency of the engine. Finally, we compared the measured values with those from the simulation so that we could adjust the simulation parameters for more accurate predictions.
 
 		We found that a solid fuel rocket can be made from readily available and low-cost materials. Finally, we suggest some improvements that have already been identified and point out opportunities for further research and testing.
 		\\[2ex]
 		Keywords: rocket motor, solid fuel, insulator, nozzle, specific impulse
-	\end{abstract}
+	
 
 	\tableofcontents
 
@@ -319,6 +318,12 @@
 			S funkcijo snemanja sva dobila natančne podatke o spreminjanju temperature s časom. Ker pa ima kamera premajhno merilno območje
 			za merjenje temperature izpuha motorja, sva merila predvsem temperaturo zunanje cevi in tako preverila, da se ne pregreva.
 
+		\begin{figure}
+		\centering
+		\includegraphics[height= 3cm]{topl_roka}
+		\caption{Prikaz toplotne kamere.}
+		\end{figure}
+
 			\subsection{Specifičen impulz}
 			Impulz ali sunek sile je fizikalna količina, ki spreminja gibalno količino telesa. Izračunamo ga kot spremembo gibalne količine ali kot produkt sile in spremembe časa.
 			To lahko zapišemo tudi v diferencialni obliki,
@@ -383,7 +388,7 @@
 			\subsection{Zunanja cev}
 			Za ohišje motorja sva uporabljala odtočne cevi iz plastike PP-H (polipropilen homopolimer) ki jih izdeluje podjetje Peštan. Kupila sva jih v trgovini s tehničnim blagom
 			in jih razžagala na primerno dolžino - za prve teste izolatorja \SI{4}{cm}, potem \SI{6}{cm} ter \SI{12,5}{cm} za dejanski motor.
-			Cev je certificirana s standardom EN 1451.\cite{Katalog_HTPP} Tako bi morala pri temperaturi \SI{353}{K} zdržati, četudi za kratek čas, tlak do \SI{6,0}{MPa}.\cite{EN1451} Kot primerjavo lahko vzamemo tretji test motorja. Temperatura zunanjosti zunanje cevi se med samim izgorevanjem spremeni za pičlih 2 K, iz 280 K do 282 K, kot prikazano na sliki \ref{cetrti_temp}.
+			Cev je certificirana s standardom EN 1451.\cite{Katalog_HTPP} Tako bi morala pri temperaturi \SI{353}{K} zdržati, četudi za kratek čas, tlak do \SI{6,0}{MPa}.\cite{EN1451} Kot primerjavo lahko vzamemo tretji test motorja. Temperatura zunanjosti zunanje cevi se med samim izgorevanjem spremeni za pičlih 2 K, iz 280 K do 282 K, kot vidno na slikah \ref{cetrti_temp}.
 			Cevi sva izmerila notrananji premer \SI{36}{mm} in debelino stene \SI{1.90}{mm}. Ko sva odžagala primerno dolžino cevi, sva plastiko,
 			ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. 
 			S tem sva cev polepšala, predvsem pa olajšala vstavljanje izolatorja.
@@ -547,7 +552,10 @@
 			\subsection{Gorivo} \label{gorivo}
 			Raketna goriva so mešanice goriva in oksidatorja zato, da oksidacija ni odvisna od kisika v ozračju. Posledično lahko reakcija poteka tudi v zaprtih posodah. Skupina goriv, v kateri je tudi KNSU,
 			je sestavljena iz karbohidrata oziroma sladkorja saharoze in oksidatorja kalijevega nitrata. KNSU sva izbrala, ker je saharoza najcenejši in najdostopnejši karbohidrat. Najboljše razmerje je 65/35 v prid \ce{KNO3},
-			a sva se midva odločila za razmerje 60/40, saj sva sicer imela večje težave s pripravo in ulivanjem.
+			a sva se midva odločila za razmerje 60/40, saj sva sicer imela večje težave s pripravo in ulivanjem. Za lažjo predstavo: skozi raziskovalno nalogo sva porabila 2 kg  \ce{KNO3} oziroma pripravila 3,3 kg goriva.
+			Pripravljala sva med 100 g in 300 g
+			goriva naenkrat, priprava takšne količine pa traja med 60 in 80 minut. Tako lahko izračunamo, da je med 15 in 25 ur dela bilo potrebnih le za pripravo goriva na različne načine.
+			Ker je bilo veliko poizkusov priprave ponesrečenih je velik delež tega goriva bil zavržen.
 			Gorivo gori po enčbi \ref{eq:gorjenje-goriva}.
 
 				\subsubsection{Priprava goriva}
@@ -799,10 +807,25 @@
 			raketnem motorju in s tem opravilo svojo nalogo z odliko.
 			\begin{figure}
 			\centering
-			\includegraphics[height = 6cm]{pokoncno_prerezan}
-			\includegraphics[height = 6cm]{lezec}
+			\includegraphics[height = 4cm]{pokoncno_prerezan}
+			\includegraphics[height = 4cm]{lezec}
 			\caption{Prerezan motor tretjega testa.}
 			\label{prerezan}
+			\end{figure}
+		
+			\begin{figure}
+			\centering
+			\includegraphics[height = 3.5cm]{tretji_topl_prej}
+			\includegraphics[height = 3.5cm]{tretji_topl_potem}
+			\includegraphics[height = 3.5cm]{tretji_topl_kasnej}
+			\caption[Tretji test: prikaz delovanja izolatorja]{Tretji test: prikaz delovanja izolatorja. Na levi strani vidimo temperaturo zunanje cevi pred vžigom, v sredini takoj po končanem izgorevanju in na desni 30 sekund po koncu izgorevanja}
+			\label{cetrti_temp}
+			\end{figure}
+
+			\begin{figure}
+			\centering
+			\includegraphics[height = 3cm]{tretji_topl_gori}
+			\caption{Tretji test: prikaz motorja med gorenjem.}
 			\end{figure}
 
 
@@ -886,7 +909,8 @@
 		\begin{figure}
 		\centering
 		\includegraphics[width = 14cm]{prilagojeno_potisk}
-			\caption{Simulacija, prilagojena za pravilen maksimalen potisk.} \label{graf:prilagojeno_potisk}
+			\caption{Simulacija, prilagojena za pravilen maksimalen potisk.}
+			 \label{graf:prilagojeno_potisk}
 		\end{figure}
 
 		\begin{figure}
@@ -903,7 +927,6 @@
 		da je KD šoba v tem primeru škodi učinkovitosti motorja in da bi šoba brez divergentnega dela imela boljši izkoristek.
 		To sva tudi simulirala in opazila, da se je impulz povečal na \SI{19,64}{Ns}, kar je 14 \% več kot izmerjen impulz
 		s KD šobo.
-	
 
 	\section{Rezultati}
 	Skozi ustvarjanje te raziskovalne naloge sva prišla do številnih rezultatov, s katerimi sva lahko ovrednotila vse štiri hipoteze.
@@ -925,7 +948,32 @@
 	Najino gorivo je najverjetneje imelo tudi pri tretjem testu težave z vlago. Ugotovila sva, da je pri teh pogojih openMotor nezanesljiv.
 	
 	\section{Zaključek}
-	%Ideje za nadalno raziskovanje (različna goriva, različni materiali za šobe, pridobivanje podatkov z dinamičnimi testi, sistem za nadzorovanje leta rakete)
+%	V nalogi sva raziskovala energijski izkoristek raketnega motorja na trdno gorivo. Seznanila sva se s teorijo in jo opisala. Motor, ki sva ga ob pomoči literature in raziskovanja opisanega v nalogi zasnovala sama in katerega izdelavo sva 			%podrobno opisala, sva testirala in zbrala meritve. Namen naloge sva izpolnila, prav tako sva ovrednotila hipoteze.
+% Veliko sva se naučila tudi o načrtovanju raket. Vse to nama 
+%	bo v pomoč pri naslednjih raziskavah in poizkusih, za katere so se nama porodile ideje. Motor se lahko izboljša, uporabi se lahko še druga goriva, z primesmi. Za šobe se lahko uporablja še druge materiale in kombinacije materialov (primer dodatka %jeklene volne v mavec za dodano trdnos), debelina izolatorja se lahko izpopolni. V prihodnosti imava namen izvesti tudi dinamične teste z letalnim računalnikom in izdelati sistem za nadzorovanje leta. %Ideje za nadalno raziskovanje (različna goriva, %različni materiali za šobe, pridobivanje podatkov z dinamičnimi testi, sistem za nadzorovanje leta rakete)
+
+V okviru te raziskovalne naloge sva na podlagi teorije, literature in testiranja zasnovala in razvila raketni motor na trdno gorivo, zgrajen iz dostopnih in nizkocenovnih materialov. Motor sva tudi testirala, proizvedel je impulz 17,26 Ns, kar ga postavi v kategorijo D, in dokazuje, 
+da je mogoče izdelati funkcionalen motor tudi z  minimalnimi sredstvi in malo specializirane opreme. Z zaokroževanjem navzgor sva ocenila ceno enega motorja na 115 centov. Omenila bi, da kar 54 centov zneska predstavlja epoksi smola.
+
+Skozi raziskovanje sva hipoteze ovrednotila in prišla do raznih zaključkov. Papir debeline 1,75 mm se je izkazal za učinkovit izolator, šobe iz mavca pa so se zaradi erozije izkazale za dokaj neprimerne.
+Simulacije z openMotorjem so zahtevale prilagoditve in niso bile zadostno natančne za nizkotlačne sisteme in za preveč karamelizirana goriva, sploh pa ne podpira spreminjanja hitrosti gorenja.
+
+Z raziskovalno nalogo sva pridobila mnogo znanja in izkušenj. Porodile so se nama tudi ideje za izboljšave in nadaljna raziskovanja.
+Navedene ideje bi lahko pripomogle k izboljšanju učinkovitosti, zanesljivosti in ponovljivosti amaterskih raketnih motorjev. 
+
+\begin{itemize}
+    \item \textbf{Materiali za šobe:} Preizkusiti dodajanje jeklene volne v mavec, ojačanje grla z kovinsko podložko, druge materiale.
+    \item \textbf{Oblika šobe:} Raziskati enostavnejšo, konvergentno šobo (brez divergentnega dela), ki bi pri nizkih tlakih lahko povečala izkoristek.
+    \item \textbf{Sistem vžiga:} Razviti zanesljivejši sistem elektronskega vžiga z nanosom majhne količine goriva na zvezani žički.
+    \item \textbf{Dinamično testiranje:} Vgraditi motor v model rakete in meriti dinamično zmogljivost (pospešek, višino, trajanje leta).
+    \item \textbf{Vpliv vlage:} Kvantitativno analizirati vpliv vlažnosti goriva na hitrost gorenja in specifični impulz.
+    \item \textbf{Alternativna goriva:} Preizkusiti druga razmerja kalijeveg nitrata /saharoze ali dodatke za izboljšanje učinkovitosti.
+\end{itemize}
+
+		\subsection{Najin pogled}
+		Skozi pisanje naloge sva pridobila veliko znanja, izkušenj in idej za prihodne raziskave. Raziskovanje je bilo večinoma zanimivo in zabavno, a tudi naporno.
+		Sploh nama je težave delalo gorivo, ki nama je preprečilo večji obseg testiranja in vzelo ogromno časa.
+		Vendar pa nameravava v prihodnosti opraviti nadaljne raziskave in jih tudi razširiti, pri tem pa bova podatke in motor s pridom uporabila.
 
 	\printbibliography
 	[
