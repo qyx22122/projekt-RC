@@ -14,8 +14,6 @@
 
 
 \usetheme{Berlin}
-%\usecolortheme{seahorse}
-%Opcija 2
 \usecolortheme{seahorse}
 
 \begin{document}
@@ -25,21 +23,25 @@
 \section{Uvod}
 \begin{frame}
 \frametitle{Uvod}
-\begin{itemize}
-    \item Ideja za nalogo in njen namen
-    \item Hipoteze
-    \begin{enumerate}
-        \item Nizkocenovnost in prostodostopnost materialov
-        \item Primernost papirja kot izolatorja
-        \item Pirmernost mavca kot materiala za šobe
-        \item Primerljivost OpenMotor simulacij z empiričnimi podatki
-    \end{enumerate}
-    \item Varnost
-				\begin{figure}
-				\includegraphics[height=3cm]{test3_5}
-				\includegraphics[height=3cm]{test3_6}
-				\end{figure}
-\end{itemize}
+\begin{columns}
+	\column{.5\textwidth}
+	\begin{itemize}
+	    \item Ideja za nalogo in njen namen
+	    \item Hipoteze
+	    \begin{enumerate}
+	        \item Nizkocenovnost in prostodostopnost materialov
+	        \item Primernost papirja kot izolatorja
+	        \item Pirmernost mavca kot materiala za šobe
+	        \item Primerljivost OpenMotor simulacij z empiričnimi podatki
+	    \end{enumerate}
+	    \item Varnost
+	\end{itemize}
+	\column{.4\textwidth}
+		\begin{figure}
+		\includegraphics[height=.5\textheight - 1cm]{test3_5}
+		\includegraphics[height=.5\textheight - 1cm]{test3_6}
+		\end{figure}
+\end{columns}
 \end{frame}
 
 \section{Teoretični del}
@@ -64,16 +66,21 @@
 \section{Sestava motorja}
 \begin{frame}
 \frametitle{Sestava motorja}
+	\begin{columns}
+		\column{.3\textwidth}
 		\begin{enumerate}
-		\item Zunanja cev
-		\item Izolator
-		\item Gorivo
-		\item Šoba
-	\end{enumerate}
+			\item Zunanja cev
+			\item Izolator
+			\item Gorivo
+			\item Šoba
+		\end{enumerate}
+		\column{.7\textwidth}
 		\begin{figure}
-		\centering
-		\includegraphics[height=4cm]{QFau_oznacen_final}
+			\centering
+			\includegraphics[height=\textwidth - 1.5cm]{QFau_oznacen_final}
 		\end{figure}
+	\end{columns}
+
 \end{frame}
 
 \section{Testiranje in analiza podatkov}
