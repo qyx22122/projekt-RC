@@ -1,6 +1,5 @@
 \documentclass{beamer}
 
-\graphicspath{{./slike/}}
 %Information to be included in the title page:
 \title{Energijski izkoristek raketnih motorjev na trdno gorivo}
 \author{Tibor Maček, Leon Smrekar voskobojnik}
@@ -9,7 +8,7 @@
 
 \usepackage[version=4]{mhchem}
 \usepackage[slovenian]{babel}
-\usepackage{graphicx}
+\usepackage{graphicx, booktabs, physics}
 \graphicspath{{./slike/}}
 
 
@@ -41,6 +40,7 @@
 		\includegraphics[height=.5\textheight - 1cm]{test3_5}
 		\includegraphics[height=.5\textheight - 1cm]{test3_6}
 		\end{figure}
+
 \end{columns}
 \end{frame}
 
@@ -51,7 +51,7 @@
 		\item Gorivo
 		\item Šoba
 		\item Potisk
-		\item Specifični impulz
+		\item Specifičen impulz
 	\end{enumerate}
 \end{frame}
 
@@ -60,8 +60,109 @@
 	Gorenje KNSU goriva :
 
 	\ce{C12H22O11(s) + 6.288 KNO3(s)  -> 3.796 CO2(g) + \\ + 5.205 CO(g) + 7.794 H2O(g) + 3.065 H2(g) + 3.143 N2(g) + \\ + 2.998 K2CO3(l) + 0.274 KOH(g)}
+
+		\begin{table}
+		\tiny
+		\begin{tabular}{lll}
+		\hline
+		Snov & Agregatno stanje & Kemijska formula \\
+		\hline \noalign{\vskip 0.3ex}
+		Saharoza & trdno & \ce{C12H22O11} \\
+		Kalijev nitrat & trdno & \ce{KNO3} \\
+		Ogljikov dioksid & plinasto & \ce{CO2} \\
+		Ogljikov monoksid & plinasto & \ce{CO} \\
+		Vodna para & plinasto & \ce{H2O} \\
+		Vodik & plinasto & \ce{H2} \\
+		Dušik & plinasto & \ce{N2} \\
+		Kalijev karbonat & tekoče & \ce{K2CO3} \\
+		Kalijev hidroksid & plinasto & \ce{KOH} \\
+		\hline
+		\end{tabular}
+		\end{table}
 \end{frame}
 
+\begin{frame}
+\frametitle{Šoba}
+	\begin{columns}
+		\column{.4\textwidth}
+		\begin{equation} \label{eq:šoba-vA}
+			(1 - M^2) \frac{\dd v}{v} = - \frac{\dd A}{A}
+		\end{equation}
+		\begin{equation} \label{eq:Mach}
+			M = \frac{v}{c}
+		\end{equation}
+
+		\column{.6\textwidth}
+		\begin{figure}
+		\centering
+		\includegraphics[width=.9\textwidth]{prerez_sobe}
+		\end{figure}
+
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Potisk}
+	\begin{figure}
+	\centering
+	\includegraphics[width=.9\textwidth]{motor_trust}
+	\end{figure}
+	\tiny
+	(https://www.nakka-rocketry.net/th\_thrst.html, 9. 3. 2026)
+
+	\normalsize
+	\begin{equation} \label{eq:potisk_1}
+		F = \int{P}{dA} = \dot{m} v_e + (P_e - P_a)A_e
+	\end{equation}
+
+	\begin{equation} \label{eq:potisk_1}
+		F = \dot{m} v_e
+	\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Specifičnen impulz}
+	\begin{columns}
+		\column{.6\textwidth}
+			\begin{equation}
+				I = G_1 - G_0 = \int F dt
+			\end{equation}
+			\begin{equation}\label{eq:ISP}
+				I_{SP} = \frac{I}{m \vdot g_0}
+			\end{equation}
+			\begin{equation} \label{eq:ISP_v}
+				I_{SP} = \frac{v_e}{g_0}
+			\end{equation}
+			Enačba Ciolkovskega:
+			\begin{equation} \label{eq:Ciolkovskega}
+				\Delta v = v_e \ln{\frac{m_0}{m_1}} = I_{SP} g_0 \ln{\frac{m_0}{m_1}}
+			\end{equation}
+		\column{.4\textwidth}
+				\begin{table}
+					\small
+					\begin{tabular}{lll} 
+						\hline
+						Raketni motor & $I_{SP}$ [s] \\
+						\hline \noalign{\vskip 0.3ex}
+						NERVA NRX A6 & 869 \\ 
+						RS-25 & 453 \\ 
+						RD-843 & 315,5 \\
+						Merlin 1D & 310 \\
+						Avio Zefiro 9A & 295,2\\
+						Avio Zefiro 23 & 287,5 \\
+						Space Shuttle SRB & 250 \\ 
+						\hline
+					\end{tabular}
+					\caption[Primeri specifičnih impulzov]{Primeri že testiranih raketnih motorjev in njihovih specifičnih impulzov.}
+				\end{table}
+	\end{columns}
+
+\end{frame}
+
+\section{Simuliranje}
+\begin{frame}
+\frametitle{Simuliranje v programu openMotor}
+\end{frame}
 
 \section{Sestava motorja}
 \begin{frame}
@@ -76,7 +177,6 @@
 		\end{enumerate}
 		\column{.7\textwidth}
 		\begin{figure}
-			\centering
 			\includegraphics[height=\textwidth - 1.5cm]{QFau_oznacen_final}
 		\end{figure}
 	\end{columns}
