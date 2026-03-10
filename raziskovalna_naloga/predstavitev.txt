@@ -1,0 +1,19 @@
+
+UVOD
+Z raziskovalno nalogo sva se poglobila v delovanje raketnih motorjev na trdno gorivo. S pomočjo pregledane literature in testiranja izolatorjev sva razvila in testirala lasten motor. Pred in med raziskovanjem sva si postavila hipoteze, do katerih sva se tudi potem tudi opredelila, in sicer .... . Razlog za delanje raziskovalne naloge pa je poleg želje po izdelavi lastnega, cenovno ugodnega motorja  tudi ta, da sva že predhodno izdelala raketo, s podobnim, a manj dodelanim motorjem, ki je tudi poletela, kot je vidno na sliki, in sva si želela podrobneje raziskati in sistematično zbirati podatke o potisku in posledično o energijskem izkoristku.
+V nalogi sva opisala tudi nevarnosti takih raketnih motorjev in varnostne ukrepe ki so pri testiranju potrebni.
+
+SESTAVA MOTORJA
+Na prosojnici lahko vidimo shemo motorja, ob strani pa nekatere podatke o njem, ki sva jih želela izpostaviti.
+Najin motor je sestavljen iz zunanje cevi in plasti epoksi smole, ki jo zapira, 
+izolatorja iz papirja, ki je v plastično cev na vstavljen v zvitju, gorivne celice, ki sva jo izdelala sama in šobe iz električarskega mavca, ki sva jih tudi sama ulivala in so na zunanjo cev prilepljene z epoksi smolo.
+
+STATIČNO TESTIRANJE
+Podatke sva zbirala s pomočjo merilnika potiska, povezanega na računalnik. Temperaturo
+sva merila s toplotno kamero. Za potrebe testiranja sta nama po najinemu načrtu hišnika gimnazije vič izdelala aluminijasto stojalo, ki varno drži motor. Poizkusila sva tudi vžig motorja z elektronskim vžigom, za katerega sva potrebovala vir napetosti, vendar nama ta metoda ni uspela.
+
+ZAKLJUČEK
+Z nalogo sva izdelala prostodostopen in ugoden motor, ki je proizvedel potisk. Ker sva postopek podrobno opisala in navedla materiale in ker je najina naloga prostodostopna ima kdorkoli možnost enak motor, ali pa razviti svojega.
+Tekom dela in testiranja pa sva dobila ideje za izboljšavo in nadaljno raziskovanje.
+......
+Na koncu bi se še posebej zahvalila mentorju, profesorju Juretu Auscu za vso pomoč in  usmerjanje pri raziskovanju.
