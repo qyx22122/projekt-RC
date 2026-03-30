@@ -105,11 +105,11 @@
 		\thispagestyle{plain}
 		\setcounter{page}{3}
 		\section*{Povzetek}
-		V raziskovalni nalogi sva se poglobila v delovanje, simuliranje in testiranje raketnih motorjev na trdno gorivo. V teoretičnem delu sva opisala, na katerih fizikalnih zakonih temeljijo raketni motorji in kakšno funkcijo imajo posamezni deli raketnega motorja na trdno gorivo. Nato sva se lotila razvoja lastnega raketnega motorja na trdno gorivo, ki je narejen iz dostopnih in cenovno ugodnih materialov ter ne potrebuje manj dostopnih strojev, kot sta naprimer stružnica in CNC rezkar. Testirala sva različne vrste in debeline izolatorjev, dokler nisva našla najprimernejšega. S simulacijo sva si pomagala pri načrtovanju šobe in ostalih kritičnih dimenzij motorja, ki sva ga nato tudi sestavila in testirala. Iz pridobljenih podatkov sva potrdila primernost izolatorja in izračunala učinkovitost motorja. Nazadnje sva primerjala izmerjene vrednosti s tistimi iz simulacije, da sva lahko prilagodila parametre simulacije za natančnejše napovedi.
+		V raziskovalni nalogi sva se poglobila v delovanje, simuliranje in testiranje raketnih motorjev na trdno gorivo. V teoretičnem delu sva opisala, na katerih fizikalnih zakonih temeljijo raketni motorji in kakšno funkcijo imajo posamezni deli raketnega motorja na trdno gorivo. Nato sva se lotila razvoja lastnega raketnega motorja na trdno gorivo, ki je narejen iz dostopnih in cenovno ugodnih materialov ter ne potrebuje manj dostopnih strojev, kot sta na primer stružnica in CNC rezkar. Testirala sva različne vrste in debeline izolatorjev, dokler nisva našla najprimernejšega. S simulacijo sva si pomagala pri načrtovanju šobe in ostalih kritičnih dimenzij motorja, ki sva ga nato tudi sestavila in testirala. Iz pridobljenih podatkov sva potrdila primernost izolatorja in izračunala učinkovitost motorja. Nazadnje sva primerjala izmerjene vrednosti s tistimi iz simulacije, da sva lahko prilagodila parametre simulacije za natančnejše napovedi.
 
 		Ugotovila sva, da je raketo na trdno gorivo mogoče izdelati iz prostodostopnih in nizkocenovnih materialov. Na koncu predlagava še nekaj že ugotovljenih izboljšav in nakaževa možnosti za nadaljnje raziskovanje in testiranje.
 		\\[2ex]
-		Ključne besede: raketni motor, trdno gorivno, izolator, šoba, specifični impulz
+		Ključne besede: raketni motor, trdno gorivo, izolator, šoba, specifični impulz
 
 \vspace{0.5cm}
 \section*{Abstract}
@@ -133,7 +133,7 @@
 		\section{Uvod}
 		Z razvojem raketne znanosti se je razširilo tudi amatersko raketarstvo in z njim različne velikosti raket, različni materiali in tipi goriva. Skozi čas so
 		materiali in znanje postajali vse bolj dostopni. V teh časih vsakdo lahko izdela model rakete, edino vprašanje je izbira materialov,
-		porabljen čas in denar, kako varna bo izvedba in kako učinkovit bo motor. Čeprav obstajajo tudi majhni komercialni motorji, sva si želela narediti cenovno ugoden motor.
+		porabljen čas in denar, kako varna bo izvedba in kako učinkovit bo motor. Čeprav obstajajo tudi majhni komercialni motorji, sva si želela narediti svoj, cenovno ugodnejši motor.
 		Da bi prihranila na opremi, času in denarju nasploh, sva si izbrala najenostavnejše in najcenejše gorivo. Kaj kmalu se nama je porodilo vprašanje
 		učinkovitosti in tako so nastali temelji za raziskovalno nalogo. Želela sva dokazati, da je tudi z malo sredstvi in iz
 		prostodostopnih materialov mogoče narediti učinkovito in zmogljivo raketo. Tak motor je dostopnejši in posledično na voljo vsem, ki ga želijo uporabiti ali izvesti nadaljne poizkuse.
@@ -155,8 +155,10 @@
 		Proces gorenja prikazuje enačba \ref{eq:gorjenje-goriva}, kjer med reaktanti ni elementarnega kisika (\ce{O2}).
 		Ob nepravilnem ravnanju lahko zelo hitro dobimo tudi hujše opekline. Dober primer je vsuvanje mešanice v prevročo posodo pri pripravi goriva, saj se v tem primeru lahko spontano vžge.
 		Kot produkt reakcije se sproščajo plini, ki dražijo oči in dihala. Testiranje v zaprtih prostorih je tako odsvetovano, tudi zaradi tveganja materialne škode.
-		Pri prižganju v posodah, kjer omejujemo uhajanje plinov, poteka reakcija zaradi skokovitega naraščanja plinov še hitreje in s tem se tudi tlak dviguje pospešeno.
+		Pri prižganju v posodah, kjer omejujemo uhajanje plinov med njihovim nastankom tlak skokovito raste. Posledično reakcija pospešuje, kar povzroča še hitrejše nastajanje plinov.
 		To vodi v pozitivno povratno zanko, ki se ponavadi konča z eksplozijo, pri kateri je nevarnost šrapnelov in poškodbe sluha zaradi udarnega vala.
+
+%       poteka reakcija zaradi skokovitega naraščanja hitrosti nastajanja plinov še hitreje in s tem se tudi tlak dviguje pospešeno
 
 		Da bi zagotovila tako lastno varnost, kot tudi preprečila materialno škodo, sva uporabljala minimalne količine goriva, potrebne za reprezentativnost. Pri pripravi goriva sva
 		bila pozorna na temperaturo. Gorivo sva pripravljala v digestoriju, da sva se
@@ -166,7 +168,7 @@
 
 		\section{Teoretičeni del}
 		Raketni motorji delujejo zaradi zakona o ohranitvi gibalne količine; motor pospeši vroče pline v nasprotno smer gibanja rakete in s tem poveča hitrost rakete.
-		Pri raketnih motorjih na trdno grivo ta plin pride iz reakcije goriva in oksidatorja, obeh v trdnem agregatnem stanju. V zgorevalni komori je zaradi tega ustvarjen povišan tlak.
+		Pri raketnih motorjih na trdno gorivo ta plin pride iz reakcije goriva in oksidatorja, obeh v trdnem agregatnem stanju. V zgorevalni komori je zaradi tega ustvarjen povišan tlak.
 		Vroči plini uhajajo skozi šobo, katere funkcija je izkoriščanje tlaka in temperature teh plinov, da jih pospeši do visokih hitrosti in jim s tem poveča gibalno količino.
 
 			\subsection{Gorivo}
@@ -222,9 +224,9 @@
 			\subsection{Šoba} \label{soba}
 			Šoba je navzven enostaven del raketnega motorja, ki pa je izrednega pomena za pravilno delovanje, saj z omejevanjem in usmerjanjem nekaterih vročih produktov
 			reakcije povzroči potisk, ki pospeši raketo.
-			Od šobe je odvisen tlak znotraj zgorevalne komore, od katerega je odvisna hitrost rekacije in njena učinkovitost. Šoba določa tudi največji doseženi tlak, katerega morajo zdržati vsi ostali deli motorja.
+			Od šobe je odvisen tlak znotraj zgorevalne komore, od katerega je odvisna hitrost reakcije in njena učinkovitost. Šoba določa tudi največji doseženi tlak, katerega morajo zdržati vsi ostali deli motorja.
 			Šoba na notranji strani konvergira proti premeru grla
-			in nato divergira do izhodnega premera - od tod tudi prideta imeni kovergentno-divergentna oz. KD šoba, poznana tudi kot De Laval šoba.
+			in nato divergira do izhodnega premera - od tod tudi prideta imeni konvergentno-divergentna oz. KD šoba, poznana tudi kot De Laval šoba.
 			Tekočine v taki šobi operirajo v dveh različnih režimih, ki jih opisuje spodnja enačba.\cite{nasa:nozzle_design}
 			\begin{equation} \label{eq:šoba-vA}
 				(1 - M^2) \frac{\dd v}{v} = - \frac{\dd A}{A}
@@ -253,7 +255,7 @@
 			pospeševali do zvočne hitrosti v zožanju šobe in nato pospešili tudi preko zvočne hitrosti, ko se v končnem delu šobe presek spet povečuje.
 
 			\subsection{Potisk}
-			Potisk motorja ja ena najpomembnejših lastnosti raketnega motorja. Izračunamo ga z enačbo \ref{eq:potisk_1}.\cite{nasa:rocket_thrust}
+			Potisk motorja je ena najpomembnejših lastnosti raketnega motorja. Izračunamo ga z enačbo \ref{eq:potisk_1}.\cite{nasa:rocket_thrust}
 			\begin{equation} \label{eq:potisk_1}
 				F = \dot{m} v_e + (P_e - P_a)A_e
 			\end{equation}
@@ -278,8 +280,8 @@
 
 			Kot prikazuje slika \ref{statičen_test}, je najbolj pogosto raketni motor na vodoravnih tirnicah in potiska v isti smeri.
 			Odločila sva se za vertikalno orientacijo motorja in da ta potiska navzdol, saj se nama je to zdelo bolj varno in praktično.
-			Problem takšne postavitve je, da sva merivla tudi silo teže motorja, ki pa se skozi čas gorenja spreminja. Sprememba teže motorja pa je enaka teži goriva (\SI{0,75}{N}),
-			ki je zanemarljiva v primerjavi z potiskom motorja.
+			Problem takšne postavitve je, da sva merila tudi silo teže motorja, ki pa se skozi čas gorenja spreminja. Sprememba teže motorja pa je enaka teži goriva (\SI{0,75}{N}),
+			ki je zanemarljiva v primerjavi s potiskom motorja.
 
 			\subsection{Simulacija v openMotor}
 			Simulacije so v raketni znanosti zelo pomembno orodje, saj vnaprej povedo lastnosti motorja, ki so ključnega pomena za njegovo izdelavo.
@@ -312,7 +314,7 @@
 
 			\subsection{Toplotna kamera}
 			Za merjenje temperatur sva uporabljala toplotno kamero Seek ShotPRO. V razponu 233 K do 603 K zaznava z občutljivostjo manj kot 70 mK.
-			Prav tako ima visoko resolucijo 320 x 240 (78 600 pikslov). Kamera zaznava dolgovaloven infrardeč spekter, natančneje valovne dolžine med 7,5 in 14 $\mu m$.\cite{seekshotpro_specsheet}
+			Prav tako ima visoko resolucijo 320 x 240 (76 800 pikslov). Kamera zaznava dolgovaloven infrardeč spekter, natančneje valovne dolžine med 7,5 in 14 $\mu m$.\cite{seekshotpro_specsheet}
 			S funkcijo snemanja sva dobila natančne podatke o spreminjanju temperature s časom. Ker pa ima kamera premajhno merilno območje
 			za merjenje temperature izpuha motorja, sva merila predvsem temperaturo zunanje cevi in tako preverila, da se ne pregreva.
 
@@ -387,7 +389,7 @@
 			Za ohišje motorja sva uporabljala odtočne cevi iz plastike PP-H (polipropilen homopolimer) ki jih izdeluje podjetje Peštan. Kupila sva jih v trgovini s tehničnim blagom
 			in jih razžagala na primerno dolžino - za prve teste izolatorja \SI{4}{cm}, potem \SI{6}{cm} ter \SI{12,5}{cm} za dejanski motor.
 			Cev je certificirana s standardom EN 1451.\cite{Katalog_HTPP} Tako bi morala pri temperaturi \SI{353}{K} zdržati, četudi za kratek čas, tlak do \SI{6,0}{MPa}.\cite{EN1451} Kot primerjavo lahko vzamemo tretji test motorja. Temperatura zunanjosti zunanje cevi se med samim izgorevanjem spremeni za pičlih 2 K, iz 280 K do 282 K, kot vidno na slikah \ref{cetrti_temp}.
-			Cevi sva izmerila notrananji premer \SI{36}{mm} in debelino stene \SI{1.90}{mm}. Ko sva odžagala primerno dolžino cevi, sva plastiko,
+			Cevi sva izmerila notranji premer \SI{36}{mm} in debelino stene \SI{1.90}{mm}. Ko sva odžagala primerno dolžino cevi, sva plastiko,
 			ki je bila natrgana pri žaganju, stopila oziroma odžgala s plamenom. 
 			S tem sva cev polepšala, predvsem pa olajšala vstavljanje izolatorja.
 			
@@ -833,7 +835,7 @@
 			\begin{figure}[H]
 			\centering
 			\includegraphics[height = 6cm]{tretji_test_motorja}
-			\caption{Tretje statično testiranje motrja}
+			\caption{Tretje statično testiranje motorja}
 			\end{figure}
 
 		\subsection{Analiza podatkov}
@@ -916,7 +918,7 @@
 			\caption{Simulacija, prilagojena za pravilen impulz.} \label{graf:prilagojen_impulz}
 		\end{figure}
 
-		\subsubsection{Neprimernost kovergentno-divergentne šobe}
+		\subsubsection{Neprimernost konvergentno-divergentne šobe}
 		Ko sva prilagajala simulacijo, nama je openMotor javil opozorilo za nizek izhodni tlak in možnost odmika izpuhov od strani šobe.
 		Po premisleku sva s pomočjo enačbe \ref{eq:šoba-vA} prišla do zaključka, da izpuhi ne dosegajo pravilnih hitrosti v šobi.
 		Ker je tlak prenizek, izpuhi v grlu šobe ne dosežejo zvočne hitrosti, kar pomeni, da v divergentnem delu šobe izpuhi
@@ -945,26 +947,27 @@
 	Najino gorivo je najverjetneje imelo tudi pri tretjem testu težave z vlago. Ugotovila sva, da je pri teh pogojih openMotor nezanesljiv.
 	
 	\section{Zaključek}
-%	V nalogi sva raziskovala energijski izkoristek raketnega motorja na trdno gorivo. Seznanila sva se s teorijo in jo opisala. Motor, ki sva ga ob pomoči literature in raziskovanja opisanega v nalogi zasnovala sama in katerega izdelavo sva 			%podrobno opisala, sva testirala in zbrala meritve. Namen naloge sva izpolnila, prav tako sva ovrednotila hipoteze.
+%	V nalogi sva raziskovala energijski izkoristek raketnega motorja na trdno gorivo. Seznanila sva se s teorijo in jo opisala. Motor, ki sva ga ob pomoči literature in raziskovanja opisanega v nalogi zasnovala sama in katerega izdelavo sva 
+%podrobno opisala, sva testirala in zbrala meritve. Namen naloge sva izpolnila, prav tako sva ovrednotila hipoteze.
 % Veliko sva se naučila tudi o načrtovanju raket. Vse to nama 
 %	bo v pomoč pri naslednjih raziskavah in poizkusih, za katere so se nama porodile ideje. Motor se lahko izboljša, uporabi se lahko še druga goriva, z primesmi. Za šobe se lahko uporablja še druge materiale in kombinacije materialov (primer dodatka %jeklene volne v mavec za dodano trdnos), debelina izolatorja se lahko izpopolni. V prihodnosti imava namen izvesti tudi dinamične teste z letalnim računalnikom in izdelati sistem za nadzorovanje leta. %Ideje za nadalno raziskovanje (različna goriva, %različni materiali za šobe, pridobivanje podatkov z dinamičnimi testi, sistem za nadzorovanje leta rakete)
 
 V okviru te raziskovalne naloge sva na podlagi teorije, literature in testiranja zasnovala in razvila raketni motor na trdno gorivo, zgrajen iz dostopnih in nizkocenovnih materialov. Motor sva tudi testirala, proizvedel je impulz 17,26 Ns, kar ga postavi v kategorijo D, in dokazuje, 
 da je mogoče izdelati funkcionalen motor tudi z  minimalnimi sredstvi in malo specializirane opreme. Z zaokroževanjem navzgor sva ocenila ceno enega motorja na 115 centov. Omenila bi, da kar 54 centov zneska predstavlja epoksi smola.
 
-Skozi raziskovanje sva hipoteze ovrednotila in prišla do raznih zaključkov. Papir debeline 1,75 mm se je izkazal za učinkovit izolator, šobe iz mavca pa so se zaradi erozije izkazale za dokaj neprimerne.
+Skozi raziskovanje sva hipoteze ovrednotila in prišla do raznih zaključkov. Papir debeline 1,75 mm se je izkazal za učinkovit izolator, šobe iz mavca pa so se zaradi erozije izkazale za dokaj  	.
 Simulacije z openMotorjem so zahtevale prilagoditve in niso bile zadostno natančne za nizkotlačne sisteme in za preveč karamelizirana goriva, sploh pa ne podpirajo spreminjanja hitrosti gorenja.
 
 Z raziskovalno nalogo sva pridobila mnogo znanja in izkušenj. Porodile so se nama tudi ideje za izboljšave in nadaljna raziskovanja.
 Navedene ideje bi lahko pripomogle k izboljšanju učinkovitosti, zanesljivosti in ponovljivosti amaterskih raketnih motorjev. 
 
 \begin{itemize}
-    \item \textbf{Materiali za šobe:} Preizkusiti dodajanje jeklene volne v mavec, ojačanje grla s kovinsko podložko, druge materiale.
-    \item \textbf{Oblika šobe:} Raziskati enostavnejšo, konvergentno šobo (brez divergentnega dela), ki bi pri nizkih tlakih lahko povečala izkoristek.
-    \item \textbf{Sistem vžiga:} Razviti zanesljivejši sistem elektronskega vžiga z nanosom majhne količine goriva na zvezani žički.
-    \item \textbf{Dinamično testiranje:} Vgraditi motor v model rakete in meriti dinamično zmogljivost (pospešek, višino, trajanje leta).
-    \item \textbf{Vpliv vlage:} Kvantitativno analizirati vpliv vlažnosti goriva na hitrost gorenja in specifični impulz.
-    \item \textbf{Alternativna goriva:} Preizkusiti druga razmerja kalijeveg nitrata /saharoze ali dodatke za izboljšanje učinkovitosti.
+	\item \textbf{Materiali za šobe:} Preizkusiti dodajanje jeklene volne v mavec, ojačanje grla s kovinsko podložko, druge materiale.
+	\item \textbf{Oblika šobe:} Raziskati enostavnejšo, konvergentno šobo (brez divergentnega dela), ki bi pri nizkih tlakih lahko povečala izkoristek.
+	\item \textbf{Sistem vžiga:} Razviti zanesljivejši sistem elektronskega vžiga z nanosom majhne količine goriva na zvezani žički.
+	\item \textbf{Dinamično testiranje:} Vgraditi motor v model rakete in meriti dinamično zmogljivost (pospešek, višino, trajanje leta).
+	\item \textbf{Vpliv vlage:} Kvantitativno analizirati vpliv vlažnosti goriva na hitrost gorenja in specifični impulz.
+	\item \textbf{Alternativna goriva:} Preizkusiti druga razmerja kalijeveg nitrata /saharoze ali dodatke za izboljšanje učinkovitosti.
 	\item \textbf{Izdelava goriva:} Raziskati druge priprave in metode izdelave goriva, poiskati hitrejši način.
 \end{itemize}
 
