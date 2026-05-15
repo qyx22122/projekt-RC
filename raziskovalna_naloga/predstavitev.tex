@@ -3,7 +3,7 @@
 
 %Information to be included in the title page:
 \title{Energijski izkoristek raketnih motorjev na trdno gorivo}
-\author[Tibor Maček \and Leon Smrekar Voskobojnik]{Tibor Maček, 2. letnik \and Leon Smrekar Voskobojnik, 2. letnik \\[0.5cm] \small Mentor: prof. Jure Ausec}
+\author[Tibor Maček \and Leon Smrekar Voskobojnik]{Tibor Maček, 2. letnik \and Leon Smrekar Voskobojnik, 2. letnik \\[0.5cm] \small Mentor: Jure Ausec, univ. dipl. fiz.}
 
 \institute{Gimnazija Vič}
 \date{2026}
@@ -22,7 +22,7 @@
 \usefonttheme[onlymath]{serif}
 
 \usetheme{Berlin}
-\usecolortheme{seahorse}
+\usecolortheme{fly}
 
 \begin{document}
 
@@ -30,92 +30,21 @@
 
 \section{Uvod}
 \begin{frame}
-\frametitle{Uvod}
+\frametitle{Leteča raketa}
 	\begin{figure}
 	\includegraphics[height= .8\textheight]{Raketa}
 
 	\end{figure}
 \end{frame}
-
-\section{Simuliranje}
 \begin{frame}
-\frametitle{Simuliranje v programu openMotor}
-	\begin{figure}
-	\centering
-	\includegraphics[width = .9\textwidth]{prilagojen_impulz}
-		\caption{Posnetek zaslona iz openMotorja}
-	\end{figure}
+\frametitle{Staljena raketa}
+			\begin{figure}
+			\centering
+			\includegraphics[height = 6.5cm]{uporabljen_kondom}
+			\end{figure}
 \end{frame}
 
-\section{Testiranje izolatorjev}
-\begin{frame}
-\frametitle{Prvi in drugi test izolatorjev}
-	\begin{figure}
-	\centering
-	\includegraphics[height=.3\textheight]{prvi_test}
-	\end{figure}
-
-	\begin{figure}
-	\centering
-	\includegraphics[height=.3\textheight]{drugi_test}
-	\hspace{0.3cm}
-	\includegraphics[height=.3\textheight]{drugi_test_potem}
-	\end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Tretji in četrti test izolatorjev}
-	\begin{figure}
-	\centering
-	\includegraphics[height=.3\textheight]{test3_5}
-	\hspace{0.3cm}
-	\includegraphics[height=.3\textheight]{test3_6}
-	\end{figure}
-
-	\begin{figure}
-	\centering
-	\includegraphics[height=.3\textheight]{termalni_posnetek_takoj_po}
-	\hspace{0.3cm}
-	\includegraphics[height=.3\textheight]{termalni_posnetek_kasneje}
-	\end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Rezultati testiranja izolatorjev}
-	\centering
-	\small
-	Podatki o drugem testu izolatorja
-	\tiny
-	\begin{table}
-		\begin{tabularx}{\textwidth}{c|c|c|X} 
-			\hline
-			Število navojev & Debelina [mm] & Masa goriva [g] & Stanje zunanje cevi \\
-			\hline
-			5 & 2,9 & 25,5 & Malo stopljena \\
-			6 & 3,6 & 25,9 & Minimalne deformacije \\
-			7 & 4,2 & 25,5 & Nepoškodovana \\
-			\hline
-		\end{tabularx}
-	\end{table}
-	\small
-	Podatki o četrtem testu izolatorja
-	\tiny
-	\begin{table}
-		\begin{tabularx}{\textwidth}{c|c|c|c} 
-			\hline
-			Število plasti & Debelina [mm] & Masa goriva [g] & Najvišja dosežena temperatura [K] \\
-			\hline
-			8 & 1,3 & 75,4 & 321 \\
-			9 & 1,6 & 75,0 & 385 \\
-			10 & 1,8 & 75,2 & 312 \\
-			11 & 2,0 & 75,4 & 303 \\
-			12 & 2,1 & 75,1 & 303 \\
-			\hline
-		\end{tabularx}
-	\end{table}
-\end{frame}
-
-\section{Statično testiranje}
+\section{Sestava motorja}
 \begin{frame}
 \frametitle{Sestava motorja}
 	\begin{columns}
@@ -145,10 +74,57 @@
 		\column{.5\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[height=\textwidth - .5cm]{QFau_oznacen_final}
+			\includegraphics[height=\textwidth + 1cm]{shema_QFau_pobarvana}
 		\end{figure}
 	\end{columns}
 \end{frame}
+
+\section{Simuliranje}
+\begin{frame}
+\frametitle{Simuliranje v programu openMotor}
+	\begin{figure}
+	\centering
+	\includegraphics[width = .7\textwidth]{prilagojen_impulz_obrezan}
+	\includegraphics[width = .7\textwidth]{regresija}
+		\caption{Graf in regresija goriva - posnetek zaslona programa openMotor}
+	\end{figure}
+\end{frame}
+
+\section{Testiranje izolatorjev}
+\begin{frame}
+\frametitle{Prvi in drugi test izolatorjev}
+	\begin{figure}
+	\centering
+	\includegraphics[height=.4\textheight]{prvi_test}
+	\end{figure}
+
+	\begin{figure}
+	\centering
+	\includegraphics[height=.4\textheight]{drugi_test}
+	\hspace{0.3cm}
+	\includegraphics[height=.4\textheight]{drugi_test_potem}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tretji in četrti test izolatorjev}
+	\begin{figure}
+	\centering
+	\includegraphics[height=.4\textheight]{test3_5}
+	\hspace{0.3cm}
+	\includegraphics[height=.4\textheight]{test3_6}
+	\end{figure}
+
+	\begin{figure}
+	\centering
+	\includegraphics[height=.3\textheight]{termalni_posnetek_takoj_po}
+	\hspace{0.3cm}
+	\includegraphics[height=.3\textheight]{termalni_posnetek_kasneje}
+	\end{figure}
+\end{frame}
+
+
+\section{Statično testiranje}
 
 
 \begin{frame}
@@ -162,29 +138,30 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Prvi test}
+\frametitle{Prvi in drugi test motorja}
 	\begin{figure}
-	\centering
-	\includegraphics[height = 5cm]{prvi_test_motorja}
-	\caption{Prvo statično testiranje motorja.}
+
+	\includegraphics[height = 3cm]{prvi_test_motorja}
+	\includegraphics[height = 3cm]{test2_3}
+	\caption{Prvo in drugo statično testiranje motorja.}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-\frametitle{Drugi test}
+\frametitle{Tretji test motorja}
 	\begin{figure}
-	\centering
-	\includegraphics[height = 5cm]{test2_3}
-	\caption{Drugo statično testiranje motorja.}
+	\includegraphics[height = 4cm]{tretji_topl_gori}
+	\includegraphics[height = 4cm]{stojalo_motor}
+	\caption{Tretji test sneman s termalno kamero, stojalo motorja}
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-\frametitle{Tretji test}
+\frametitle{Tretji test motorja}
 	\begin{figure}
-	\includegraphics[width = .45\textwidth]{tretji_topl_gori}
-	\includegraphics[width = .45\textwidth]{tretji_topl_kasnej}
-	\caption{Tretje statično testiranje snemano s termalno kamero}
+	\includegraphics[height = 5cm]{erozija_sobe}
+	\includegraphics[height = 5cm]{lezec}
+	\caption{Primerjava sveže in erodirane šobe, prerezan testiran motor}
 	\end{figure}
 \end{frame}
 
@@ -193,20 +170,20 @@
 \frametitle{Analiza podatkov}
 	\begin{figure}
 	\centering
-	\includegraphics[height = .5\textheight]{potisk}
+	\includegraphics[height = .7\textheight]{potisk}
 	\end{figure}
 
 	\begin{equation}
-		I = \SI{17,26}{Ns} \pm \SI{1,55}{Ns}\nonumber
+		I = \SI{17,3}{Ns} \pm \SI{1,6}{Ns}\nonumber
 	\end{equation}
 \end{frame}
 \begin{frame}
 %	\begin{align}
-%		\onslide<1->{\bar{F} &= \frac{I}{t} = \frac{\SI{17,26}{Ns} \pm \SI{1,55}{Ns}}{\SI{3,6}{s} \pm \SI{0,1}{s}} = \SI{4,8}{N} \pm \SI{0,6}{N}} \nonumber \\[1em]
+%		\onslide<1->{\bar{F} &= \frac{I}{t} = \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}{\SI{3,6}{s} \pm \SI{0,1}{s}} = \SI{4,8}{N} \pm \SI{0,6}{N}} \nonumber \\[1em]
 %
-%		\onslide<2->{I_{SP} &= \frac{I}{m \vdot g_0} = \frac{\SI{17,26}{Ns} \pm \SI{1,55}{Ns}}{(\SI{0,075}{kg} \pm \SI{0,001}{kg}) \vdot \SI{9.80665}{m/s^2}} = \SI{23,5}{s} \pm \SI{2,3}{s}} \nonumber \\[1em]
+%		\onslide<2->{I_{SP} &= \frac{I}{m \vdot g_0} = \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}{(\SI{0,075}{kg} \pm \SI{0,001}{kg}) \vdot \SI{9.80665}{m/s^2}} = \SI{23,5}{s} \pm \SI{2,3}{s}} \nonumber \\[1em]
 %		
-%		\onslide<3->{\bar{v_e} &= \frac{I}{m} = \frac{\SI{17,26}{Ns} \pm \SI{1,55}{Ns}}{\SI{0,075}{kg} \pm \SI{0,001}{kg}} = \SI{230}{m/s} \pm \SI{23}{m/s}} \nonumber \\[1em]
+%		\onslide<3->{\bar{v_e} &= \frac{I}{m} = \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}{\SI{0,075}{kg} \pm \SI{0,001}{kg}} = \SI{230}{m/s} \pm \SI{23}{m/s}} \nonumber \\[1em]
 %
 %		\onslide<4->{\Delta v &= v_e \ln{\frac{m_0}{m_1}} = (\SI{230}{m/s} \pm \SI{23}{m/s})\vdot \ln{\frac{\SI{0,170}{kg} \pm \SI{0,001}{kg}}{\SI{0,095}{kg} \pm \SI{0,001}{kg}}} = \nonumber \\[1em]
 %		&= \SI{134}{m/s} \pm \SI{17}{m/s}} \nonumber
@@ -214,19 +191,19 @@
 \begin{align}
 \onslide<1->{
 \bar{F} &= \frac{I}{t}
-= \frac{\SI{17,26}{Ns} \pm \SI{1,55}{Ns}}
+= \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}
        {\SI{3,6}{s} \pm \SI{0,1}{s}}
 = \SI{4,8}{N} \pm \SI{0,6}{N}
 } \nonumber \\[1em]
 \onslide<2->{
 I_{SP} &= \frac{I}{m \cdot g_0}
-= \frac{\SI{17,26}{Ns} \pm \SI{1,55}{Ns}}
+= \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}
        {(\SI{0,075}{kg} \pm \SI{0,001}{kg}) \cdot \SI{9.80665}{m/s^2}}
 = \SI{23,5}{s} \pm \SI{2,3}{s}
 } \nonumber \\[1em]
 \onslide<3->{
 \bar{v_e} &= \frac{I}{m}
-= \frac{\SI{17,26}{Ns} \pm \SI{1,55}{Ns}}
+= \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}
        {\SI{0,075}{kg} \pm \SI{0,001}{kg}}
 = \SI{230}{m/s} \pm \SI{23}{m/s}
 } \nonumber \\[1em]
@@ -279,24 +256,8 @@ I_{SP} &= \frac{I}{m \cdot g_0}
 		\item Odkritje neprimernosti KD šobe za najin motor
 		\end{itemize}
 \end{frame}
-\begin{frame}
-\frametitle{Opredelitev do hipotez}
-	\begin{columns}
-		\column{.5\textwidth}
-			Primernost izolatorja
-			\begin{figure}
-			\centering
-			\includegraphics[height = 3cm]{tretji_topl_prej}
-			\includegraphics[height = 3cm]{tretji_topl_potem}
-			\end{figure}
-		\column{.5\textwidth}
-			Primernost materiala za šobe
-			\begin{figure}
-			\centering
-			\includegraphics[height=5cm]{erozija_sobe}
-			\end{figure}
-	\end{columns}
-\end{frame}
+
+
 \begin{frame}
 \frametitle{Opredelitev do hipotez}
 	\begin{columns}
@@ -304,8 +265,7 @@ I_{SP} &= \frac{I}{m \cdot g_0}
 			Primerjava simulacije in izmerjenih podatkov
 			\begin{figure}
 			\centering
-			\includegraphics[height = 2.5cm]{potisk_zglajen}
-			\includegraphics[height = 2.5cm]{graf_originalen}
+			\includegraphics[height = 5cm]{potisk_primerjava}
 			\end{figure}
 		\column{.5\textwidth}
 		Nizkocenovnost motorja \\

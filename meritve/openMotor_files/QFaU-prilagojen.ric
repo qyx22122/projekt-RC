@@ -20,17 +20,17 @@ data:
   nozzle:
     convAngle: 30.0
     divAngle: 15.0
-    efficiency: 0.2866
+    efficiency: 0.332
     erosionCoeff: 4.25e-09
-    exit: 0.025
+    exit: 0.01
     slagCoeff: 0.0
     throat: 0.01
-    throatLength: 0.0
+    throatLength: 0.01
   propellant:
     density: 1800.0
-    name: Nakka - KNSU (1)
+    name: Nakka - KNSU
     tabs:
-    - a: 8.073115000000001e-05
+    - a: 0.00010073115
       k: 1.133
       m: 41.98
       maxPressure: 10342500.0

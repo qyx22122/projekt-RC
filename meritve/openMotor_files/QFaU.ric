@@ -30,7 +30,7 @@ data:
     density: 1800.0
     name: Nakka - KNSU
     tabs:
-    - a: 0.00010073115141607291
+    - a: 0.00010073115
       k: 1.133
       m: 41.98
       maxPressure: 10342500.0
