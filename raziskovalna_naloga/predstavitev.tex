@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 
 %Information to be included in the title page:
@@ -174,20 +174,12 @@
 	\end{figure}
 
 	\begin{equation}
-		I = \SI{17,3}{Ns} \pm \SI{1,6}{Ns}\nonumber
+		F \Delta t = I = \SI{17,3}{Ns} \pm \SI{1,6}{Ns}\nonumber
 	\end{equation}
 \end{frame}
 \begin{frame}
-%	\begin{align}
-%		\onslide<1->{\bar{F} &= \frac{I}{t} = \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}{\SI{3,6}{s} \pm \SI{0,1}{s}} = \SI{4,8}{N} \pm \SI{0,6}{N}} \nonumber \\[1em]
-%
-%		\onslide<2->{I_{SP} &= \frac{I}{m \vdot g_0} = \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}{(\SI{0,075}{kg} \pm \SI{0,001}{kg}) \vdot \SI{9.80665}{m/s^2}} = \SI{23,5}{s} \pm \SI{2,3}{s}} \nonumber \\[1em]
-%		
-%		\onslide<3->{\bar{v_e} &= \frac{I}{m} = \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}{\SI{0,075}{kg} \pm \SI{0,001}{kg}} = \SI{230}{m/s} \pm \SI{23}{m/s}} \nonumber \\[1em]
-%
-%		\onslide<4->{\Delta v &= v_e \ln{\frac{m_0}{m_1}} = (\SI{230}{m/s} \pm \SI{23}{m/s})\vdot \ln{\frac{\SI{0,170}{kg} \pm \SI{0,001}{kg}}{\SI{0,095}{kg} \pm \SI{0,001}{kg}}} = \nonumber \\[1em]
-%		&= \SI{134}{m/s} \pm \SI{17}{m/s}} \nonumber
-%	\end{align}
+\frametitle{Povprečni potisk in specifični impulz}
+
 \begin{align}
 \onslide<1->{
 \bar{F} &= \frac{I}{t}
@@ -200,14 +192,20 @@ I_{SP} &= \frac{I}{m \cdot g_0}
 = \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}
        {(\SI{0,075}{kg} \pm \SI{0,001}{kg}) \cdot \SI{9.80665}{m/s^2}}
 = \SI{23,5}{s} \pm \SI{2,3}{s}
-} \nonumber \\[1em]
-\onslide<3->{
+} \nonumber
+\end{align}
+\end{frame}
+
+\begin{frame}
+\begin{align}
+\frametitle{Izhodna hitrost izpuhov in sprememba hitrost rakete}
+\onslide<1->{
 \bar{v_e} &= \frac{I}{m}
 = \frac{\SI{17,3}{Ns} \pm \SI{1,6}{Ns}}
        {\SI{0,075}{kg} \pm \SI{0,001}{kg}}
 = \SI{230}{m/s} \pm \SI{23}{m/s}
 } \nonumber \\[1em]
-\onslide<4->{
+\onslide<2->{
 \Delta v &= v_e \ln\!\left(\frac{m_0}{m_1}\right) = (\SI{230}{m/s} \pm \SI{23}{m/s})
    \cdot
    \ln\!\left(
@@ -250,10 +248,10 @@ I_{SP} &= \frac{I}{m \cdot g_0}
 		\begin{itemize}
 		\item Izdelava cenovno ugodnega motorja
 		\item Dokaz papirja kot dobrega izolatorja
-		\item Omogočanje nadaljnega testiranja motorja ostalim
-		\item Ponovljiv način pridobivanja goriva
-		\item Preverjena točnost simulacij
 		\item Odkritje neprimernosti KD šobe za najin motor
+		\item Omogočanje nadaljnjega testiranja motorja ostalim
+		\item Ponovljiv način pridobivanja goriva
+		\item Preverjena točnost simulacije
 		\end{itemize}
 \end{frame}
 
